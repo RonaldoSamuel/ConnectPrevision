@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+extension String {
+    
+    func printValue(){
+        print(self)
+    }
+}

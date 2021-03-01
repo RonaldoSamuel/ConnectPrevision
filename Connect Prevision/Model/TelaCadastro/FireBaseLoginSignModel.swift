@@ -8,6 +8,14 @@
 import Foundation
 
 struct FireBaseLoginSignModel: Codable {
-    let email: String
-    let password: String
+    var email: String
+    var password: String
+    
+}
+
+extension FireBaseLoginSignModel {
+    init() {
+        self.email = ""
+        self.password = ""
+    }
 }

@@ -1,0 +1,6 @@
+framework module Pods_Connect_Prevision {
+  umbrella header "Pods-Connect Prevision-umbrella.h"
+
+  export *
+  module * { export * }
+}

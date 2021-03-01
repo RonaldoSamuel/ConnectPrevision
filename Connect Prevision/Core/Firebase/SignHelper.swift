@@ -6,3 +6,50 @@
 //
 
 import Foundation
+import Firebase
+import MaterialComponents
+
+class SignHelper {
+    
+    func criarConta(emailModel: FireBaseLoginSignModel){
+        Auth.auth().createUser(withEmail: emailModel.email, password: emailModel.password, completion: {authResult, Error in if let Error = Error as NSError? {
+            switch AuthErrorCode(rawValue: Error.code){
+            case .operationNotAllowed:
+                self.snackbar(message: Error.localizedDescription)
+                break
+            case .emailAlreadyInUse:
+                self.snackbar(message: Error.localizedDescription)
+                print("Email Ja Existe")
+                break
+            case .invalidEmail:
+                self.snackbar(message: Error.localizedDescription)
+                print("Email Invalido")
+                break
+            case .weakPassword:
+                self.snackbar(message: Error.localizedDescription)
+                print("Sua Senha é fraca")
+                break
+            
+            default:
+                self.snackbar(message: Error.localizedDescription)
+                print("Error: \(Error.localizedDescription)")
+            }
+            
+            
+        } else {
+            print("User sings up successfully")
+            let newUserInfo = Auth.auth().currentUser
+            let email = newUserInfo?.email
+        }
+        
+        })
+    }
+    
+    func snackbar(message: String){
+        let action = MDCSnackbarMessage()
+        action.text = message
+        
+        MDCSnackbarManager.default.show(action)
+    }
+    
+}
