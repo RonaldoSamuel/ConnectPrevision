@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>770182017392-kdtdo8hgam3np7vc07pvnofjad23d9v9.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.770182017392-kdtdo8hgam3np7vc07pvnofjad23d9v9</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAhKsPzAN7HPjiTOV_w87gXgyXb0RaaDCU</string>
+	<key>GCM_SENDER_ID</key>
+	<string>770182017392</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>br.com.ConnectPrevision</string>
+	<key>PROJECT_ID</key>
+	<string>connect-prevision</string>
+	<key>STORAGE_BUCKET</key>
+	<string>connect-prevision.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:770182017392:ios:318373e970bc2862e0dfb5</string>
+</dict>
+</plist>

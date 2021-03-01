@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class TelaLoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
