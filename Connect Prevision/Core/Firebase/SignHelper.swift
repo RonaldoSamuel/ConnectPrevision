@@ -37,9 +37,7 @@ class SignHelper {
             
             
         } else {
-            print("User sings up successfully")
-            let newUserInfo = Auth.auth().currentUser
-            let email = newUserInfo?.email
+            self.snackbar(message: "Usuario Cadastrado com Sucesso")
         }
         
         })

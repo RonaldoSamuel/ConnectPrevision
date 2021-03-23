@@ -12,8 +12,7 @@ import Firebase
 import MaterialComponents
 
 class LoginHelper {
-    
-    func logarFirebase(emailModel: FireBaseLoginSignModel){
+    func logarFirebase(emailModel: FireBaseLoginSignModel,completion: @escaping((Bool)->Void)){
         
         Auth.auth().signIn(withEmail: emailModel.email, password: emailModel.password, completion: { (authResult, error) in
             if let error = error as NSError? {
@@ -38,11 +37,21 @@ class LoginHelper {
                 print("User signs in successfully")
                 let email: String = Auth.auth().currentUser?.email ?? "Nulo"
                 self.snackbar(message: "Usuario Logado \(email)")
+                completion(true)
             }
             
         })
         
     }
+    
+    func deslogarFirebase(){
+        do {
+            try Auth.auth().signOut()
+        } catch let signOutError as NSError {
+            print ("Erro ao deslogar", signOutError)
+        }
+    }
+    
     
     func snackbar(message: String){
         let action = MDCSnackbarMessage()

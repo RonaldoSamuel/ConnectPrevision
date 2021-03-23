@@ -17,6 +17,8 @@ target 'Connect Prevision' do
   pod 'MaterialComponents/BottomAppBar'
   pod 'Alamofire'
   pod 'Firebase/Auth'
+  pod 'GoogleSignIn'
+  pod 'FBSDKLoginKit'
 
   # add pods for desired Firebase products
   # https://firebase.google.com/docs/ios/setup#available-pods

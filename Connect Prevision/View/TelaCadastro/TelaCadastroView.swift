@@ -83,6 +83,14 @@ class TelaCadastroView: UIView {
         return txt
     }()
     
+    var btnChange: UIButton = {
+       var btn = UIButton()
+        btn.setImage(UIImage(named: "visible")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        btn.tintColor = .gray
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        return btn
+    }()
+    
     var txtConfirmSenha: TextFieldFormulario = {
         var txt = TextFieldFormulario()
         txt.setPlaceholder("Confirm Password")
@@ -210,6 +218,13 @@ class TelaCadastroView: UIView {
             txtSenha.topAnchor.constraint(equalTo: txtPhone.bottomAnchor,constant: size.height*0.03),
             txtSenha.leadingAnchor.constraint(equalTo: viewItensForm.leadingAnchor,constant: 25),
             txtSenha.trailingAnchor.constraint(equalTo: viewItensForm.trailingAnchor,constant: -25)
+        ])
+        
+        viewItensForm.addSubview(btnChange)
+        NSLayoutConstraint.activate([
+            btnChange.topAnchor.constraint(equalTo: txtSenha.topAnchor),
+            btnChange.bottomAnchor.constraint(equalTo: txtSenha.bottomAnchor),
+            btnChange.trailingAnchor.constraint(equalTo: txtSenha.trailingAnchor,constant: -15)
         ])
     
         viewItensForm.addSubview(txtConfirmSenha)

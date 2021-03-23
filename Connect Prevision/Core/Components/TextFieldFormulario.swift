@@ -15,8 +15,10 @@ class TextFieldFormulario: UIView {
     var disposable = DisposeBag()
     var text: BehaviorRelay<String> = BehaviorRelay<String>(value: "")
     var isPreenchido: BehaviorRelay<Bool> = BehaviorRelay<Bool>(value: false)
+    var isSecureTextEntry: Bool = false
+    var isEditando: Bool = false
     
-    private var txt: MDCOutlinedTextField = {
+    var txt: MDCOutlinedTextField = {
         var txt = MDCOutlinedTextField()
         txt.translatesAutoresizingMaskIntoConstraints = false
         return txt
@@ -38,16 +40,18 @@ class TextFieldFormulario: UIView {
     
     func bindView(){
         txt.rx.text.orEmpty.changed.bind(to: text).disposed(by: disposable)
-        
+                
         text.map { value in return value.count > 0 }
             .bind(to: isPreenchido)
             .disposed(by: disposable)
 
         txt.rx.controlEvent(.editingDidBegin).bind { _ in
+            self.isEditando = true
             self.txt.leadingView?.tintColor = UIColor(red: 0.25, green: 0.57, blue: 0.87, alpha: 1.00)
         }.disposed(by: disposable)
         
         txt.rx.controlEvent(.editingDidEnd).bind { _ in
+            self.isEditando = false
             self.isPreenchido.value ? ( self.txt.leadingView?.tintColor = UIColor(red: 0.25, green: 0.57, blue: 0.87, alpha: 1.00)) : ( self.txt.leadingView?.tintColor = .gray)
         }.disposed(by: disposable)
     }
@@ -79,6 +83,13 @@ class TextFieldFormulario: UIView {
         txt.setOutlineColor(UIColor(red: 0.25, green: 0.57, blue: 0.87, alpha: 1.00), for: .editing)
         txt.setTextColor(UIColor(red: 0.25, green: 0.57, blue: 0.87, alpha: 1.00), for: .normal)
         txt.setTextColor(UIColor(red: 0.25, green: 0.57, blue: 0.87, alpha: 1.00), for: .editing)
+    }
+    
+    func togglePasswordVisible(){
+        isSecureTextEntry = !isSecureTextEntry
+        
+        txt.isSecureTextEntry = isSecureTextEntry
+        
     }
     
     func setIcon(named: String){

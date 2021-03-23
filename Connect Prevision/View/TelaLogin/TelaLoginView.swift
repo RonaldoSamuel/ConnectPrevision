@@ -7,6 +7,8 @@
 
 import UIKit
 import MaterialComponents
+import GoogleSignIn
+import FBSDKLoginKit
 
 class TelaLoginView: UIView {
         
@@ -79,6 +81,14 @@ class TelaLoginView: UIView {
         return txt
     }()
     
+    var btnChange: UIButton = {
+       var btn = UIButton()
+        btn.setImage(UIImage(named: "visible")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        btn.tintColor = .gray
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        return btn
+    }()
+    
     var forgotButton: UIButton = {
         var btn = UIButton()
         btn.setTitle("Forgot Password?", for: .normal)
@@ -113,40 +123,20 @@ class TelaLoginView: UIView {
         return lbl
     }()
     
-    var facebookButton: MDCButton = {
-        var btn = MDCButton()
-        btn.layer.shadowRadius = 5
-        btn.layer.shadowOpacity = 0.2
-        btn.setImage(UIImage(named: "facebookLogo")?.withRenderingMode(.alwaysTemplate), for: .normal)
-        btn.setImageTintColor(.white, for: .normal)
-        btn.layer.shadowOffset = CGSize(width: 5, height: 5)
-        btn.layer.shadowColor = UIColor.blue.cgColor
-        btn.layer.cornerRadius = 4
-        btn.titleEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
-        btn.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 25)
-        btn.setTitle("Facebook", for: .normal)
-        btn.setBackgroundColor(UIColor(red: 0.21, green: 0.36, blue: 0.56, alpha: 1.00), for: .normal)
+    var facebookTeste: FBLoginButton = {
+        var btn = FBLoginButton()
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
     }()
     
-    var googleButton: MDCButton = {
-        var btn = MDCButton()
-        btn.layer.shadowRadius = 5
-        btn.layer.shadowOpacity = 0.2
-        btn.setImage(UIImage(named: "google")?.withRenderingMode(.alwaysTemplate), for: .normal)
-        btn.setImageTintColor(.white, for: .normal)
-        btn.layer.shadowOffset = CGSize(width: 5, height: 5)
-        btn.layer.shadowColor = UIColor.blue.cgColor
-        btn.layer.cornerRadius = 4
-        btn.titleLabel?.textAlignment = .right
-        btn.setTitle("Google", for: .normal)
-        btn.titleEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
-        btn.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 25)
-        btn.setBackgroundColor(UIColor(red: 0.96, green: 0.26, blue: 0.22, alpha: 1.00), for: .normal)
+   
+    
+    var googleTest: GIDSignInButton = {
+        var btn = GIDSignInButton()
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
     }()
+    
     
     var dontHaveAccountLabel: UILabel = {
         var lbl = UILabel()
@@ -257,6 +247,13 @@ class TelaLoginView: UIView {
             txtPassword.trailingAnchor.constraint(equalTo: viewItensFormulario.trailingAnchor,constant: -25)
         ])
         
+        viewItensFormulario.addSubview(btnChange)
+        NSLayoutConstraint.activate([
+            btnChange.topAnchor.constraint(equalTo: txtPassword.topAnchor),
+            btnChange.bottomAnchor.constraint(equalTo: txtPassword.bottomAnchor),
+            btnChange.trailingAnchor.constraint(equalTo: txtPassword.trailingAnchor,constant: -15)
+        ])
+        
         viewItensFormulario.addSubview(forgotButton)
         NSLayoutConstraint.activate([
             forgotButton.topAnchor.constraint(equalTo: txtPassword.bottomAnchor,constant: 5),
@@ -279,25 +276,27 @@ class TelaLoginView: UIView {
             otherloginMethodLabel.trailingAnchor.constraint(equalTo: viewItensFormulario.trailingAnchor,constant: -25)
         ])
         
-        viewItensFormulario.addSubview(facebookButton)
+       
+        
+        viewItensFormulario.addSubview(googleTest)
         NSLayoutConstraint.activate([
-            facebookButton.topAnchor.constraint(equalTo: otherloginMethodLabel.bottomAnchor,constant: 15),
-            facebookButton.leadingAnchor.constraint(equalTo: viewItensFormulario.leadingAnchor,constant: 55),
-            facebookButton.trailingAnchor.constraint(equalTo: viewItensFormulario.trailingAnchor,constant: -UIScreen.main.bounds.width*0.52),
-            facebookButton.heightAnchor.constraint(equalToConstant: 40)
+            googleTest.topAnchor.constraint(equalTo: otherloginMethodLabel.bottomAnchor,constant: 15),
+            googleTest.leadingAnchor.constraint(equalTo: viewItensFormulario.leadingAnchor,constant: UIScreen.main.bounds.width*0.52),
+            googleTest.trailingAnchor.constraint(equalTo: viewItensFormulario.trailingAnchor,constant: -55),
+            googleTest.bottomAnchor.constraint(equalTo: otherloginMethodLabel.bottomAnchor,constant: 60)
         ])
         
-        viewItensFormulario.addSubview(googleButton)
+        viewItensFormulario.addSubview(facebookTeste)
         NSLayoutConstraint.activate([
-            googleButton.topAnchor.constraint(equalTo: otherloginMethodLabel.bottomAnchor,constant: 15),
-            googleButton.leadingAnchor.constraint(equalTo: viewItensFormulario.leadingAnchor,constant: UIScreen.main.bounds.width*0.52),
-            googleButton.trailingAnchor.constraint(equalTo: viewItensFormulario.trailingAnchor,constant: -55),
-            googleButton.heightAnchor.constraint(equalToConstant: 40)
+            facebookTeste.topAnchor.constraint(equalTo: otherloginMethodLabel.bottomAnchor,constant: 19),
+            facebookTeste.leadingAnchor.constraint(equalTo: viewItensFormulario.leadingAnchor,constant: 55),
+            facebookTeste.trailingAnchor.constraint(equalTo: viewItensFormulario.trailingAnchor,constant: -UIScreen.main.bounds.width*0.52),
+            facebookTeste.bottomAnchor.constraint(equalTo: googleTest.bottomAnchor,constant: -2)
         ])
         
         viewItensFormulario.addSubview(dontHaveAccountLabel)
         NSLayoutConstraint.activate([
-            dontHaveAccountLabel.topAnchor.constraint(equalTo: facebookButton.bottomAnchor,constant: 60),
+            dontHaveAccountLabel.topAnchor.constraint(equalTo: facebookTeste.bottomAnchor,constant: 60),
             dontHaveAccountLabel.leadingAnchor.constraint(equalTo: viewItensFormulario.leadingAnchor,constant: 25),
             dontHaveAccountLabel.trailingAnchor.constraint(equalTo: viewItensFormulario.trailingAnchor,constant: -UIScreen.main.bounds.width*0.40)
         ])

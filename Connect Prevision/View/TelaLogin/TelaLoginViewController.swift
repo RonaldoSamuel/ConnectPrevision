@@ -8,13 +8,18 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import Firebase
 import MaterialComponents
+import GoogleSignIn
 
-class TelaLoginViewController: UIViewController {
+
+class TelaLoginViewController: UIViewController{
 
     var presentationView = TelaLoginView()
+    weak var coordinator: LoginCoordinator?
     var disposable = DisposeBag()
     var viewModel = TelaLoginViewModel()
+    var firebaseHelper = LoginHelper()
     
     override func loadView() {
         view = presentationView
@@ -24,6 +29,9 @@ class TelaLoginViewController: UIViewController {
         super.viewDidLoad()
         bindView()
         viewModel.viewDidLoad()
+        
+        GIDSignIn.sharedInstance()?.presentingViewController = self
+        
         // Do any additional setup after loading the view.
     }
     
@@ -35,6 +43,14 @@ class TelaLoginViewController: UIViewController {
         
         viewModel.isFormPreenchido.bind {value in
             self.presentationView.loginButton.isEnabled = value
+        }.disposed(by: disposable)
+        
+        print(viewModel.isUserLogged.value)
+        
+        presentationView.btnChange.rx.tap.bind { _ in
+            let value = self.presentationView.txtPassword.isSecureTextEntry
+            value ? self.presentationView.btnChange.setImage(UIImage(named: "visible")?.withRenderingMode(.alwaysTemplate), for: .normal) : self.presentationView.btnChange.setImage(UIImage(named: "notVisible")?.withRenderingMode(.alwaysTemplate), for: .normal)
+            self.presentationView.txtPassword.togglePasswordVisible()
         }.disposed(by: disposable)
         
         presentationView.loginButton.rx
@@ -53,20 +69,24 @@ class TelaLoginViewController: UIViewController {
             .bind(to: viewModel.password)
             .disposed(by: disposable)
         
+        viewModel.isUserLogged.bind{ value in
+            if value == true {
+                self.coordinator?.parentCoordinator?.home()
+            }else{
+                print("falso")
+            }}.disposed(by: disposable)
+        
+        
         presentationView.signUpButton.rx
             .tap
             .bind {
-                self.irParaCadastro()
+                self.coordinator?.parentCoordinator?.cadastro()
             }.disposed(by: disposable)
+        
+       
     }
     
+   
     
-    func irParaCadastro(){
-        let vc = TelaCadastroViewController()
-        navigationController?.pushViewController(vc, animated: true)
-    }
- 
-    
-
+   
 }
-

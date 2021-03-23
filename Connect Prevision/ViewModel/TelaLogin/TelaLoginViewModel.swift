@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Firebase
 import RxSwift
 import RxCocoa
 
@@ -23,13 +24,19 @@ class TelaLoginViewModel {
     
     var isFormPreenchido: BehaviorRelay<Bool> = BehaviorRelay<Bool>(value: false)
     
+    var isUserLogged: BehaviorRelay<Bool> = BehaviorRelay<Bool>(value: false)
+    
     func viewDidLoad(){
+        
+        
         
         Observable.combineLatest(isEmailPreenchido, isPasswordPreenchido) { (email,password) in
             return email == true && password == true
         }
         .bind(to: isFormPreenchido)
         .disposed(by: disposable)
+        
+        isUserLogged.accept( Auth.auth().currentUser != nil ? true : false )
         
         email.asObservable()
             .subscribe(onNext: {value in
@@ -50,7 +57,10 @@ class TelaLoginViewModel {
     }
     
     func logar(){
-        firebaseHelper.logarFirebase(emailModel: loginModel)
+        firebaseHelper.logarFirebase(emailModel: loginModel) {
+            [weak self] (value) in  self?.isUserLogged.accept(value)
+        }
+       
     }
     
 }

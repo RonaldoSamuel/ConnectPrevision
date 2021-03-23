@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3B8016ACCA5A2CEFDA55EE2B /* Pods_Connect_Prevision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D225F977D6CFA72B0E025371 /* Pods_Connect_Prevision.framework */; };
+		24D446624F4446B2DC2A6F60 /* Pods_Connect_Prevision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CACCC4735F274190AE27D064 /* Pods_Connect_Prevision.framework */; };
 		625EA77D25E9042B0030DC26 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625EA77C25E9042B0030DC26 /* UIView.swift */; };
 		625EA78325E90E690030DC26 /* TelaCadastroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625EA78225E90E690030DC26 /* TelaCadastroViewController.swift */; };
 		625EA78B25E90E720030DC26 /* TelaCadastroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625EA78A25E90E720030DC26 /* TelaCadastroView.swift */; };
 		625EA79125E9133D0030DC26 /* TextFieldFormulario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625EA79025E9133D0030DC26 /* TextFieldFormulario.swift */; };
+		626BC63A2608CFC4000AC793 /* CadastroCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626BC6392608CFC4000AC793 /* CadastroCoordinator.swift */; };
+		626DD7D1260A09EF001A7931 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 626DD7D0260A09EF001A7931 /* GoogleService-Info.plist */; };
 		6293C1B025E7E69900718F31 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6293C1AF25E7E69900718F31 /* AppDelegate.swift */; };
 		6293C1B425E7E69900718F31 /* TelaLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6293C1B325E7E69900718F31 /* TelaLoginViewController.swift */; };
 		6293C1B925E7E69900718F31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6293C1B825E7E69900718F31 /* Assets.xcassets */; };
@@ -19,16 +21,22 @@
 		6293C1C725E7E69900718F31 /* Connect_PrevisionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6293C1C625E7E69900718F31 /* Connect_PrevisionTests.swift */; };
 		6293C1D225E7E69900718F31 /* Connect_PrevisionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6293C1D125E7E69900718F31 /* Connect_PrevisionUITests.swift */; };
 		6293C1FB25E7E8BD00718F31 /* TelaLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6293C1FA25E7E8BD00718F31 /* TelaLoginView.swift */; };
-		6294CD4E25ECF78B00F2555A /* CreateAccountHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6294CD4D25ECF78B00F2555A /* CreateAccountHelper.swift */; };
+		6294CD8025ED521500F2555A /* TempoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6294CD7F25ED521500F2555A /* TempoModel.swift */; };
+		6294CD8625ED569C00F2555A /* TelaHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6294CD8525ED569C00F2555A /* TelaHomeView.swift */; };
+		6294CD8B25ED56A700F2555A /* TelaHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6294CD8A25ED56A700F2555A /* TelaHomeViewController.swift */; };
+		62BC6E842608E4CE00A04F73 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BC6E832608E4CE00A04F73 /* LoginCoordinator.swift */; };
+		62BC6E8D2608FBAD00A04F73 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BC6E8C2608FBAD00A04F73 /* HomeCoordinator.swift */; };
+		62F0AD752604CC030011115A /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F0AD742604CC030011115A /* Coordinator.swift */; };
+		62F0AD7A2604CC0C0011115A /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F0AD792604CC0C0011115A /* MainCoordinator.swift */; };
+		62F0AD802604E01E0011115A /* TelaHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F0AD7F2604E01E0011115A /* TelaHomeViewModel.swift */; };
 		62FAEE5025E9396B0094C58A /* TelaCadastroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FAEE4F25E9396B0094C58A /* TelaCadastroViewModel.swift */; };
-		62FAEE8525E93E6C0094C58A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 62FAEE8425E93E6C0094C58A /* GoogleService-Info.plist */; };
 		62FAEEA125E954E60094C58A /* LoginHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FAEEA025E954E60094C58A /* LoginHelper.swift */; };
 		62FAEEA925E954F20094C58A /* SignHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FAEEA825E954F20094C58A /* SignHelper.swift */; };
 		62FAEEAF25E955470094C58A /* FireBaseLoginSignModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FAEEAE25E955470094C58A /* FireBaseLoginSignModel.swift */; };
 		62FAEEB925E958BE0094C58A /* TelaLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FAEEB825E958BE0094C58A /* TelaLoginViewModel.swift */; };
 		62FAEEBE25E95EBF0094C58A /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FAEEBD25E95EBF0094C58A /* String+Extension.swift */; };
-		844FF8EF9A55E3446B8F93B7 /* Pods_Connect_Prevision_Connect_PrevisionUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF39C5273F263BB50D6DFEBA /* Pods_Connect_Prevision_Connect_PrevisionUITests.framework */; };
-		B2039BD8E7F0F47435042684 /* Pods_Connect_PrevisionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C09F60B6A83FB1BCAB93AFB9 /* Pods_Connect_PrevisionTests.framework */; };
+		92123ED208197681D48722E9 /* Pods_Connect_PrevisionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA077DD49A23685A5B1C8450 /* Pods_Connect_PrevisionTests.framework */; };
+		9547B21E4EFD2D32449333D2 /* Pods_Connect_Prevision_Connect_PrevisionUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4A1C15CBE336AD1301AF048 /* Pods_Connect_Prevision_Connect_PrevisionUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,11 +57,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		501581AA95D1DF54FCC65A0E /* Pods-Connect Prevision-Connect PrevisionUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Connect Prevision-Connect PrevisionUITests.release.xcconfig"; path = "Target Support Files/Pods-Connect Prevision-Connect PrevisionUITests/Pods-Connect Prevision-Connect PrevisionUITests.release.xcconfig"; sourceTree = "<group>"; };
+		1529374601852233D9048D7B /* Pods-Connect PrevisionTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Connect PrevisionTests.debug.xcconfig"; path = "Target Support Files/Pods-Connect PrevisionTests/Pods-Connect PrevisionTests.debug.xcconfig"; sourceTree = "<group>"; };
+		28CA7E09784A8F5EC53B7490 /* Pods-Connect Prevision-Connect PrevisionUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Connect Prevision-Connect PrevisionUITests.debug.xcconfig"; path = "Target Support Files/Pods-Connect Prevision-Connect PrevisionUITests/Pods-Connect Prevision-Connect PrevisionUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		4B21B64813BB75966730832D /* Pods-Connect Prevision.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Connect Prevision.debug.xcconfig"; path = "Target Support Files/Pods-Connect Prevision/Pods-Connect Prevision.debug.xcconfig"; sourceTree = "<group>"; };
 		625EA77C25E9042B0030DC26 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		625EA78225E90E690030DC26 /* TelaCadastroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelaCadastroViewController.swift; sourceTree = "<group>"; };
 		625EA78A25E90E720030DC26 /* TelaCadastroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelaCadastroView.swift; sourceTree = "<group>"; };
 		625EA79025E9133D0030DC26 /* TextFieldFormulario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldFormulario.swift; sourceTree = "<group>"; };
+		626BC6392608CFC4000AC793 /* CadastroCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroCoordinator.swift; sourceTree = "<group>"; };
+		626DD7D0260A09EF001A7931 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6293C1AC25E7E69900718F31 /* Connect Prevision.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Connect Prevision.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6293C1AF25E7E69900718F31 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6293C1B325E7E69900718F31 /* TelaLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelaLoginViewController.swift; sourceTree = "<group>"; };
@@ -67,22 +79,26 @@
 		6293C1D125E7E69900718F31 /* Connect_PrevisionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connect_PrevisionUITests.swift; sourceTree = "<group>"; };
 		6293C1D325E7E69900718F31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6293C1FA25E7E8BD00718F31 /* TelaLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelaLoginView.swift; sourceTree = "<group>"; };
-		6294CD4D25ECF78B00F2555A /* CreateAccountHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountHelper.swift; sourceTree = "<group>"; };
+		6294CD7F25ED521500F2555A /* TempoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempoModel.swift; sourceTree = "<group>"; };
+		6294CD8525ED569C00F2555A /* TelaHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelaHomeView.swift; sourceTree = "<group>"; };
+		6294CD8A25ED56A700F2555A /* TelaHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelaHomeViewController.swift; sourceTree = "<group>"; };
+		62BC6E832608E4CE00A04F73 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
+		62BC6E8C2608FBAD00A04F73 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		62F0AD742604CC030011115A /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		62F0AD792604CC0C0011115A /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		62F0AD7F2604E01E0011115A /* TelaHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelaHomeViewModel.swift; sourceTree = "<group>"; };
 		62FAEE4F25E9396B0094C58A /* TelaCadastroViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelaCadastroViewModel.swift; sourceTree = "<group>"; };
-		62FAEE8425E93E6C0094C58A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		62FAEEA025E954E60094C58A /* LoginHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginHelper.swift; sourceTree = "<group>"; };
 		62FAEEA825E954F20094C58A /* SignHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignHelper.swift; sourceTree = "<group>"; };
 		62FAEEAE25E955470094C58A /* FireBaseLoginSignModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireBaseLoginSignModel.swift; sourceTree = "<group>"; };
 		62FAEEB825E958BE0094C58A /* TelaLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelaLoginViewModel.swift; sourceTree = "<group>"; };
 		62FAEEBD25E95EBF0094C58A /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
-		7EDD3AAA8193E71AEB486B36 /* Pods-Connect Prevision.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Connect Prevision.debug.xcconfig"; path = "Target Support Files/Pods-Connect Prevision/Pods-Connect Prevision.debug.xcconfig"; sourceTree = "<group>"; };
-		A28CF609C66565139CD2B543 /* Pods-Connect PrevisionTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Connect PrevisionTests.release.xcconfig"; path = "Target Support Files/Pods-Connect PrevisionTests/Pods-Connect PrevisionTests.release.xcconfig"; sourceTree = "<group>"; };
-		A86F561BF8634AA950E07952 /* Pods-Connect PrevisionTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Connect PrevisionTests.debug.xcconfig"; path = "Target Support Files/Pods-Connect PrevisionTests/Pods-Connect PrevisionTests.debug.xcconfig"; sourceTree = "<group>"; };
-		B8B1E14D11F9C56EA95DB4D7 /* Pods-Connect Prevision.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Connect Prevision.release.xcconfig"; path = "Target Support Files/Pods-Connect Prevision/Pods-Connect Prevision.release.xcconfig"; sourceTree = "<group>"; };
-		C09F60B6A83FB1BCAB93AFB9 /* Pods_Connect_PrevisionTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Connect_PrevisionTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CF39C5273F263BB50D6DFEBA /* Pods_Connect_Prevision_Connect_PrevisionUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Connect_Prevision_Connect_PrevisionUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D225F977D6CFA72B0E025371 /* Pods_Connect_Prevision.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Connect_Prevision.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F04E43A29F39749B2B4F4629 /* Pods-Connect Prevision-Connect PrevisionUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Connect Prevision-Connect PrevisionUITests.debug.xcconfig"; path = "Target Support Files/Pods-Connect Prevision-Connect PrevisionUITests/Pods-Connect Prevision-Connect PrevisionUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		7BA2B3C5F83AA8723CAA8EFF /* Pods-Connect PrevisionTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Connect PrevisionTests.release.xcconfig"; path = "Target Support Files/Pods-Connect PrevisionTests/Pods-Connect PrevisionTests.release.xcconfig"; sourceTree = "<group>"; };
+		846A4108D7DD5D099104FFF4 /* Pods-Connect Prevision.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Connect Prevision.release.xcconfig"; path = "Target Support Files/Pods-Connect Prevision/Pods-Connect Prevision.release.xcconfig"; sourceTree = "<group>"; };
+		B4A1C15CBE336AD1301AF048 /* Pods_Connect_Prevision_Connect_PrevisionUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Connect_Prevision_Connect_PrevisionUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA077DD49A23685A5B1C8450 /* Pods_Connect_PrevisionTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Connect_PrevisionTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CACCC4735F274190AE27D064 /* Pods_Connect_Prevision.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Connect_Prevision.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA16BBD2F4824A3D45F20985 /* Pods-Connect Prevision-Connect PrevisionUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Connect Prevision-Connect PrevisionUITests.release.xcconfig"; path = "Target Support Files/Pods-Connect Prevision-Connect PrevisionUITests/Pods-Connect Prevision-Connect PrevisionUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B8016ACCA5A2CEFDA55EE2B /* Pods_Connect_Prevision.framework in Frameworks */,
+				24D446624F4446B2DC2A6F60 /* Pods_Connect_Prevision.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,7 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B2039BD8E7F0F47435042684 /* Pods_Connect_PrevisionTests.framework in Frameworks */,
+				92123ED208197681D48722E9 /* Pods_Connect_PrevisionTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,7 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				844FF8EF9A55E3446B8F93B7 /* Pods_Connect_Prevision_Connect_PrevisionUITests.framework in Frameworks */,
+				9547B21E4EFD2D32449333D2 /* Pods_Connect_Prevision_Connect_PrevisionUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,8 +162,8 @@
 		625EA78125E90E570030DC26 /* TelaCadastro */ = {
 			isa = PBXGroup;
 			children = (
-				625EA78225E90E690030DC26 /* TelaCadastroViewController.swift */,
 				625EA78A25E90E720030DC26 /* TelaCadastroView.swift */,
+				625EA78225E90E690030DC26 /* TelaCadastroViewController.swift */,
 			);
 			path = TelaCadastro;
 			sourceTree = "<group>";
@@ -168,7 +184,7 @@
 				6293C1D025E7E69900718F31 /* Connect PrevisionUITests */,
 				6293C1AD25E7E69900718F31 /* Products */,
 				840F35AF77589DA244461CF8 /* Pods */,
-				F89D393E512E385C591B0957 /* Frameworks */,
+				6A3D106188863AFB53844CBB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -191,8 +207,8 @@
 				62FAEEAD25E9551F0094C58A /* Model */,
 				6293C1F625E7E88D00718F31 /* ViewModel */,
 				6293C1F425E7E88300718F31 /* View */,
+				626DD7D0260A09EF001A7931 /* GoogleService-Info.plist */,
 				6293C1BA25E7E69900718F31 /* LaunchScreen.storyboard */,
-				62FAEE8425E93E6C0094C58A /* GoogleService-Info.plist */,
 				6293C1BD25E7E69900718F31 /* Info.plist */,
 			);
 			path = "Connect Prevision";
@@ -219,6 +235,7 @@
 		6293C1F425E7E88300718F31 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6294CD8425ED568E00F2555A /* TelaHome */,
 				625EA78125E90E570030DC26 /* TelaCadastro */,
 				6293C1F925E7E8A900718F31 /* TelaLogin */,
 			);
@@ -228,6 +245,8 @@
 		6293C1F525E7E88900718F31 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				62BC6E882608E78A00A04F73 /* Protocol */,
+				62F0AD732604CBF50011115A /* Navigation */,
 				62FAEE9F25E954D60094C58A /* Firebase */,
 				625EA78F25E9130F0030DC26 /* Components */,
 				6225699A25E7EC0A003B0F59 /* Constants */,
@@ -241,6 +260,7 @@
 		6293C1F625E7E88D00718F31 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				62F0AD7E2604E00D0011115A /* TelaHome */,
 				62FAEE4E25E939590094C58A /* TelaCadastro */,
 				62FAEEB725E958880094C58A /* TelaLogin */,
 			);
@@ -266,10 +286,54 @@
 		6293C1F925E7E8A900718F31 /* TelaLogin */ = {
 			isa = PBXGroup;
 			children = (
-				6293C1B325E7E69900718F31 /* TelaLoginViewController.swift */,
 				6293C1FA25E7E8BD00718F31 /* TelaLoginView.swift */,
+				6293C1B325E7E69900718F31 /* TelaLoginViewController.swift */,
 			);
 			path = TelaLogin;
+			sourceTree = "<group>";
+		};
+		6294CD7E25ED520700F2555A /* TelaHome */ = {
+			isa = PBXGroup;
+			children = (
+				6294CD7F25ED521500F2555A /* TempoModel.swift */,
+			);
+			path = TelaHome;
+			sourceTree = "<group>";
+		};
+		6294CD8425ED568E00F2555A /* TelaHome */ = {
+			isa = PBXGroup;
+			children = (
+				6294CD8525ED569C00F2555A /* TelaHomeView.swift */,
+				6294CD8A25ED56A700F2555A /* TelaHomeViewController.swift */,
+			);
+			path = TelaHome;
+			sourceTree = "<group>";
+		};
+		62BC6E882608E78A00A04F73 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				62F0AD742604CC030011115A /* Coordinator.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		62F0AD732604CBF50011115A /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				626BC6392608CFC4000AC793 /* CadastroCoordinator.swift */,
+				62BC6E832608E4CE00A04F73 /* LoginCoordinator.swift */,
+				62F0AD792604CC0C0011115A /* MainCoordinator.swift */,
+				62BC6E8C2608FBAD00A04F73 /* HomeCoordinator.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		62F0AD7E2604E00D0011115A /* TelaHome */ = {
+			isa = PBXGroup;
+			children = (
+				62F0AD7F2604E01E0011115A /* TelaHomeViewModel.swift */,
+			);
+			path = TelaHome;
 			sourceTree = "<group>";
 		};
 		62FAEE4E25E939590094C58A /* TelaCadastro */ = {
@@ -285,7 +349,6 @@
 			children = (
 				62FAEEA025E954E60094C58A /* LoginHelper.swift */,
 				62FAEEA825E954F20094C58A /* SignHelper.swift */,
-				6294CD4D25ECF78B00F2555A /* CreateAccountHelper.swift */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -293,6 +356,7 @@
 		62FAEEAD25E9551F0094C58A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6294CD7E25ED520700F2555A /* TelaHome */,
 				62FAEEB625E958750094C58A /* TelaCadastro */,
 			);
 			path = Model;
@@ -314,27 +378,27 @@
 			path = TelaLogin;
 			sourceTree = "<group>";
 		};
+		6A3D106188863AFB53844CBB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CACCC4735F274190AE27D064 /* Pods_Connect_Prevision.framework */,
+				B4A1C15CBE336AD1301AF048 /* Pods_Connect_Prevision_Connect_PrevisionUITests.framework */,
+				BA077DD49A23685A5B1C8450 /* Pods_Connect_PrevisionTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		840F35AF77589DA244461CF8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				7EDD3AAA8193E71AEB486B36 /* Pods-Connect Prevision.debug.xcconfig */,
-				B8B1E14D11F9C56EA95DB4D7 /* Pods-Connect Prevision.release.xcconfig */,
-				F04E43A29F39749B2B4F4629 /* Pods-Connect Prevision-Connect PrevisionUITests.debug.xcconfig */,
-				501581AA95D1DF54FCC65A0E /* Pods-Connect Prevision-Connect PrevisionUITests.release.xcconfig */,
-				A86F561BF8634AA950E07952 /* Pods-Connect PrevisionTests.debug.xcconfig */,
-				A28CF609C66565139CD2B543 /* Pods-Connect PrevisionTests.release.xcconfig */,
+				4B21B64813BB75966730832D /* Pods-Connect Prevision.debug.xcconfig */,
+				846A4108D7DD5D099104FFF4 /* Pods-Connect Prevision.release.xcconfig */,
+				28CA7E09784A8F5EC53B7490 /* Pods-Connect Prevision-Connect PrevisionUITests.debug.xcconfig */,
+				DA16BBD2F4824A3D45F20985 /* Pods-Connect Prevision-Connect PrevisionUITests.release.xcconfig */,
+				1529374601852233D9048D7B /* Pods-Connect PrevisionTests.debug.xcconfig */,
+				7BA2B3C5F83AA8723CAA8EFF /* Pods-Connect PrevisionTests.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		F89D393E512E385C591B0957 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				D225F977D6CFA72B0E025371 /* Pods_Connect_Prevision.framework */,
-				CF39C5273F263BB50D6DFEBA /* Pods_Connect_Prevision_Connect_PrevisionUITests.framework */,
-				C09F60B6A83FB1BCAB93AFB9 /* Pods_Connect_PrevisionTests.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -344,11 +408,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6293C1D625E7E69900718F31 /* Build configuration list for PBXNativeTarget "Connect Prevision" */;
 			buildPhases = (
-				CD85FF04E04DD8E8154B5F2D /* [CP] Check Pods Manifest.lock */,
+				6FDCD04E10354970EB1C29F7 /* [CP] Check Pods Manifest.lock */,
 				6293C1A825E7E69900718F31 /* Sources */,
 				6293C1A925E7E69900718F31 /* Frameworks */,
 				6293C1AA25E7E69900718F31 /* Resources */,
-				71CED99F5D2607E334A8A89D /* [CP] Embed Pods Frameworks */,
+				04A01EEF0FE5336B1EC4A040 /* [CP] Embed Pods Frameworks */,
+				063B2C10F28CE892AE879224 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -363,7 +428,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6293C1D925E7E69900718F31 /* Build configuration list for PBXNativeTarget "Connect PrevisionTests" */;
 			buildPhases = (
-				D3EED9C79924280231DDFF0B /* [CP] Check Pods Manifest.lock */,
+				A452FB4BCF659139E1D3B4E3 /* [CP] Check Pods Manifest.lock */,
 				6293C1BE25E7E69900718F31 /* Sources */,
 				6293C1BF25E7E69900718F31 /* Frameworks */,
 				6293C1C025E7E69900718F31 /* Resources */,
@@ -382,11 +447,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6293C1DC25E7E69900718F31 /* Build configuration list for PBXNativeTarget "Connect PrevisionUITests" */;
 			buildPhases = (
-				54FEAF1285945995CAC9E2A5 /* [CP] Check Pods Manifest.lock */,
+				99A2EA2C383566F588BA4DEC /* [CP] Check Pods Manifest.lock */,
 				6293C1C925E7E69900718F31 /* Sources */,
 				6293C1CA25E7E69900718F31 /* Frameworks */,
 				6293C1CB25E7E69900718F31 /* Resources */,
-				B476375C91C51C9C082D6D28 /* [CP] Embed Pods Frameworks */,
+				F67492567A7F71A840A30C6D /* [CP] Embed Pods Frameworks */,
+				6201D6C8E19E76DA25707BC3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -447,7 +513,7 @@
 			files = (
 				6293C1BC25E7E69900718F31 /* LaunchScreen.storyboard in Resources */,
 				6293C1B925E7E69900718F31 /* Assets.xcassets in Resources */,
-				62FAEE8525E93E6C0094C58A /* GoogleService-Info.plist in Resources */,
+				626DD7D1260A09EF001A7931 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,29 +534,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		54FEAF1285945995CAC9E2A5 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Connect Prevision-Connect PrevisionUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		71CED99F5D2607E334A8A89D /* [CP] Embed Pods Frameworks */ = {
+		04A01EEF0FE5336B1EC4A040 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -507,24 +551,41 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Connect Prevision/Pods-Connect Prevision-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B476375C91C51C9C082D6D28 /* [CP] Embed Pods Frameworks */ = {
+		063B2C10F28CE892AE879224 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Connect Prevision-Connect PrevisionUITests/Pods-Connect Prevision-Connect PrevisionUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Connect Prevision/Pods-Connect Prevision-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Connect Prevision-Connect PrevisionUITests/Pods-Connect Prevision-Connect PrevisionUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Connect Prevision/Pods-Connect Prevision-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Connect Prevision-Connect PrevisionUITests/Pods-Connect Prevision-Connect PrevisionUITests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Connect Prevision/Pods-Connect Prevision-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CD85FF04E04DD8E8154B5F2D /* [CP] Check Pods Manifest.lock */ = {
+		6201D6C8E19E76DA25707BC3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Connect Prevision-Connect PrevisionUITests/Pods-Connect Prevision-Connect PrevisionUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Connect Prevision-Connect PrevisionUITests/Pods-Connect Prevision-Connect PrevisionUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Connect Prevision-Connect PrevisionUITests/Pods-Connect Prevision-Connect PrevisionUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6FDCD04E10354970EB1C29F7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -546,7 +607,29 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D3EED9C79924280231DDFF0B /* [CP] Check Pods Manifest.lock */ = {
+		99A2EA2C383566F588BA4DEC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Connect Prevision-Connect PrevisionUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A452FB4BCF659139E1D3B4E3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -568,6 +651,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		F67492567A7F71A840A30C6D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Connect Prevision-Connect PrevisionUITests/Pods-Connect Prevision-Connect PrevisionUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Connect Prevision-Connect PrevisionUITests/Pods-Connect Prevision-Connect PrevisionUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Connect Prevision-Connect PrevisionUITests/Pods-Connect Prevision-Connect PrevisionUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -575,20 +675,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62F0AD802604E01E0011115A /* TelaHomeViewModel.swift in Sources */,
+				626BC63A2608CFC4000AC793 /* CadastroCoordinator.swift in Sources */,
 				625EA77D25E9042B0030DC26 /* UIView.swift in Sources */,
 				62FAEE5025E9396B0094C58A /* TelaCadastroViewModel.swift in Sources */,
 				625EA78325E90E690030DC26 /* TelaCadastroViewController.swift in Sources */,
 				6293C1B425E7E69900718F31 /* TelaLoginViewController.swift in Sources */,
 				6293C1B025E7E69900718F31 /* AppDelegate.swift in Sources */,
+				6294CD8B25ED56A700F2555A /* TelaHomeViewController.swift in Sources */,
 				6293C1FB25E7E8BD00718F31 /* TelaLoginView.swift in Sources */,
+				62BC6E842608E4CE00A04F73 /* LoginCoordinator.swift in Sources */,
+				62F0AD7A2604CC0C0011115A /* MainCoordinator.swift in Sources */,
 				62FAEEBE25E95EBF0094C58A /* String+Extension.swift in Sources */,
+				6294CD8025ED521500F2555A /* TempoModel.swift in Sources */,
 				62FAEEB925E958BE0094C58A /* TelaLoginViewModel.swift in Sources */,
+				62F0AD752604CC030011115A /* Coordinator.swift in Sources */,
+				6294CD8625ED569C00F2555A /* TelaHomeView.swift in Sources */,
 				62FAEEA925E954F20094C58A /* SignHelper.swift in Sources */,
 				625EA79125E9133D0030DC26 /* TextFieldFormulario.swift in Sources */,
 				625EA78B25E90E720030DC26 /* TelaCadastroView.swift in Sources */,
-				6294CD4E25ECF78B00F2555A /* CreateAccountHelper.swift in Sources */,
 				62FAEEAF25E955470094C58A /* FireBaseLoginSignModel.swift in Sources */,
 				62FAEEA125E954E60094C58A /* LoginHelper.swift in Sources */,
+				62BC6E8D2608FBAD00A04F73 /* HomeCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -672,6 +780,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				"EXCLUDED_ARCHS[sdk=*]" = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -733,6 +842,8 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				EXCLUDED_ARCHS = "";
+				"EXCLUDED_ARCHS[sdk=*]" = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -753,7 +864,7 @@
 		};
 		6293C1D725E7E69900718F31 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7EDD3AAA8193E71AEB486B36 /* Pods-Connect Prevision.debug.xcconfig */;
+			baseConfigurationReference = 4B21B64813BB75966730832D /* Pods-Connect Prevision.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -775,7 +886,7 @@
 		};
 		6293C1D825E7E69900718F31 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B8B1E14D11F9C56EA95DB4D7 /* Pods-Connect Prevision.release.xcconfig */;
+			baseConfigurationReference = 846A4108D7DD5D099104FFF4 /* Pods-Connect Prevision.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -797,7 +908,7 @@
 		};
 		6293C1DA25E7E69900718F31 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A86F561BF8634AA950E07952 /* Pods-Connect PrevisionTests.debug.xcconfig */;
+			baseConfigurationReference = 1529374601852233D9048D7B /* Pods-Connect PrevisionTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -820,7 +931,7 @@
 		};
 		6293C1DB25E7E69900718F31 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A28CF609C66565139CD2B543 /* Pods-Connect PrevisionTests.release.xcconfig */;
+			baseConfigurationReference = 7BA2B3C5F83AA8723CAA8EFF /* Pods-Connect PrevisionTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -843,7 +954,7 @@
 		};
 		6293C1DD25E7E69900718F31 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F04E43A29F39749B2B4F4629 /* Pods-Connect Prevision-Connect PrevisionUITests.debug.xcconfig */;
+			baseConfigurationReference = 28CA7E09784A8F5EC53B7490 /* Pods-Connect Prevision-Connect PrevisionUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -864,7 +975,7 @@
 		};
 		6293C1DE25E7E69900718F31 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 501581AA95D1DF54FCC65A0E /* Pods-Connect Prevision-Connect PrevisionUITests.release.xcconfig */;
+			baseConfigurationReference = DA16BBD2F4824A3D45F20985 /* Pods-Connect Prevision-Connect PrevisionUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
