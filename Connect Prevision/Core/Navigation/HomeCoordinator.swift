@@ -22,7 +22,6 @@ class HomeCoordinator: Coordinator{
     
     func home(){
         let vc = TelaHomeViewController()
-        vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)
     }
     

@@ -70,6 +70,17 @@ PODS:
     - MaterialComponents/NavigationBar
     - MaterialComponents/private/Math
     - MDFInternationalization
+  - MaterialComponents/BottomNavigation (122.0.1):
+    - MaterialComponents/Availability
+    - MaterialComponents/Elevation
+    - MaterialComponents/Ink
+    - MaterialComponents/Palettes
+    - MaterialComponents/private/Math
+    - MaterialComponents/Ripple
+    - MaterialComponents/ShadowElevations
+    - MaterialComponents/ShadowLayer
+    - MaterialComponents/Typography
+    - MDFInternationalization
   - MaterialComponents/ButtonBar (122.0.1):
     - MaterialComponents/Buttons
     - MaterialComponents/private/Application
@@ -104,6 +115,7 @@ PODS:
   - MaterialComponents/OverlayWindow (122.0.1):
     - MaterialComponents/Availability
     - MaterialComponents/private/Application
+  - MaterialComponents/Palettes (122.0.1)
   - MaterialComponents/private/Application (122.0.1)
   - MaterialComponents/private/Color (122.0.1):
     - MaterialComponents/Availability
@@ -217,6 +229,7 @@ DEPENDENCIES:
   - Firebase/Auth
   - GoogleSignIn
   - MaterialComponents/BottomAppBar
+  - MaterialComponents/BottomNavigation
   - MaterialComponents/Buttons
   - MaterialComponents/Snackbar
   - "MaterialComponents/TextControls+FilledTextAreas"
@@ -273,6 +286,6 @@ SPEC CHECKSUMS:
   RxRelay: 483e1a19fad961b41f0b0c0bee506f46c1ae14fe
   RxSwift: a834e5c538e89eca0cae86f403f4fbf0336786ce
 
-PODFILE CHECKSUM: 290bdf405b65ef92183dbdb91ccafd64948a447f
+PODFILE CHECKSUM: 0d3d1e5cbf0899f74f4e32f4bd021a5cbf08e87c
 
 COCOAPODS: 1.10.1

@@ -9,6 +9,7 @@ import UIKit
 import Firebase
 import GoogleSignIn
 import FBSDKCoreKit
+import FBSDKLoginKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
@@ -55,6 +56,39 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         )
         return GIDSignIn.sharedInstance().handle(url)
       }
+    
+    func loginButton(_ loginButton: FBLoginButton!, didCompleteWith result: LoginManagerLoginResult!, error: Error!) {
+      if let error = error {
+        print(error.localizedDescription)
+        return
+      }
+        let credential = FacebookAuthProvider.credential(withAccessToken: AccessToken.current!.tokenString)
+        Auth.auth().signIn(with: credential, completion: {authResult, Error in if let Error = Error as NSError? {
+            switch AuthErrorCode(rawValue: Error.code){
+            case .operationNotAllowed:
+                break
+            case .emailAlreadyInUse:
+                print("Email Ja Existe")
+                break
+            case .invalidEmail:
+                print("Email Invalido")
+                break
+            case .weakPassword:
+                
+                print("Sua Senha é fraca")
+                break
+            
+            default:
+                print("Error: \(Error.localizedDescription)")
+            }
+            
+            
+        } else {
+            print("usuario criado")
+        }
+        
+        })
+    }
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!,
                 withError error: Error!) {

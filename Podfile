@@ -15,6 +15,7 @@ target 'Connect Prevision' do
   pod 'MaterialComponents/Buttons'
   pod 'MaterialComponents/Snackbar'
   pod 'MaterialComponents/BottomAppBar'
+  pod 'MaterialComponents/BottomNavigation'
   pod 'Alamofire'
   pod 'Firebase/Auth'
   pod 'GoogleSignIn'

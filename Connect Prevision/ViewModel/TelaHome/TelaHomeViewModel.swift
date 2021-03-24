@@ -17,8 +17,6 @@ class TelaHomeViewModel {
     
     func bindViewModel(){
         
-        
-        
     }
     
     func deslogarUsuario(){

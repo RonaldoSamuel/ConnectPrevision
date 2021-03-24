@@ -34,7 +34,7 @@ class MainCoordinator: Coordinator {
     }
     
     func home(){
-        let child = HomeCoordinator(navigationController: navigationController)
+        let child = NavigationBarCoordinator(navigationController: navigationController)
         child.parentCoordinator = self
         childCoordinators.append(child)
         child.start()

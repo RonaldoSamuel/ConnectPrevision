@@ -1,14 +1,14 @@
 //
-//  TelaHomeView.swift
+//  perfilView.swift
 //  Connect Prevision
 //
-//  Created by Ronaldo Filho on 01/03/21.
+//  Created by Ronaldo Filho on 24/03/21.
 //
 
 import UIKit
 import MaterialComponents
 
-class TelaHomeView: UIView {
+class PerfilView: UIView{
     
     var botaoDeslogar: MDCButton = {
         var btn = MDCButton()
@@ -26,10 +26,11 @@ class TelaHomeView: UIView {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         createSubViews()
+        
     }
     
     func createSubViews(){
-        backgroundColor = .white
+        backgroundColor = .gray
         setupBotaoDeslogar()
     }
     
@@ -37,9 +38,7 @@ class TelaHomeView: UIView {
         addSubview(botaoDeslogar)
         NSLayoutConstraint.activate([
             botaoDeslogar.centerXAnchor.constraint(equalTo: centerXAnchor),
-            botaoDeslogar.centerYAnchor.constraint(equalTo: centerYAnchor),
-            botaoDeslogar.widthAnchor.constraint(equalToConstant: 100),
-            botaoDeslogar.heightAnchor.constraint(equalToConstant: 50)
+            botaoDeslogar.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
     }
     

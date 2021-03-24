@@ -208,9 +208,9 @@ class TelaLoginView: UIView {
         viewItensDescricao.addSubview(logoView)
         NSLayoutConstraint.activate([
             logoView.topAnchor.constraint(equalTo: viewItensDescricao.topAnchor,constant: 60),
-            logoView.leadingAnchor.constraint(equalTo: viewItensDescricao.leadingAnchor,constant: UIScreen.main.bounds.width*0.25),
-            logoView.trailingAnchor.constraint(equalTo: viewItensDescricao.trailingAnchor,constant: -UIScreen.main.bounds.width*0.25),
-            logoView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height*0.20)
+            logoView.leadingAnchor.constraint(equalTo: viewItensDescricao.leadingAnchor,constant: self.size.width*0.25),
+            logoView.trailingAnchor.constraint(equalTo: viewItensDescricao.trailingAnchor,constant: -self.size.width*0.25),
+            logoView.heightAnchor.constraint(equalToConstant: self.size.height*0.20)
         ])
         
         viewItensDescricao.addSubview(descricaoLabel)
@@ -264,8 +264,8 @@ class TelaLoginView: UIView {
         viewItensFormulario.addSubview(loginButton)
         NSLayoutConstraint.activate([
             loginButton.topAnchor.constraint(equalTo: txtPassword.bottomAnchor,constant: 50),
-            loginButton.leadingAnchor.constraint(equalTo: viewItensFormulario.leadingAnchor,constant: UIScreen.main.bounds.width*0.25),
-            loginButton.trailingAnchor.constraint(equalTo: viewItensFormulario.trailingAnchor,constant: -UIScreen.main.bounds.width*0.25),
+            loginButton.leadingAnchor.constraint(equalTo: viewItensFormulario.leadingAnchor,constant: self.size.width*0.25),
+            loginButton.trailingAnchor.constraint(equalTo: viewItensFormulario.trailingAnchor,constant: -self.size.width*0.25),
             loginButton.heightAnchor.constraint(equalToConstant: 48)
         ])
         
@@ -281,7 +281,7 @@ class TelaLoginView: UIView {
         viewItensFormulario.addSubview(googleTest)
         NSLayoutConstraint.activate([
             googleTest.topAnchor.constraint(equalTo: otherloginMethodLabel.bottomAnchor,constant: 15),
-            googleTest.leadingAnchor.constraint(equalTo: viewItensFormulario.leadingAnchor,constant: UIScreen.main.bounds.width*0.52),
+            googleTest.leadingAnchor.constraint(equalTo: viewItensFormulario.leadingAnchor,constant: self.size.width*0.52),
             googleTest.trailingAnchor.constraint(equalTo: viewItensFormulario.trailingAnchor,constant: -55),
             googleTest.bottomAnchor.constraint(equalTo: otherloginMethodLabel.bottomAnchor,constant: 60)
         ])
@@ -290,7 +290,7 @@ class TelaLoginView: UIView {
         NSLayoutConstraint.activate([
             facebookTeste.topAnchor.constraint(equalTo: otherloginMethodLabel.bottomAnchor,constant: 19),
             facebookTeste.leadingAnchor.constraint(equalTo: viewItensFormulario.leadingAnchor,constant: 55),
-            facebookTeste.trailingAnchor.constraint(equalTo: viewItensFormulario.trailingAnchor,constant: -UIScreen.main.bounds.width*0.52),
+            facebookTeste.trailingAnchor.constraint(equalTo: viewItensFormulario.trailingAnchor,constant: -self.size.width*0.52),
             facebookTeste.bottomAnchor.constraint(equalTo: googleTest.bottomAnchor,constant: -2)
         ])
         
@@ -298,14 +298,14 @@ class TelaLoginView: UIView {
         NSLayoutConstraint.activate([
             dontHaveAccountLabel.topAnchor.constraint(equalTo: facebookTeste.bottomAnchor,constant: 60),
             dontHaveAccountLabel.leadingAnchor.constraint(equalTo: viewItensFormulario.leadingAnchor,constant: 25),
-            dontHaveAccountLabel.trailingAnchor.constraint(equalTo: viewItensFormulario.trailingAnchor,constant: -UIScreen.main.bounds.width*0.40)
+            dontHaveAccountLabel.trailingAnchor.constraint(equalTo: viewItensFormulario.trailingAnchor,constant: -self.size.width*0.40)
         ])
         
         viewItensFormulario.addSubview(signUpButton)
         NSLayoutConstraint.activate([
             signUpButton.topAnchor.constraint(equalTo: dontHaveAccountLabel.topAnchor,constant: -7),
             signUpButton.leadingAnchor.constraint(equalTo: dontHaveAccountLabel.trailingAnchor,constant: 2),
-            signUpButton.trailingAnchor.constraint(equalTo: viewItensFormulario.trailingAnchor,constant: -UIScreen.main.bounds.width*0.20),
+            signUpButton.trailingAnchor.constraint(equalTo: viewItensFormulario.trailingAnchor,constant: -self.size.width*0.20),
             signUpButton.bottomAnchor.constraint(equalTo: viewItensFormulario.bottomAnchor, constant: -20)
         ])
     }

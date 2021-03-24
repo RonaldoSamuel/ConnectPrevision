@@ -246,14 +246,14 @@ class TelaCadastroView: UIView {
         NSLayoutConstraint.activate([
             haveACount.topAnchor.constraint(equalTo: signUpButton.bottomAnchor,constant: size.height*0.07),
             haveACount.leadingAnchor.constraint(equalTo: viewItensForm.leadingAnchor,constant: 25),
-            haveACount.trailingAnchor.constraint(equalTo: viewItensForm.trailingAnchor,constant: -UIScreen.main.bounds.width*0.40)
+            haveACount.trailingAnchor.constraint(equalTo: viewItensForm.trailingAnchor,constant: -self.size.width*0.40)
         ])
     
         viewItensForm.addSubview(loginButton)
         NSLayoutConstraint.activate([
             loginButton.topAnchor.constraint(equalTo: haveACount.topAnchor),
             loginButton.leadingAnchor.constraint(equalTo: haveACount.trailingAnchor,constant: 1),
-            loginButton.trailingAnchor.constraint(equalTo: viewItensForm.trailingAnchor,constant: -UIScreen.main.bounds.width*0.20),
+            loginButton.trailingAnchor.constraint(equalTo: viewItensForm.trailingAnchor,constant: -self.size.width*0.20),
             loginButton.heightAnchor.constraint(equalToConstant: 16),
             loginButton.bottomAnchor.constraint(equalTo: viewItensForm.bottomAnchor,constant: -25)
         ])

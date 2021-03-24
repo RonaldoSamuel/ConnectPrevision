@@ -30,6 +30,7 @@ class TelaLoginViewController: UIViewController{
         bindView()
         viewModel.viewDidLoad()
         
+        
         GIDSignIn.sharedInstance()?.presentingViewController = self
         
         // Do any additional setup after loading the view.
