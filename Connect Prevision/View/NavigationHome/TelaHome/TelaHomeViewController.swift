@@ -43,7 +43,7 @@ class TelaHomeViewController: UITabBarController{
     
     func bindView(){
         
-//        viewModel.pegarTemperatura()
+        viewModel.pegarTemperatura()
         
         presentationView.botaoDeslogar.rx
             .tap

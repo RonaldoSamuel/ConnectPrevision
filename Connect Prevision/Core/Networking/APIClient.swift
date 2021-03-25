@@ -9,7 +9,10 @@ import Foundation
 import Alamofire
 
 class APIClient {
+    
     static func pegarTemperatura(completion: @escaping (AFResult<TempoModel>)->Void) {
-        AF.request(PegarTempo.pegarTemperatura(pais: "São Paulo")).responseDecodable { (response: AFDataResponse<TempoModel>) in completion(response.result)}
+        AF.request(PegarTempo.pegarTemperatura(pais: "São Paulo"))
+            .responseDecodable { (response: AFDataResponse<TempoModel>) in completion(response.result)}
     }
+    
 }

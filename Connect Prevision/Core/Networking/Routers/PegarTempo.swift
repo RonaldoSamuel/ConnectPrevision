@@ -9,7 +9,9 @@ import Foundation
 import Alamofire
 
 enum PegarTempo: APIConfiguration {
+    
     case pegarTemperatura(pais: String)
+    
     var method: HTTPMethod{
         switch self {
         default:
@@ -20,9 +22,10 @@ enum PegarTempo: APIConfiguration {
     var parameters: RequestParams? {
         switch self {
         case .pegarTemperatura(let pais):
-            return .body([
-                "key": WeatherAPI.key,
-                ParameterKeys.q: pais
+            return .url([
+                ParameterKeys.keyP: WeatherAPI.key,
+                ParameterKeys.q: pais,
+                "aqi": "yes"
             ])
         }
     }
@@ -43,15 +46,25 @@ enum PegarTempo: APIConfiguration {
         
         urlRequest.setValue(ContentType.json.rawValue, forHTTPHeaderField: HTTPHeaderField.acceptType.rawValue)
         urlRequest.setValue(ContentType.json.rawValue, forHTTPHeaderField: HTTPHeaderField.contentType.rawValue)
-     
-        if let parameters = parameters {
-            do {
-                urlRequest.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: [])
+        
+        switch parameters {
+        
+        case .body(let params):
+            urlRequest.httpBody = try JSONSerialization.data(withJSONObject: params, options: [])
+            
+        case .url(let params):
+            let queryParams = params.map { pair  in
+                return URLQueryItem(name: pair.key, value: "\(pair.value)")
             }
+            var components = URLComponents(string:url.appendingPathComponent(path).absoluteString)
+            components?.queryItems = queryParams
+            urlRequest.url = components?.url
+        case .none:
+            break
         }
-    
+        
         return urlRequest
         
     }
-   
+    
 }

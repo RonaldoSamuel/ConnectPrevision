@@ -19,7 +19,8 @@ struct APIConstants {
 }
 
 struct ParameterKeys {
-  static let q = "q"
+    static let q = "q"
+    static let keyP = "key"
 }
 
 enum HTTPHeaderField: String {
@@ -34,7 +35,6 @@ enum HTTPHeaderField: String {
 enum ContentType: String {
     
     case json = "Application/json"
-    case formEncode = "application/x-www-form-urlencoded"
 }
  
 enum RequestParams {
