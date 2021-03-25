@@ -56,7 +56,6 @@ class TelaHomeView: UIView {
         lbl.textAlignment = .center
         lbl.textColor = .white
         lbl.font = UIFont.boldSystemFont(ofSize: 18)
-        lbl.text = "Ter,Mar 23 13:43"
         lbl.translatesAutoresizingMaskIntoConstraints = false
         return lbl
     }()

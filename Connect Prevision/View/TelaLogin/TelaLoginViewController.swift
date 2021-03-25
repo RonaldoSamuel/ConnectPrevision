@@ -32,7 +32,6 @@ class TelaLoginViewController: UIViewController{
         
         
         GIDSignIn.sharedInstance()?.presentingViewController = self
-        
         // Do any additional setup after loading the view.
     }
     
@@ -83,7 +82,6 @@ class TelaLoginViewController: UIViewController{
             .bind {
                 self.coordinator?.parentCoordinator?.cadastro()
             }.disposed(by: disposable)
-        
        
     }
     

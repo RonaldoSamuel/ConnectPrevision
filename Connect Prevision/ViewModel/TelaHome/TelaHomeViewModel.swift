@@ -24,4 +24,8 @@ class TelaHomeViewModel {
         isUsuarioDeslogar.accept( Auth.auth().currentUser == nil ? true : false )
     }
     
+    func pegarTemperatura(){
+        APIClient.pegarTemperatura(completion: { result in print(result)})
+    }
+    
 }

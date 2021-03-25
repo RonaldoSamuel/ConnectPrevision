@@ -22,18 +22,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         FirebaseApp.configure()
         
         ApplicationDelegate.shared.application(
-                    application,
-                    didFinishLaunchingWithOptions: launchOptions
-                )
+            application,
+            didFinishLaunchingWithOptions: launchOptions
+        )
         
         GIDSignIn.sharedInstance().clientID = "770182017392-ceifqf8010a4ar4k3r0fe2039b8k4qr3.apps.googleusercontent.com"
         GIDSignIn.sharedInstance().delegate = self
+        
         
         let navController = UINavigationController()
         coordinator = MainCoordinator(navigationcontroller: navController)
         
         coordinator?.start()
-     
+        
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         window?.rootViewController = navController
@@ -42,12 +43,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     }
     
     func application(_ application: UIApplication,
-                      open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
-       return GIDSignIn.sharedInstance().handle(url)
-     }
+                     open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        return GIDSignIn.sharedInstance().handle(url)
+    }
     
     @available(iOS 9.0, *)
-      func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any]) -> Bool {
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any]) -> Bool {
         ApplicationDelegate.shared.application(
             app,
             open: url,
@@ -55,13 +56,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             annotation: options[UIApplication.OpenURLOptionsKey.annotation]
         )
         return GIDSignIn.sharedInstance().handle(url)
-      }
+    }
     
     func loginButton(_ loginButton: FBLoginButton!, didCompleteWith result: LoginManagerLoginResult!, error: Error!) {
-      if let error = error {
-        print(error.localizedDescription)
-        return
-      }
+        if let error = error {
+            print(error.localizedDescription)
+            return
+        }
+        print("=================================================================")
+        print("==================Inciando Login Facebook========================")
+        print("=================================================================")
         let credential = FacebookAuthProvider.credential(withAccessToken: AccessToken.current!.tokenString)
         Auth.auth().signIn(with: credential, completion: {authResult, Error in if let Error = Error as NSError? {
             switch AuthErrorCode(rawValue: Error.code){
@@ -77,38 +81,43 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                 
                 print("Sua Senha é fraca")
                 break
-            
+                
             default:
                 print("Error: \(Error.localizedDescription)")
             }
             
             
         } else {
-            print("usuario criado")
+            print("Usuario Google Logado")
+            self.coordinator?.home()
         }
         
         })
+        
+        print("=================================================================")
+        print("=================================================================")
+        print("=================================================================")
     }
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!,
-                withError error: Error!) {
+              withError error: Error!) {
         if let error = error {
-          if (error as NSError).code == GIDSignInErrorCode.hasNoAuthInKeychain.rawValue {
-            print("The user has not signed in before or they have since signed out.")
-          } else {
-            print("\(error.localizedDescription)")
-          }
-          // [START_EXCLUDE silent]
-          NotificationCenter.default.post(
-            name: Notification.Name(rawValue: "ToggleAuthUINotification"), object: nil, userInfo: nil)
-          // [END_EXCLUDE]
-          return
+            if (error as NSError).code == GIDSignInErrorCode.hasNoAuthInKeychain.rawValue {
+                print("The user has not signed in before or they have since signed out.")
+            } else {
+                print("\(error.localizedDescription)")
+            }
+            // [START_EXCLUDE silent]
+            NotificationCenter.default.post(
+                name: Notification.Name(rawValue: "ToggleAuthUINotification"), object: nil, userInfo: nil)
+            // [END_EXCLUDE]
+            return
         }
         guard let authentication = user.authentication else { return }
-          let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
-                                                            accessToken: authentication.accessToken)
+        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
+                                                       accessToken: authentication.accessToken)
         
-       print(credential)
+        print(credential)
         
         Auth.auth().signIn(with: credential, completion: {authResult, Error in if let Error = Error as NSError? {
             switch AuthErrorCode(rawValue: Error.code){
@@ -124,7 +133,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                 
                 print("Sua Senha é fraca")
                 break
-            
+                
             default:
                 print("Error: \(Error.localizedDescription)")
             }
@@ -132,36 +141,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             
         } else {
             print("usuario criado")
+            self.coordinator?.home()
+            
         }
         
         })
         
-        // Perform any operations on signed in user here.
-//        let userId = user.userID                  // For client-side use only!
-//        let idToken = user.authentication.idToken // Safe to send to the server
-//        let fullName = user.profile.name
-//        let givenName = user.profile.givenName
-//        let familyName = user.profile.familyName
-//        let email = user.profile.email
-//        print(email,fullName)
         // [START_EXCLUDE]
         NotificationCenter.default.post(
-          name: Notification.Name(rawValue: "ToggleAuthUINotification"),
-          object: nil,
-          userInfo: ["statusText": "Signed in user:"])
+            name: Notification.Name(rawValue: "ToggleAuthUINotification"),
+            object: nil,
+            userInfo: ["statusText": "Signed in user:"])
         // [END_EXCLUDE]
-      }
+    }
     
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!,
-                withError error: Error!) {
+              withError error: Error!) {
         // Perform any operations when the user disconnects from app here.
         // [START_EXCLUDE]
         NotificationCenter.default.post(
-          name: Notification.Name(rawValue: "ToggleAuthUINotification"),
-          object: nil,
-          userInfo: ["statusText": "User has disconnected."])
+            name: Notification.Name(rawValue: "ToggleAuthUINotification"),
+            object: nil,
+            userInfo: ["statusText": "User has disconnected."])
         // [END_EXCLUDE]
-      }
+    }
     
 }
 

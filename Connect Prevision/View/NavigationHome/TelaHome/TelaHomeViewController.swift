@@ -18,6 +18,7 @@ class TelaHomeViewController: UITabBarController{
     var viewModel = TelaHomeViewModel()
     var disposable = DisposeBag()
     
+    var timer: Timer?
     
     override func loadView() {
         view = presentationView
@@ -42,13 +43,8 @@ class TelaHomeViewController: UITabBarController{
     
     func bindView(){
         
-        let date = Date() // save date, so all components use the same date
-        let calendar = Calendar.current // or e.g. Calendar(identifier: .persian)
-
-        let hour = calendar.component(.hour, from: date)
-        let minute = calendar.component(.minute, from: date)
+//        viewModel.pegarTemperatura()
         
-        presentationView.dateLabel.text = "Qua, Mar 24 " + "\(hour):" + "\(minute)"
         presentationView.botaoDeslogar.rx
             .tap
             .bind { self.viewModel.deslogarUsuario()
@@ -59,6 +55,25 @@ class TelaHomeViewController: UITabBarController{
                 self.navigationController?.popViewController(animated: true)
             }}.disposed(by: disposable)
         
+        timer = Timer.scheduledTimer(timeInterval: 60, target: self, selector: #selector(atualizaData(_:)), userInfo: nil, repeats: true)
+        atualizaData(timer!)
+    }
+    
+    @objc func atualizaData(_ timer: Timer){
+        
+        let dateFormmater = DateFormatter()
+        
+//        dateFormmater.dateStyle = .medium
+//        dateFormmater.timeStyle = .short
+        dateFormmater.dateFormat = "EE, MMM dd HH:mm"
+        
+        let date1 = Date()
+        presentationView.dateLabel.text = dateFormmater.string(from: date1)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        timer?.invalidate()
     }
     
 }
