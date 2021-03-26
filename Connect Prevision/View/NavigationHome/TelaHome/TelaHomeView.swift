@@ -46,7 +46,7 @@ class TelaHomeView: UIView {
         lbl.textAlignment = .center
         lbl.textColor = .white
         lbl.font = UIFont.boldSystemFont(ofSize: 18)
-        lbl.text = "Garça/SP"
+        lbl.text = "Loading..."
         lbl.translatesAutoresizingMaskIntoConstraints = false
         return lbl
     }()
@@ -73,7 +73,7 @@ class TelaHomeView: UIView {
         lbl.textAlignment = .center
         lbl.textColor = .white
         lbl.font = UIFont.boldSystemFont(ofSize: 68)
-        lbl.text = "20"
+        lbl.text = "..."
         lbl.translatesAutoresizingMaskIntoConstraints = false
         return lbl
     }()
@@ -87,7 +87,7 @@ class TelaHomeView: UIView {
         lbl.layer.backgroundColor = UIColor(red: 0.24, green: 0.53, blue: 0.98, alpha: 1.00).cgColor
         lbl.textColor = .white
         lbl.font = UIFont.boldSystemFont(ofSize: 18)
-        lbl.text = "Feels like 25°C"
+        lbl.text = "Loading"
         lbl.translatesAutoresizingMaskIntoConstraints = false
         return lbl
     }()
@@ -137,7 +137,7 @@ class TelaHomeView: UIView {
     var componente1: ViewComponentesTemperatura = {
         var componentes = ViewComponentesTemperatura()
         componentes.setDesLabelText(conteudo: "UIV Index")
-        componentes.setupContentText(conteudo: "Low")
+        componentes.setupContentText(conteudo: "...")
         componentes.setIcon(named: "uivlight")
         componentes.translatesAutoresizingMaskIntoConstraints = false
         return componentes
@@ -155,7 +155,7 @@ class TelaHomeView: UIView {
     var componente3: ViewComponentesTemperatura = {
         var componentes = ViewComponentesTemperatura()
         componentes.setDesLabelText(conteudo: "Humidade")
-        componentes.setupContentText(conteudo: "80%")
+        componentes.setupContentText(conteudo: "...")
         componentes.setIcon(named: "humidity")
         componentes.translatesAutoresizingMaskIntoConstraints = false
         return componentes

@@ -78,6 +78,10 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Usaremos isto para melhorar sua experiencia</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Usaremos isto para melhorar sua experiencia</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

@@ -8,9 +8,9 @@
 import Foundation
 import Alamofire
 
-enum PegarTempo: APIConfiguration {
+enum PegarTemperaturaForeCast: APIConfiguration {
     
-    case pegarTemperatura(lat: Double,long: Double)
+    case pegarTemperaturaForeCast(lat: Double,long: Double)
     
     var method: HTTPMethod{
         switch self {
@@ -21,19 +21,21 @@ enum PegarTempo: APIConfiguration {
     
     var parameters: RequestParams? {
         switch self {
-        case .pegarTemperatura(let lat, let long):
+        case .pegarTemperaturaForeCast(let lat, let long):
             return .url([
                 ParameterKeys.keyP: WeatherAPI.key,
                 ParameterKeys.q: "\(lat), \(long)",
-                "aqi": "yes"
+                "days": 7,
+                "aqi": "no",
+                "alerts": "no"
             ])
         }
     }
     
     var path: String {
         switch self {
-        case .pegarTemperatura:
-            return "/current.json"
+        case .pegarTemperaturaForeCast:
+            return "/forecast.json"
         }
     }
     
