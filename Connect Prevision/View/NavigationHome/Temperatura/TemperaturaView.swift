@@ -9,6 +9,47 @@ import UIKit
 
 class TemperaturaView: UIView{
     
+    var descricaoLabel: UILabel = {
+        var lbl = UILabel()
+        lbl.text = "Next 7 Days"
+        lbl.font = UIFont.boldSystemFont(ofSize: 20)
+        lbl.translatesAutoresizingMaskIntoConstraints = false
+        return lbl
+    }()
+    
+    var contentTableView: UITableView = {
+        var tbl = UITableView()
+        tbl.allowsMultipleSelection = false
+        tbl.refreshControl = UIRefreshControl()
+        tbl.register(SeteDiasCell.self, forCellReuseIdentifier: SeteDiasCell.identifier)
+        tbl.translatesAutoresizingMaskIntoConstraints = false
+        return tbl
+    }()
+    
+    var subDescricaoLabel: UILabel = {
+        var lbl = UILabel()
+        lbl.text = "Air Quality Index"
+        lbl.font = UIFont.boldSystemFont(ofSize: 20)
+        lbl.translatesAutoresizingMaskIntoConstraints = false
+        return lbl
+    }()
+    
+    var valorAirLabel: UILabel = {
+        var lbl = UILabel()
+        lbl.text = "40"
+        lbl.font = UIFont.boldSystemFont(ofSize: 20)
+        lbl.translatesAutoresizingMaskIntoConstraints = false
+        return lbl
+    }()
+    
+    var subValorAirLabel: UILabel = {
+        var lbl = UILabel()
+        lbl.text = "Good"
+        lbl.font = UIFont.boldSystemFont(ofSize: 20)
+        lbl.translatesAutoresizingMaskIntoConstraints = false
+        return lbl
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         createSubViews()
@@ -19,7 +60,27 @@ class TemperaturaView: UIView{
     }
     
     func createSubViews(){
-        backgroundColor = .systemPink
+        backgroundColor = .white
+        setupDescricaoLabel()
+        setupTableView()
+    }
+    
+    func setupDescricaoLabel(){
+        addSubview(descricaoLabel)
+        NSLayoutConstraint.activate([
+            descricaoLabel.topAnchor.constraint(equalTo: topAnchor,constant: 50),
+            descricaoLabel.centerXAnchor.constraint(equalTo: centerXAnchor)
+        ])
+    }
+    
+    func setupTableView(){
+        addSubview(contentTableView)
+        NSLayoutConstraint.activate([
+            contentTableView.topAnchor.constraint(equalTo: descricaoLabel.bottomAnchor,constant: 10),
+            contentTableView.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 10),
+            contentTableView.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -10),
+            contentTableView.heightAnchor.constraint(equalToConstant: size.height*0.6)
+        ])
     }
     
 }

@@ -10,7 +10,13 @@ import MaterialComponents
 
 class TelaHomeView: UIView {
     
-    let hour = Calendar.current.component(.hour, from: Date())
+    var refreshButton: UIButton = {
+        var btn = UIButton(type: .custom)
+        btn.setImage(UIImage(named: .ic_refresh)?.withRenderingMode(.alwaysTemplate), for: .normal)
+        btn.tintColor = .white
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        return btn
+    }()
     
     var imagemNuvem1: UIImageView = {
         var img = UIImageView()
@@ -146,7 +152,7 @@ class TelaHomeView: UIView {
     var componente2: ViewComponentesTemperatura = {
         var componentes = ViewComponentesTemperatura()
         componentes.setDesLabelText(conteudo: "Sunrise")
-        componentes.setupContentText(conteudo: "05:32")
+        componentes.setupContentText(conteudo: "...")
         componentes.setIcon(named: "sunrise")
         componentes.translatesAutoresizingMaskIntoConstraints = false
         return componentes
@@ -164,7 +170,7 @@ class TelaHomeView: UIView {
     var componente4: ViewComponentesTemperatura = {
         var componentes = ViewComponentesTemperatura()
         componentes.setDesLabelText(conteudo: "Sunset")
-        componentes.setupContentText(conteudo: "17:31")
+        componentes.setupContentText(conteudo: "...")
         componentes.setIcon(named: "sunset")
         componentes.translatesAutoresizingMaskIntoConstraints = false
         return componentes
@@ -192,6 +198,7 @@ class TelaHomeView: UIView {
     
     func createSubViews(){
         backgroundColor = UIColor(red: 0.23, green: 0.45, blue: 0.96, alpha: 1.00)
+        setupRefreshButton()
         setupNuvem1()
         setupNuvem2()
         setupNuvem3()
@@ -203,6 +210,16 @@ class TelaHomeView: UIView {
         setupLabelFeelsLike()
         setupViewBottom()
         setupStacks()
+    }
+    
+    func setupRefreshButton(){
+        addSubview(refreshButton)
+        NSLayoutConstraint.activate([
+            refreshButton.topAnchor.constraint(equalTo: topAnchor,constant: size.height*0.05),
+            refreshButton.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -size.width*0.05),
+            refreshButton.widthAnchor.constraint(equalToConstant: 30),
+            refreshButton.heightAnchor.constraint(equalToConstant: 30)
+        ])
     }
     
     func setupNuvem1(){

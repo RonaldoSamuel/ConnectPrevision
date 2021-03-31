@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3644D6FAD6F54EBDD5F279B7 /* Pods_Connect_PrevisionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05FBF7CD76FB31D8A2225D5E /* Pods_Connect_PrevisionTests.framework */; };
+		10FA55E6C2DE475D528A35C8 /* Pods_Connect_Prevision_Connect_PrevisionUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4EC4B19B5F659FDB76044B3 /* Pods_Connect_Prevision_Connect_PrevisionUITests.framework */; };
 		62251FAE260CC00D00B3A2CC /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62251FAD260CC00D00B3A2CC /* DateExtension.swift */; };
 		62251FB3260CCFA300B3A2CC /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62251FB2260CCFA300B3A2CC /* APIConstants.swift */; };
 		62251FB9260CD0DB00B3A2CC /* PegarTempo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62251FB8260CD0DB00B3A2CC /* PegarTempo.swift */; };
@@ -16,6 +16,7 @@
 		6247B30C260E4E1F00B8961A /* TempoModelForeCast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6247B30B260E4E1F00B8961A /* TempoModelForeCast.swift */; };
 		6247B314260E4EBA00B8961A /* PegarTemperaturaForeCast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6247B313260E4EBA00B8961A /* PegarTemperaturaForeCast.swift */; };
 		624F2957260E0A7C00372E34 /* Dados.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624F2956260E0A7C00372E34 /* Dados.swift */; };
+		625E29F92612005C006FA533 /* SeteDiasCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625E29F82612005C006FA533 /* SeteDiasCell.swift */; };
 		625EA77D25E9042B0030DC26 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625EA77C25E9042B0030DC26 /* UIView.swift */; };
 		625EA78325E90E690030DC26 /* TelaCadastroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625EA78225E90E690030DC26 /* TelaCadastroViewController.swift */; };
 		625EA78B25E90E720030DC26 /* TelaCadastroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625EA78A25E90E720030DC26 /* TelaCadastroView.swift */; };
@@ -53,8 +54,8 @@
 		62FAEEAF25E955470094C58A /* FireBaseLoginSignModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FAEEAE25E955470094C58A /* FireBaseLoginSignModel.swift */; };
 		62FAEEB925E958BE0094C58A /* TelaLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FAEEB825E958BE0094C58A /* TelaLoginViewModel.swift */; };
 		62FAEEBE25E95EBF0094C58A /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FAEEBD25E95EBF0094C58A /* String+Extension.swift */; };
-		D0A977B025E8449A49228BEF /* Pods_Connect_Prevision_Connect_PrevisionUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91F175B18DD970A8B9D2FC52 /* Pods_Connect_Prevision_Connect_PrevisionUITests.framework */; };
-		E2C2FFEFA49ACC25E2519CF8 /* Pods_Connect_Prevision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE2863CD9AB6B190B8D0FCCC /* Pods_Connect_Prevision.framework */; };
+		91A727CF3F0AEDEDEE9ECDB8 /* Pods_Connect_PrevisionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58824572DA8C3D2A018943B3 /* Pods_Connect_PrevisionTests.framework */; };
+		E779D6777B16275EA1714BDD /* Pods_Connect_Prevision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F658E608769F40E3B4C6A7D /* Pods_Connect_Prevision.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,9 +76,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		05FBF7CD76FB31D8A2225D5E /* Pods_Connect_PrevisionTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Connect_PrevisionTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2C9FBFE0789A9DFE49916746 /* Pods-Connect Prevision-Connect PrevisionUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Connect Prevision-Connect PrevisionUITests.release.xcconfig"; path = "Target Support Files/Pods-Connect Prevision-Connect PrevisionUITests/Pods-Connect Prevision-Connect PrevisionUITests.release.xcconfig"; sourceTree = "<group>"; };
-		41DF133D01AF0DFFD1C32476 /* Pods-Connect Prevision.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Connect Prevision.debug.xcconfig"; path = "Target Support Files/Pods-Connect Prevision/Pods-Connect Prevision.debug.xcconfig"; sourceTree = "<group>"; };
+		1F658E608769F40E3B4C6A7D /* Pods_Connect_Prevision.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Connect_Prevision.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F793F45182EC74B22C7240E /* Pods-Connect PrevisionTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Connect PrevisionTests.debug.xcconfig"; path = "Target Support Files/Pods-Connect PrevisionTests/Pods-Connect PrevisionTests.debug.xcconfig"; sourceTree = "<group>"; };
+		58824572DA8C3D2A018943B3 /* Pods_Connect_PrevisionTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Connect_PrevisionTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		62251FAD260CC00D00B3A2CC /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		62251FB2260CCFA300B3A2CC /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		62251FB8260CD0DB00B3A2CC /* PegarTempo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PegarTempo.swift; sourceTree = "<group>"; };
@@ -86,6 +87,7 @@
 		6247B30B260E4E1F00B8961A /* TempoModelForeCast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempoModelForeCast.swift; sourceTree = "<group>"; };
 		6247B313260E4EBA00B8961A /* PegarTemperaturaForeCast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PegarTemperaturaForeCast.swift; sourceTree = "<group>"; };
 		624F2956260E0A7C00372E34 /* Dados.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dados.swift; sourceTree = "<group>"; };
+		625E29F82612005C006FA533 /* SeteDiasCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeteDiasCell.swift; sourceTree = "<group>"; };
 		625EA77C25E9042B0030DC26 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		625EA78225E90E690030DC26 /* TelaCadastroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelaCadastroViewController.swift; sourceTree = "<group>"; };
 		625EA78A25E90E720030DC26 /* TelaCadastroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelaCadastroView.swift; sourceTree = "<group>"; };
@@ -129,12 +131,12 @@
 		62FAEEAE25E955470094C58A /* FireBaseLoginSignModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireBaseLoginSignModel.swift; sourceTree = "<group>"; };
 		62FAEEB825E958BE0094C58A /* TelaLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelaLoginViewModel.swift; sourceTree = "<group>"; };
 		62FAEEBD25E95EBF0094C58A /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
-		731E6C00AF20882D5B5C79DE /* Pods-Connect PrevisionTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Connect PrevisionTests.release.xcconfig"; path = "Target Support Files/Pods-Connect PrevisionTests/Pods-Connect PrevisionTests.release.xcconfig"; sourceTree = "<group>"; };
-		79BB872594895D2C57048528 /* Pods-Connect Prevision-Connect PrevisionUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Connect Prevision-Connect PrevisionUITests.debug.xcconfig"; path = "Target Support Files/Pods-Connect Prevision-Connect PrevisionUITests/Pods-Connect Prevision-Connect PrevisionUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		91F175B18DD970A8B9D2FC52 /* Pods_Connect_Prevision_Connect_PrevisionUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Connect_Prevision_Connect_PrevisionUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AE2863CD9AB6B190B8D0FCCC /* Pods_Connect_Prevision.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Connect_Prevision.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E3C87D291DB9E02384BBFBB1 /* Pods-Connect Prevision.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Connect Prevision.release.xcconfig"; path = "Target Support Files/Pods-Connect Prevision/Pods-Connect Prevision.release.xcconfig"; sourceTree = "<group>"; };
-		F36673453E6B7E7E05884866 /* Pods-Connect PrevisionTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Connect PrevisionTests.debug.xcconfig"; path = "Target Support Files/Pods-Connect PrevisionTests/Pods-Connect PrevisionTests.debug.xcconfig"; sourceTree = "<group>"; };
+		700252023C2EDB4E6703ECE3 /* Pods-Connect Prevision.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Connect Prevision.release.xcconfig"; path = "Target Support Files/Pods-Connect Prevision/Pods-Connect Prevision.release.xcconfig"; sourceTree = "<group>"; };
+		7A3E0BD7D676D97B13DBE849 /* Pods-Connect Prevision.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Connect Prevision.debug.xcconfig"; path = "Target Support Files/Pods-Connect Prevision/Pods-Connect Prevision.debug.xcconfig"; sourceTree = "<group>"; };
+		7DAF3806FD4C518F17FA2E18 /* Pods-Connect PrevisionTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Connect PrevisionTests.release.xcconfig"; path = "Target Support Files/Pods-Connect PrevisionTests/Pods-Connect PrevisionTests.release.xcconfig"; sourceTree = "<group>"; };
+		8E31829D91A67AD087D64C57 /* Pods-Connect Prevision-Connect PrevisionUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Connect Prevision-Connect PrevisionUITests.release.xcconfig"; path = "Target Support Files/Pods-Connect Prevision-Connect PrevisionUITests/Pods-Connect Prevision-Connect PrevisionUITests.release.xcconfig"; sourceTree = "<group>"; };
+		EBA1D7ADFBA0F6BA1ECD8BC9 /* Pods-Connect Prevision-Connect PrevisionUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Connect Prevision-Connect PrevisionUITests.debug.xcconfig"; path = "Target Support Files/Pods-Connect Prevision-Connect PrevisionUITests/Pods-Connect Prevision-Connect PrevisionUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F4EC4B19B5F659FDB76044B3 /* Pods_Connect_Prevision_Connect_PrevisionUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Connect_Prevision_Connect_PrevisionUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,7 +144,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2C2FFEFA49ACC25E2519CF8 /* Pods_Connect_Prevision.framework in Frameworks */,
+				E779D6777B16275EA1714BDD /* Pods_Connect_Prevision.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,7 +152,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3644D6FAD6F54EBDD5F279B7 /* Pods_Connect_PrevisionTests.framework in Frameworks */,
+				91A727CF3F0AEDEDEE9ECDB8 /* Pods_Connect_PrevisionTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,13 +160,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0A977B025E8449A49228BEF /* Pods_Connect_Prevision_Connect_PrevisionUITests.framework in Frameworks */,
+				10FA55E6C2DE475D528A35C8 /* Pods_Connect_Prevision_Connect_PrevisionUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5522241DCB0121BFAD9E3481 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1F658E608769F40E3B4C6A7D /* Pods_Connect_Prevision.framework */,
+				F4EC4B19B5F659FDB76044B3 /* Pods_Connect_Prevision_Connect_PrevisionUITests.framework */,
+				58824572DA8C3D2A018943B3 /* Pods_Connect_PrevisionTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		62251FB7260CD0CB00B3A2CC /* Routers */ = {
 			isa = PBXGroup;
 			children = (
@@ -246,7 +258,7 @@
 				6293C1D025E7E69900718F31 /* Connect PrevisionUITests */,
 				6293C1AD25E7E69900718F31 /* Products */,
 				840F35AF77589DA244461CF8 /* Pods */,
-				F2147CEC3951C261E19B5DD7 /* Frameworks */,
+				5522241DCB0121BFAD9E3481 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -389,6 +401,7 @@
 			children = (
 				62B9BD09260B5710003BCA2D /* TemperaturaView.swift */,
 				62B9BD0E260B5719003BCA2D /* TemperaturaViewController.swift */,
+				625E29F82612005C006FA533 /* SeteDiasCell.swift */,
 			);
 			path = Temperatura;
 			sourceTree = "<group>";
@@ -483,24 +496,14 @@
 		840F35AF77589DA244461CF8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				41DF133D01AF0DFFD1C32476 /* Pods-Connect Prevision.debug.xcconfig */,
-				E3C87D291DB9E02384BBFBB1 /* Pods-Connect Prevision.release.xcconfig */,
-				79BB872594895D2C57048528 /* Pods-Connect Prevision-Connect PrevisionUITests.debug.xcconfig */,
-				2C9FBFE0789A9DFE49916746 /* Pods-Connect Prevision-Connect PrevisionUITests.release.xcconfig */,
-				F36673453E6B7E7E05884866 /* Pods-Connect PrevisionTests.debug.xcconfig */,
-				731E6C00AF20882D5B5C79DE /* Pods-Connect PrevisionTests.release.xcconfig */,
+				7A3E0BD7D676D97B13DBE849 /* Pods-Connect Prevision.debug.xcconfig */,
+				700252023C2EDB4E6703ECE3 /* Pods-Connect Prevision.release.xcconfig */,
+				EBA1D7ADFBA0F6BA1ECD8BC9 /* Pods-Connect Prevision-Connect PrevisionUITests.debug.xcconfig */,
+				8E31829D91A67AD087D64C57 /* Pods-Connect Prevision-Connect PrevisionUITests.release.xcconfig */,
+				4F793F45182EC74B22C7240E /* Pods-Connect PrevisionTests.debug.xcconfig */,
+				7DAF3806FD4C518F17FA2E18 /* Pods-Connect PrevisionTests.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		F2147CEC3951C261E19B5DD7 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				AE2863CD9AB6B190B8D0FCCC /* Pods_Connect_Prevision.framework */,
-				91F175B18DD970A8B9D2FC52 /* Pods_Connect_Prevision_Connect_PrevisionUITests.framework */,
-				05FBF7CD76FB31D8A2225D5E /* Pods_Connect_PrevisionTests.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -510,12 +513,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6293C1D625E7E69900718F31 /* Build configuration list for PBXNativeTarget "Connect Prevision" */;
 			buildPhases = (
-				8EE62B0892EA55A940847469 /* [CP] Check Pods Manifest.lock */,
+				03D675FE2CB8446C3E304DBA /* [CP] Check Pods Manifest.lock */,
 				6293C1A825E7E69900718F31 /* Sources */,
 				6293C1A925E7E69900718F31 /* Frameworks */,
 				6293C1AA25E7E69900718F31 /* Resources */,
-				0FAD74A35E0338643A5C3D4B /* [CP] Embed Pods Frameworks */,
-				1E0951D77BC79703008FE832 /* [CP] Copy Pods Resources */,
+				DF149613AFE2C035AEEC67A1 /* [CP] Embed Pods Frameworks */,
+				AB7B7F896ED9F8D1C47297E9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -530,7 +533,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6293C1D925E7E69900718F31 /* Build configuration list for PBXNativeTarget "Connect PrevisionTests" */;
 			buildPhases = (
-				1211E2E7D42C37C3E4D8D3B8 /* [CP] Check Pods Manifest.lock */,
+				E24F07644FE131CC2AE6A263 /* [CP] Check Pods Manifest.lock */,
 				6293C1BE25E7E69900718F31 /* Sources */,
 				6293C1BF25E7E69900718F31 /* Frameworks */,
 				6293C1C025E7E69900718F31 /* Resources */,
@@ -549,12 +552,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6293C1DC25E7E69900718F31 /* Build configuration list for PBXNativeTarget "Connect PrevisionUITests" */;
 			buildPhases = (
-				90593032FE8B703E9236A9F1 /* [CP] Check Pods Manifest.lock */,
+				F3EB4D11D06EE717DE2B30DD /* [CP] Check Pods Manifest.lock */,
 				6293C1C925E7E69900718F31 /* Sources */,
 				6293C1CA25E7E69900718F31 /* Frameworks */,
 				6293C1CB25E7E69900718F31 /* Resources */,
-				E2497F9C6E159EC60FDFBA2A /* [CP] Embed Pods Frameworks */,
-				A7E9061B00B6F1AEA3A85092 /* [CP] Copy Pods Resources */,
+				78752BE2027688198B582273 /* [CP] Embed Pods Frameworks */,
+				AFF0CA0D95B8CDE0F61F2744 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -636,63 +639,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0FAD74A35E0338643A5C3D4B /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Connect Prevision/Pods-Connect Prevision-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Connect Prevision/Pods-Connect Prevision-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Connect Prevision/Pods-Connect Prevision-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		1211E2E7D42C37C3E4D8D3B8 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Connect PrevisionTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		1E0951D77BC79703008FE832 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Connect Prevision/Pods-Connect Prevision-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Connect Prevision/Pods-Connect Prevision-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Connect Prevision/Pods-Connect Prevision-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8EE62B0892EA55A940847469 /* [CP] Check Pods Manifest.lock */ = {
+		03D675FE2CB8446C3E304DBA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -714,7 +661,97 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		90593032FE8B703E9236A9F1 /* [CP] Check Pods Manifest.lock */ = {
+		78752BE2027688198B582273 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Connect Prevision-Connect PrevisionUITests/Pods-Connect Prevision-Connect PrevisionUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Connect Prevision-Connect PrevisionUITests/Pods-Connect Prevision-Connect PrevisionUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Connect Prevision-Connect PrevisionUITests/Pods-Connect Prevision-Connect PrevisionUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AB7B7F896ED9F8D1C47297E9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Connect Prevision/Pods-Connect Prevision-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Connect Prevision/Pods-Connect Prevision-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Connect Prevision/Pods-Connect Prevision-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AFF0CA0D95B8CDE0F61F2744 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Connect Prevision-Connect PrevisionUITests/Pods-Connect Prevision-Connect PrevisionUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Connect Prevision-Connect PrevisionUITests/Pods-Connect Prevision-Connect PrevisionUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Connect Prevision-Connect PrevisionUITests/Pods-Connect Prevision-Connect PrevisionUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DF149613AFE2C035AEEC67A1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Connect Prevision/Pods-Connect Prevision-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Connect Prevision/Pods-Connect Prevision-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Connect Prevision/Pods-Connect Prevision-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E24F07644FE131CC2AE6A263 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Connect PrevisionTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F3EB4D11D06EE717DE2B30DD /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -734,40 +771,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A7E9061B00B6F1AEA3A85092 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Connect Prevision-Connect PrevisionUITests/Pods-Connect Prevision-Connect PrevisionUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Connect Prevision-Connect PrevisionUITests/Pods-Connect Prevision-Connect PrevisionUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Connect Prevision-Connect PrevisionUITests/Pods-Connect Prevision-Connect PrevisionUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E2497F9C6E159EC60FDFBA2A /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Connect Prevision-Connect PrevisionUITests/Pods-Connect Prevision-Connect PrevisionUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Connect Prevision-Connect PrevisionUITests/Pods-Connect Prevision-Connect PrevisionUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Connect Prevision-Connect PrevisionUITests/Pods-Connect Prevision-Connect PrevisionUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -790,6 +793,7 @@
 				62B9BD19260B5739003BCA2D /* PerfilViewController.swift in Sources */,
 				629980D3260A56B700E17414 /* Imagens.swift in Sources */,
 				6293C1FB25E7E8BD00718F31 /* TelaLoginView.swift in Sources */,
+				625E29F92612005C006FA533 /* SeteDiasCell.swift in Sources */,
 				62B9BD35260BA5B5003BCA2D /* ProxHoraTemperaturaComponente.swift in Sources */,
 				62BC6E842608E4CE00A04F73 /* LoginCoordinator.swift in Sources */,
 				62F0AD7A2604CC0C0011115A /* MainCoordinator.swift in Sources */,
@@ -983,7 +987,7 @@
 		};
 		6293C1D725E7E69900718F31 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 41DF133D01AF0DFFD1C32476 /* Pods-Connect Prevision.debug.xcconfig */;
+			baseConfigurationReference = 7A3E0BD7D676D97B13DBE849 /* Pods-Connect Prevision.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1005,7 +1009,7 @@
 		};
 		6293C1D825E7E69900718F31 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E3C87D291DB9E02384BBFBB1 /* Pods-Connect Prevision.release.xcconfig */;
+			baseConfigurationReference = 700252023C2EDB4E6703ECE3 /* Pods-Connect Prevision.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1027,7 +1031,7 @@
 		};
 		6293C1DA25E7E69900718F31 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F36673453E6B7E7E05884866 /* Pods-Connect PrevisionTests.debug.xcconfig */;
+			baseConfigurationReference = 4F793F45182EC74B22C7240E /* Pods-Connect PrevisionTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1050,7 +1054,7 @@
 		};
 		6293C1DB25E7E69900718F31 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 731E6C00AF20882D5B5C79DE /* Pods-Connect PrevisionTests.release.xcconfig */;
+			baseConfigurationReference = 7DAF3806FD4C518F17FA2E18 /* Pods-Connect PrevisionTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1073,7 +1077,7 @@
 		};
 		6293C1DD25E7E69900718F31 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 79BB872594895D2C57048528 /* Pods-Connect Prevision-Connect PrevisionUITests.debug.xcconfig */;
+			baseConfigurationReference = EBA1D7ADFBA0F6BA1ECD8BC9 /* Pods-Connect Prevision-Connect PrevisionUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1094,7 +1098,7 @@
 		};
 		6293C1DE25E7E69900718F31 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2C9FBFE0789A9DFE49916746 /* Pods-Connect Prevision-Connect PrevisionUITests.release.xcconfig */;
+			baseConfigurationReference = 8E31829D91A67AD087D64C57 /* Pods-Connect Prevision-Connect PrevisionUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

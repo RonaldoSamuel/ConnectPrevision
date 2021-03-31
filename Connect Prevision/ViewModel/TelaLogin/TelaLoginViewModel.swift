@@ -19,6 +19,7 @@ class TelaLoginViewModel {
     var email: BehaviorRelay<String> = BehaviorRelay<String>(value: "")
     var password: BehaviorRelay<String> = BehaviorRelay<String>(value: "")
     
+    
     var isEmailPreenchido: BehaviorRelay<Bool> = BehaviorRelay<Bool>(value: false)
     var isPasswordPreenchido: BehaviorRelay<Bool> = BehaviorRelay<Bool>(value: false)
     

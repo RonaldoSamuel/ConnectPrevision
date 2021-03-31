@@ -31,20 +31,20 @@ class HomeNavigationTabViewController: UITabBarController {
         let homeItem = UITabBarItem(title: "home", image: homeImg, tag: 1)
         homeView.tabBarItem = homeItem
         
-        let devicesView = PerfilViewController()
-        devicesView.coordinator = coordinator
+        let TemperaturaView = TemperaturaViewController()
+        TemperaturaView.coordinator = coordinator
         let devicesImg = UIImage(named: "ic_person_location")
-        let devicesItem = UITabBarItem(title: "localização", image: devicesImg, tag: 1)
-        devicesView.tabBarItem = devicesItem
+        let devicesItem = UITabBarItem(title: "Next Days", image: devicesImg, tag: 1)
+        TemperaturaView.tabBarItem = devicesItem
         
-        let perfilView = TemperaturaViewController()
+        let perfilView = PerfilViewController()
         perfilView.coordinator = coordinator
         let perfilImg = UIImage(named: "ic_perfil")
         let perfilItem = UITabBarItem(title: "perfil", image: perfilImg, tag: 1)
         perfilView.tabBarItem = perfilItem
         
         mainViewControllers.append(homeView)
-        mainViewControllers.append(devicesView)
+        mainViewControllers.append(TemperaturaView)
         mainViewControllers.append(perfilView)
         
         viewControllers = mainViewControllers.map { UINavigationController(rootViewController: $0)}
@@ -52,9 +52,5 @@ class HomeNavigationTabViewController: UITabBarController {
         blurVisualEffectView = UIVisualEffectView(effect: blurEffect)
         blurVisualEffectView.frame = UIScreen.main.bounds
         
-//        devicesView.presentationView.botaoDeslogar.rx
-//            .tap
-//            .bind { print("ola")
-//            }.disposed(by: disposable)
     }
 }

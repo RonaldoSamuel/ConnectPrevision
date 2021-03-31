@@ -13,11 +13,6 @@ import RxCocoa
 class ViewComponentesTemperatura: UIView {
     
     var disposable = DisposeBag()
-    var text: BehaviorRelay<String> = BehaviorRelay<String>(value: "")
-    
-    var isPreenchido: BehaviorRelay<Bool> = BehaviorRelay<Bool>(value: false)
-    var isSecureTextEntry: Bool = false
-    var isEditando: Bool = false
     
     var view: UIView = {
         var view = UIView()
@@ -130,7 +125,7 @@ class ViewComponentesTemperatura: UIView {
     
     func settingDefaultsContentLabel(){
         contentLabel.textColor = UIColor(red: 0.33, green: 0.29, blue: 0.34, alpha: 1.00)
-        contentLabel.font = UIFont.boldSystemFont(ofSize: 20)
+        contentLabel.font = UIFont.boldSystemFont(ofSize: 17)
     }
     
     func setupContentText(conteudo: String){

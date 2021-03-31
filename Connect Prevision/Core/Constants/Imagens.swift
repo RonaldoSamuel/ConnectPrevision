@@ -12,4 +12,5 @@ extension String {
     static let nuvem_2 = "nuvem_2"
     static let nuvem_3 = "nuvem_3"
     static let nuvem_4 = "nuvem_4"
+    static let ic_refresh = "refresh"
 }

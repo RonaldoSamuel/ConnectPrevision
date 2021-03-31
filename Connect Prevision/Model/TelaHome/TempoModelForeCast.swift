@@ -7,13 +7,22 @@ import Foundation
 
 // MARK: - ForeCastModel
 struct ForeCastModel: Codable {
-    let location: Location
-    let current: Current
-    let forecast: Forecast
+    let location: Location?
+    let current: Current?
+    let forecast: Forecast?
+}
+
+extension ForeCastModel {
+    init(){
+        self.location = nil
+        self.current = nil
+        self.forecast = nil
+    }
 }
 
 // MARK: - Current
 struct Current: Codable {
+    
     let lastUpdatedEpoch: Double
     let lastUpdated: String
     let tempC: Double
@@ -130,26 +139,23 @@ struct Day: Codable {
 
 // MARK: - Hour
 struct Hour: Codable {
-    let timeEpoch: Double
-    let time: String
-    let tempC, tempF: Double
-    let isDay: Double
-    let condition: Condition
-    let windMph, windKph: Double
-    let windDegree: Double
-    let pressureMB: Double
-    let pressureIn, precipMm, precipIn: Double
-    let humidity, cloud: Double
-    let feelslikeC, feelslikeF, windchillC, windchillF: Double
-    let heatindexC, heatindexF, dewpointC, dewpointF: Double
-    let willItRain: Double
-    let chanceOfRain: String
-    let willItSnow: Double
-    let chanceOfSnow: String
-    let visKM: Double
-    let visMiles: Double
-    let gustMph, gustKph: Double
-    let uv: Double
+    let timeEpoch: Double?
+    let time: String?
+    let tempC, tempF: Double?
+    let isDay: Double?
+    let condition: Condition?
+    let windMph, windKph: Double?
+    let windDegree: Double?
+    let pressureMB: Double?
+    let pressureIn, precipMm, precipIn: Double?
+    let humidity, cloud: Double?
+    let feelslikeC, feelslikeF, windchillC, windchillF: Double?
+    let heatindexC, heatindexF, dewpointC, dewpointF: Double?
+    let willItRain: Double?
+    let chanceOfRain: String?
+    let visKM: Double?
+    let gustMph, gustKph: Double?
+    let uv: Double?
 
     enum CodingKeys: String, CodingKey {
         case timeEpoch = "time_epoch"
@@ -176,13 +182,43 @@ struct Hour: Codable {
         case dewpointF = "dewpoint_f"
         case willItRain = "will_it_rain"
         case chanceOfRain = "chance_of_rain"
-        case willItSnow = "will_it_snow"
-        case chanceOfSnow = "chance_of_snow"
         case visKM = "vis_km"
-        case visMiles = "vis_miles"
         case gustMph = "gust_mph"
         case gustKph = "gust_kph"
         case uv
+    }
+}
+extension Hour {
+    init(){
+        timeEpoch = nil
+        self.time = nil
+        self.tempC = nil
+        self.tempF = nil
+        self.isDay = nil
+        self.condition = nil
+        self.windMph = nil
+        self.windKph = nil
+        self.windDegree = nil
+        self.pressureMB = nil
+        self.pressureIn = nil
+        self.precipMm = nil
+        self.precipIn = nil
+        self.humidity = nil
+        self.cloud = nil
+        self.feelslikeC = nil
+        self.feelslikeF = nil
+        self.windchillC = nil
+        self.windchillF = nil
+        self.heatindexC = nil
+        self.heatindexF = nil
+        self.dewpointC = nil
+        self.dewpointF = nil
+        self.willItRain = nil
+        self.chanceOfRain = nil
+        self.visKM = nil
+        self.gustMph = nil
+        self.gustKph = nil
+        self.uv = nil
     }
 }
 
