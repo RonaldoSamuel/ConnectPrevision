@@ -176,6 +176,21 @@ class TelaHomeView: UIView {
         return componentes
     }()
     
+    var collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: UIScreen.main.bounds.width*0.2, height: 90)
+        layout.sectionInset = UIEdgeInsets(top: 20, left: 20, bottom: 10, right: 20)
+        layout.scrollDirection = .horizontal
+        layout.minimumLineSpacing = 12
+        var collection = UICollectionView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width*0.2, height: 50), collectionViewLayout: layout)
+        collection.translatesAutoresizingMaskIntoConstraints = false
+        collection.backgroundColor = .clear
+        collection.isPagingEnabled = true
+        collection.showsVerticalScrollIndicator = false
+        collection.register(TelaHomeCollectionCell.self, forCellWithReuseIdentifier: TelaHomeCollectionCell.identifier)
+        return collection
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         createSubViews()
@@ -210,6 +225,7 @@ class TelaHomeView: UIView {
         setupLabelFeelsLike()
         setupViewBottom()
         setupStacks()
+        setupCollectionView()
     }
     
     func setupRefreshButton(){
@@ -339,6 +355,16 @@ class TelaHomeView: UIView {
         stackComponentesDadosHorizontal.addArrangedSubview(stackComponentesDadosColuna2)
         stackComponentesDadosColuna2.addArrangedSubview(componente2)
         stackComponentesDadosColuna2.addArrangedSubview(componente4)
+    }
+    
+    func setupCollectionView(){
+        viewBottom.addSubview(collectionView)
+        NSLayoutConstraint.activate([
+            collectionView.topAnchor.constraint(equalTo: stackComponentesDadosHorizontal.bottomAnchor,constant: 40),
+            collectionView.bottomAnchor.constraint(equalTo: viewBottom.bottomAnchor,constant: -40),
+            collectionView.leadingAnchor.constraint(equalTo: viewBottom.leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: viewBottom.trailingAnchor)
+        ])
     }
     
 }

@@ -22,6 +22,7 @@ class TemperaturaView: UIView{
         tbl.allowsMultipleSelection = false
         tbl.refreshControl = UIRefreshControl()
         tbl.register(SeteDiasCell.self, forCellReuseIdentifier: SeteDiasCell.identifier)
+        tbl.separatorColor = .clear
         tbl.translatesAutoresizingMaskIntoConstraints = false
         return tbl
     }()

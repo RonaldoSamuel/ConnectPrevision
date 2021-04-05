@@ -11,7 +11,7 @@ import GoogleSignIn
 import FBSDKLoginKit
 
 class TelaLoginView: UIView {
-        
+    
     var scroll: UIScrollView = {
         var scroll = UIScrollView()
         scroll.showsVerticalScrollIndicator = false
@@ -37,17 +37,18 @@ class TelaLoginView: UIView {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-
+    
     var logoView: UIImageView = {
-       var image = UIImageView()
+        var image = UIImageView()
         image.image = UIImage(named: "Logo")
+        image.contentMode = .scaleAspectFit
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
     
     var descricaoLabel: UILabel = {
         var lbl = UILabel()
-        lbl.text = "Welcome back!"
+        lbl.text = "Connect Prevision"
         lbl.textAlignment = .center
         lbl.font = UIFont.boldSystemFont(ofSize: 25)
         lbl.textColor = .black
@@ -82,7 +83,7 @@ class TelaLoginView: UIView {
     }()
     
     var btnChange: UIButton = {
-       var btn = UIButton()
+        var btn = UIButton()
         btn.setImage(UIImage(named: "visible")?.withRenderingMode(.alwaysTemplate), for: .normal)
         btn.tintColor = .gray
         btn.translatesAutoresizingMaskIntoConstraints = false
@@ -101,7 +102,7 @@ class TelaLoginView: UIView {
     }()
     
     var loginButton: MDCButton = {
-       var btn = MDCButton()
+        var btn = MDCButton()
         btn.setShadowColor(UIColor(red: 0.14, green: 0.29, blue: 0.64, alpha: 1.00), for: .normal)
         btn.layer.cornerRadius = 24
         btn.setBackgroundColor(UIColor(red: 0.14, green: 0.29, blue: 0.64, alpha: 1.00), for: .normal)
@@ -118,7 +119,7 @@ class TelaLoginView: UIView {
         lbl.text = "Or Connect Using"
         lbl.textAlignment = .center
         lbl.textColor = .gray
-//        lbl.font = UIFont.
+        //        lbl.font = UIFont.
         lbl.translatesAutoresizingMaskIntoConstraints = false
         return lbl
     }()
@@ -129,7 +130,7 @@ class TelaLoginView: UIView {
         return btn
     }()
     
-   
+    
     
     var googleTest: GIDSignInButton = {
         var btn = GIDSignInButton()
@@ -207,7 +208,7 @@ class TelaLoginView: UIView {
         
         viewItensDescricao.addSubview(logoView)
         NSLayoutConstraint.activate([
-            logoView.topAnchor.constraint(equalTo: viewItensDescricao.topAnchor,constant: 60),
+            logoView.topAnchor.constraint(equalTo: viewItensDescricao.topAnchor,constant: 50),
             logoView.leadingAnchor.constraint(equalTo: viewItensDescricao.leadingAnchor,constant: self.size.width*0.25),
             logoView.trailingAnchor.constraint(equalTo: viewItensDescricao.trailingAnchor,constant: -self.size.width*0.25),
             logoView.heightAnchor.constraint(equalToConstant: self.size.height*0.20)
@@ -215,7 +216,7 @@ class TelaLoginView: UIView {
         
         viewItensDescricao.addSubview(descricaoLabel)
         NSLayoutConstraint.activate([
-            descricaoLabel.topAnchor.constraint(equalTo: logoView.bottomAnchor,constant: 5),
+            descricaoLabel.topAnchor.constraint(equalTo: logoView.bottomAnchor,constant: 15),
             descricaoLabel.leadingAnchor.constraint(equalTo: viewItensDescricao.leadingAnchor),
             descricaoLabel.trailingAnchor.constraint(equalTo: viewItensDescricao.trailingAnchor)
         ])
@@ -276,7 +277,7 @@ class TelaLoginView: UIView {
             otherloginMethodLabel.trailingAnchor.constraint(equalTo: viewItensFormulario.trailingAnchor,constant: -25)
         ])
         
-       
+        
         
         viewItensFormulario.addSubview(googleTest)
         NSLayoutConstraint.activate([

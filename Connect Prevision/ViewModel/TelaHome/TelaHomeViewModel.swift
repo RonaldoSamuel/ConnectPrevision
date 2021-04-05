@@ -21,9 +21,10 @@ class TelaHomeViewModel: NSObject {
     
     var firebaseHelper = LoginHelper()
     var dataSourse: BehaviorRelay<ForeCastModel> = BehaviorRelay<ForeCastModel>(value: ForeCastModel())
+    var dataSourseHour: BehaviorRelay<[Hour]> = BehaviorRelay<[Hour]>(value: [])
     let locationManager = CLLocationManager()
     
-    var isUsuarioDeslogar: BehaviorRelay<Bool> = BehaviorRelay<Bool>(value: false)
+   
     var data: ForeCastModel?
     
     var statusFeedback: BehaviorRelay<TelaHomeStatus> = BehaviorRelay<TelaHomeStatus>(value: .DEFAULT)
@@ -38,11 +39,6 @@ class TelaHomeViewModel: NSObject {
         }
     }
     
-    func deslogarUsuario(){
-        firebaseHelper.deslogarFirebase()
-        isUsuarioDeslogar.accept( Auth.auth().currentUser == nil ? true : false )
-    }
-    
     func pegarTemperatura(lat: Double, long: Double){
         APIClient.pegarTemperaturaForeCast(
             lat: lat,
@@ -51,6 +47,7 @@ class TelaHomeViewModel: NSObject {
                 self.data = result
                 self.dataSourse.accept(result)
                 self.breachesRX.accept(result.forecast!.forecastday)
+                self.dataSourseHour.accept(result.forecast!.forecastday[0].hour)
                 self.statusFeedback.accept(.VALORES_CARREGADOS)
                 
             }

@@ -60,7 +60,7 @@ class SeteDiasCell: UITableViewCell {
         var btn = UIButton()
         btn.tintColor = .gray
         btn.contentMode = .scaleAspectFit
-        let image = UIImage(named: .ic_refresh)?.withRenderingMode(.alwaysTemplate)
+        let image = UIImage(named: "uivlight")?.withRenderingMode(.alwaysTemplate)
         
         btn.isEnabled = false
         btn.setImage(image, for: .normal)
@@ -129,8 +129,24 @@ class SeteDiasCell: UITableViewCell {
         
     }
     
+    func convertDateFormat(inputDate: String) -> String {
+        print(inputDate)
+        let olDateFormatter = DateFormatter()
+        olDateFormatter.dateFormat = "yyyy-MM-dd"
+        
+        guard let oldDate = (olDateFormatter.date(from: inputDate)) else { return "falso" }
+        let convertDateFormatter = DateFormatter()
+        
+        convertDateFormatter.dateFormat = "EE"
+        return convertDateFormatter.string(from: oldDate)
+    }
+    
+    
     func configCell(_ item: Forecastday,index: Int){
-        diaSemana.text = "\(item.date)"
+        let horario = item.date
+        print(horario)
+        print(convertDateFormat(inputDate: horario))
+        diaSemana.text = "\(convertDateFormat(inputDate: item.date))"
         
         tempC.text = "\(item.day.avgtempC)"
         tempC.textColor = UIColor(red: 0.24, green: 0.53, blue: 0.98, alpha: 0.80)
@@ -138,7 +154,7 @@ class SeteDiasCell: UITableViewCell {
         feelsLike.text = "\(item.day.maxtempC)"
         feelsLike.textColor = .gray
         
-        condiction.text = "\(item.day.condition.text)"
+        condiction.text = "\(item.day.condition.icon)"
         condiction.textColor = UIColor(red: 0.24, green: 0.53, blue: 0.98, alpha: 1.00)
         backgroundColor = .clear
     }

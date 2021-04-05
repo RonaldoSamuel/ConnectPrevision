@@ -13,9 +13,10 @@ class PerfilViewController: UIViewController{
     
     var presentationView = PerfilView()
     var coordinator: NavigationBarCoordinator?
-    var viewModel = TelaHomeViewModel()
+    var viewModel = TelaPerfilViewModel()
     var disposable = DisposeBag()
     
+   
     override func loadView() {
         view = presentationView
     }
@@ -23,9 +24,13 @@ class PerfilViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         bindView()
+        viewModel.bindViews()
     }
     
     func bindView(){
+        
+        viewModel.userName.bind{ value in self.presentationView.nameLabel.text = value }.disposed(by: disposable)
+        
         presentationView.botaoDeslogar.rx
             .tap
             .bind { self.viewModel.deslogarUsuario()

@@ -26,15 +26,6 @@ class ProxHoraTemperaturaComponente: UIView {
         return view
     }()
     
-    var stackHorizontal: UIStackView = {
-        var stk = UIStackView()
-        stk.distribution = .fillEqually
-        stk.axis = .horizontal
-        stk.spacing = 2
-        stk.translatesAutoresizingMaskIntoConstraints = false
-        return stk
-    }()
-    
     var stackVertical: UIStackView = {
         var stk = UIStackView()
         stk.distribution = .fillEqually
@@ -69,7 +60,6 @@ class ProxHoraTemperaturaComponente: UIView {
         settingDefaultsDescLabel()
         settingDefaultsContentLabel()
         settingDefaltsIconTheme()
-        setupView()
     }
     
     required public init?(coder: NSCoder) {
@@ -79,7 +69,6 @@ class ProxHoraTemperaturaComponente: UIView {
         settingDefaultsDescLabel()
         settingDefaultsContentLabel()
         settingDefaltsIconTheme()
-        setupView()
     }
     
     func bindView(){
@@ -87,36 +76,10 @@ class ProxHoraTemperaturaComponente: UIView {
     }
     
     func createSubViews(){
-        setupView()
+        
     }
     
-    func setupView(){
-        addSubview(view)
-        NSLayoutConstraint.activate([
-            view.topAnchor.constraint(equalTo: topAnchor),
-            view.leadingAnchor.constraint(equalTo: leadingAnchor),
-            view.trailingAnchor.constraint(equalTo: trailingAnchor),
-            view.bottomAnchor.constraint(equalTo: bottomAnchor)
-        ])
-        
-        view.addSubview(stackVertical)
-        NSLayoutConstraint.activate([
-            stackVertical.topAnchor.constraint(equalTo: view.topAnchor),
-            stackVertical.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            stackVertical.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            stackVertical.trailingAnchor.constraint(equalTo: view.trailingAnchor)
-        ])
-        
-           
-        stackVertical.addArrangedSubview(descLabel)
-        stackVertical.addArrangedSubview(iconTheme)
-        NSLayoutConstraint.activate([
-            iconTheme.heightAnchor.constraint(equalToConstant: 50),
-            iconTheme.widthAnchor.constraint(equalToConstant: 50)
-        ])
-        stackVertical.addArrangedSubview(contentLabel)
-        
-    }
+   
     
     func settingDefaultsDescLabel(){
         descLabel.textColor = .lightGray

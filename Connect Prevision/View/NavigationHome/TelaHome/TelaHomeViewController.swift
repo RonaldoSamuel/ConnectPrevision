@@ -48,21 +48,22 @@ class TelaHomeViewController: UITabBarController{
         
         
         
-        presentationView.botaoDeslogar.rx
-            .tap
-            .bind { self.viewModel.deslogarUsuario()
-            }.disposed(by: disposable)
         
-        viewModel.isUsuarioDeslogar.bind{ value in
-            if value == true {
-                self.navigationController?.popViewController(animated: true)
-            }}.disposed(by: disposable)
         
         timer = Timer.scheduledTimer(timeInterval: 60, target: self, selector: #selector(atualizaData(_:)), userInfo: nil, repeats: true)
         atualizaData(timer!)
         
         viewModel.statusFeedback.bind { value in
             self.tratarFeedback(status: value)
+        }.disposed(by: disposable)
+        
+        viewModel.dataSourseHour.bind(to: self.presentationView.collectionView.rx.items(
+            cellIdentifier: TelaHomeCollectionCell.identifier,
+            cellType: TelaHomeCollectionCell.self
+        )
+        ) { row, data, cell in
+            cell.configCell(data)
+            cell.viewItem.tag = row
         }.disposed(by: disposable)
     }
     
@@ -114,4 +115,28 @@ class TelaHomeViewController: UITabBarController{
         timer?.invalidate()
     }
     
+}
+
+extension TelaHomeViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: UIScreen.main.bounds.width*0.9, height: 50.0)
+    }
+
+    // item spacing = vertical spacing in horizontal flow
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return (UIScreen.main.bounds.width*0.1)
+    }
+
+    // line spacing = horizontal spacing in horizontal flow
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return (UIScreen.main.bounds.width*0.05)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: (UIScreen.main.bounds.width*0.1 / 2.0),
+                            bottom: 0, right: (UIScreen.main.bounds.width*0.1 / 2.0))
+    }
 }
