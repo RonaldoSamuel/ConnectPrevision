@@ -22,7 +22,7 @@ class TelaHomeCollectionCell: UICollectionViewCell {
         var stk = UIStackView()
         stk.spacing = 2
         stk.axis = .vertical
-        stk.distribution = .fillEqually
+        stk.distribution = .equalCentering
         stk.translatesAutoresizingMaskIntoConstraints = false
         return stk
     }()
@@ -87,8 +87,8 @@ class TelaHomeCollectionCell: UICollectionViewCell {
         verticalStack.addArrangedSubview(horarioLabel)
         verticalStack.addArrangedSubview(imagemItem)
         NSLayoutConstraint.activate([
-            imagemItem.widthAnchor.constraint(equalToConstant: 20),
-            imagemItem.heightAnchor.constraint(equalToConstant: 20)
+            imagemItem.widthAnchor.constraint(equalToConstant: 50),
+            imagemItem.heightAnchor.constraint(equalToConstant: 50)
         ])
         verticalStack.addArrangedSubview(labelDescricao)
         
@@ -104,16 +104,17 @@ class TelaHomeCollectionCell: UICollectionViewCell {
         
         convertDateFormatter.dateFormat = "HH:mm"
         return convertDateFormatter.string(from: oldDate)
-        convertDateFormatter.dateFormat = "HH"
     }
     
     func configCell(_ item: Hour){
         guard let horario = item.time, let temperatura = item.tempC else { return }
         
         
+        let icone = "\(item.condition!.icon)"
+        let iconCode = String(icone.suffix(7)).digits
+                
         horarioLabel.text = "\(convertDateFormat(inputDate: horario))"
-        imagemItem.image = UIImage(named: "uivlight")?.withRenderingMode(.alwaysTemplate)
-        imagemItem.tintColor = UIColor(red: 0.23, green: 0.51, blue: 0.78, alpha: 1.00)
+        imagemItem.image = UIImage(named: iconCode)?.withRenderingMode(.alwaysOriginal)
         labelDescricao.text = "\(temperatura)°"
     }
 }

@@ -40,15 +40,14 @@ class TelaHomeViewController: UITabBarController{
         viewModel.bindViewModel()
         bindView()
         presentationView.refreshButton.rx.tap.bind{}.disposed(by: disposable)
+        
+        presentationView.collectionView.rx.setDelegate(self).disposed(by: disposable)
     }
     
     func bindView(){
         
         viewModel.bindViewModel()
-        
-        
-        
-        
+                
         
         timer = Timer.scheduledTimer(timeInterval: 60, target: self, selector: #selector(atualizaData(_:)), userInfo: nil, repeats: true)
         atualizaData(timer!)
@@ -84,18 +83,18 @@ class TelaHomeViewController: UITabBarController{
         guard let forecast = self.viewModel.data?.forecast else { return }
         
         self.presentationView.tempLabel.text = "\(current.tempC)"
-        self.presentationView.feelsLike.text = "Feels like \(current.feelslikeC)"
+        self.presentationView.feelsLike.text = "Sensação de \(current.feelslikeC)"
         self.presentationView.componente3.setupContentText(conteudo: "\(current.humidity)%")
         self.presentationView.localLabel.text = "\(location.name) - \(location.region)"
         
         if current.uv < 4 {
-            self.presentationView.componente1.setupContentText(conteudo: "Low")
+            self.presentationView.componente1.setupContentText(conteudo: "Baixo")
         }else if current.uv < 7 {
-            self.presentationView.componente1.setupContentText(conteudo: "Moderate")
+            self.presentationView.componente1.setupContentText(conteudo: "Moderada")
         }else if current.uv < 10 {
-            self.presentationView.componente1.setupContentText(conteudo: "High")
+            self.presentationView.componente1.setupContentText(conteudo: "Elevada")
         }else{
-            self.presentationView.componente1.setupContentText(conteudo: "Very High")
+            self.presentationView.componente1.setupContentText(conteudo: "Alta")
         }
         
         self.presentationView.componente2.setupContentText(conteudo: (forecast.forecastday[0].astro.sunrise))
@@ -122,7 +121,7 @@ extension TelaHomeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: UIScreen.main.bounds.width*0.9, height: 50.0)
+        return CGSize(width: collectionView.bounds.size.width/5, height: 100)
     }
 
     // item spacing = vertical spacing in horizontal flow

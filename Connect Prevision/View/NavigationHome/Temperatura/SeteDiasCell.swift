@@ -22,8 +22,9 @@ class SeteDiasCell: UITableViewCell {
     
     var stackDentro: UIStackView = {
         var stk = UIStackView()
-        stk.spacing = -20
-        stk.distribution = .fillEqually
+        stk.spacing = -30
+        stk.axis = .horizontal
+        stk.distribution = .fillProportionally	
         stk.translatesAutoresizingMaskIntoConstraints = false
         return stk
     }()
@@ -59,11 +60,8 @@ class SeteDiasCell: UITableViewCell {
     var btnProximo: UIButton = {
         var btn = UIButton()
         btn.tintColor = .gray
-        btn.contentMode = .scaleAspectFit
-        let image = UIImage(named: "uivlight")?.withRenderingMode(.alwaysTemplate)
-        
+        btn.contentMode = .scaleToFill
         btn.isEnabled = false
-        btn.setImage(image, for: .normal)
         btn.imageView?.contentMode = .scaleAspectFit
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
@@ -105,7 +103,7 @@ class SeteDiasCell: UITableViewCell {
             cardTable.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             cardTable.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
         ])
-
+        
     }
     
     func setupStack(){
@@ -122,8 +120,8 @@ class SeteDiasCell: UITableViewCell {
         stackDentro.addArrangedSubview(feelsLike)
         stackDentro.addArrangedSubview(btnProximo)
         NSLayoutConstraint.activate([
-            btnProximo.widthAnchor.constraint(equalToConstant: 10),
-            btnProximo.heightAnchor.constraint(equalToConstant: 25)
+            btnProximo.widthAnchor.constraint(equalToConstant: 30),
+            btnProximo.heightAnchor.constraint(equalToConstant: 30)
         ])
         stackDentro.addArrangedSubview(condiction)
         
@@ -144,8 +142,6 @@ class SeteDiasCell: UITableViewCell {
     
     func configCell(_ item: Forecastday,index: Int){
         let horario = item.date
-        print(horario)
-        print(convertDateFormat(inputDate: horario))
         diaSemana.text = "\(convertDateFormat(inputDate: item.date))"
         
         tempC.text = "\(item.day.avgtempC)"
@@ -154,7 +150,12 @@ class SeteDiasCell: UITableViewCell {
         feelsLike.text = "\(item.day.maxtempC)"
         feelsLike.textColor = .gray
         
-        condiction.text = "\(item.day.condition.icon)"
+        let icone = "\(item.day.condition.icon)"
+        let iconCode = String(icone.suffix(7)).digits
+        
+        btnProximo.setImage(UIImage(named: iconCode), for: .normal)
+        
+        condiction.text = "\(item.day.condition.text)"
         condiction.textColor = UIColor(red: 0.24, green: 0.53, blue: 0.98, alpha: 1.00)
         backgroundColor = .clear
     }

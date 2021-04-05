@@ -78,13 +78,14 @@ class TelaLoginView: UIView {
         var txt = TextFieldFormulario()
         txt.setIcon(named: "PasswordIcon")
         txt.setPlaceholder("Password")
+        txt.togglePasswordVisible()
         txt.translatesAutoresizingMaskIntoConstraints = false
         return txt
     }()
     
     var btnChange: UIButton = {
         var btn = UIButton()
-        btn.setImage(UIImage(named: "visible")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        btn.setImage(UIImage(named: "notVisible")?.withRenderingMode(.alwaysTemplate), for: .normal)
         btn.tintColor = .gray
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn

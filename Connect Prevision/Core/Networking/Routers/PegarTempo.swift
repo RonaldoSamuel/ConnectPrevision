@@ -25,7 +25,8 @@ enum PegarTempo: APIConfiguration {
             return .url([
                 ParameterKeys.keyP: WeatherAPI.key,
                 ParameterKeys.q: "\(lat), \(long)",
-                "aqi": "yes"
+                "aqi": "yes",
+                "lang": "pt"
             ])
         }
     }

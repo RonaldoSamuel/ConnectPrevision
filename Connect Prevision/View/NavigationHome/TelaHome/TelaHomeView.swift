@@ -187,6 +187,7 @@ class TelaHomeView: UIView {
         collection.backgroundColor = .clear
         collection.isPagingEnabled = true
         collection.showsVerticalScrollIndicator = false
+        collection.showsHorizontalScrollIndicator = false
         collection.register(TelaHomeCollectionCell.self, forCellWithReuseIdentifier: TelaHomeCollectionCell.identifier)
         return collection
     }()
@@ -316,7 +317,7 @@ class TelaHomeView: UIView {
             feelsLike.topAnchor.constraint(equalTo: tempLabel.bottomAnchor,constant: 20),
             feelsLike.centerXAnchor.constraint(equalTo: centerXAnchor),
             feelsLike.heightAnchor.constraint(equalToConstant: 40),
-            feelsLike.widthAnchor.constraint(equalToConstant: 150)
+            feelsLike.widthAnchor.constraint(equalToConstant: 200)
         ])
     }
     

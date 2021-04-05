@@ -40,11 +40,11 @@ class TextFieldFormulario: UIView {
     
     func bindView(){
         txt.rx.text.orEmpty.changed.bind(to: text).disposed(by: disposable)
-                
+        
         text.map { value in return value.count > 0 }
             .bind(to: isPreenchido)
             .disposed(by: disposable)
-
+        
         txt.rx.controlEvent(.editingDidBegin).bind { _ in
             self.isEditando = true
             self.txt.leadingView?.tintColor = UIColor(red: 0.25, green: 0.57, blue: 0.87, alpha: 1.00)

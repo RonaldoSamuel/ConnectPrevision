@@ -12,7 +12,7 @@ class TemperaturaView: UIView{
     var descricaoLabel: UILabel = {
         var lbl = UILabel()
         lbl.text = "Next 7 Days"
-        lbl.font = UIFont.boldSystemFont(ofSize: 20)
+        lbl.font = UIFont.boldSystemFont(ofSize: 30)
         lbl.translatesAutoresizingMaskIntoConstraints = false
         return lbl
     }()
@@ -23,6 +23,7 @@ class TemperaturaView: UIView{
         tbl.refreshControl = UIRefreshControl()
         tbl.register(SeteDiasCell.self, forCellReuseIdentifier: SeteDiasCell.identifier)
         tbl.separatorColor = .clear
+        tbl.isUserInteractionEnabled = false
         tbl.translatesAutoresizingMaskIntoConstraints = false
         return tbl
     }()
@@ -69,8 +70,8 @@ class TemperaturaView: UIView{
     func setupDescricaoLabel(){
         addSubview(descricaoLabel)
         NSLayoutConstraint.activate([
-            descricaoLabel.topAnchor.constraint(equalTo: topAnchor,constant: 50),
-            descricaoLabel.centerXAnchor.constraint(equalTo: centerXAnchor)
+            descricaoLabel.topAnchor.constraint(equalTo: topAnchor,constant: size.height*0.25),
+            descricaoLabel.centerXAnchor.constraint(equalTo: centerXAnchor,constant: -size.width*0.25)
         ])
     }
     
@@ -78,8 +79,8 @@ class TemperaturaView: UIView{
         addSubview(contentTableView)
         NSLayoutConstraint.activate([
             contentTableView.topAnchor.constraint(equalTo: descricaoLabel.bottomAnchor,constant: 10),
-            contentTableView.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 10),
-            contentTableView.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -10),
+            contentTableView.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 0),
+            contentTableView.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -0),
             contentTableView.heightAnchor.constraint(equalToConstant: size.height*0.6)
         ])
     }
