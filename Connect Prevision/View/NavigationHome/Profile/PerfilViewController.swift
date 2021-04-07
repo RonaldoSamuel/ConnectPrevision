@@ -24,7 +24,12 @@ class PerfilViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         bindView()
+        setNeedsStatusBarAppearanceUpdate()
         viewModel.bindViews()
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .lightContent
     }
     
     func bindView(){
@@ -40,6 +45,18 @@ class PerfilViewController: UIViewController{
             if value == true {
                 self.coordinator?.navigationController.popViewController(animated: true)
             }}.disposed(by: disposable)
+        
+        viewModel.userLocale.bind{ value in
+            
+            if(!value.isEmpty){
+                print(value)
+                self.presentationView.imageView.downloaded(from: value)
+            }
+            self.presentationView.imageView.image = UIImage(named: "Logo")
+           }.disposed(by: disposable)
+        
+//        viewModel.userEmail.bind{ value in self.presentationView.emailLabel.text = value }.disposed(by: disposable)
+//        viewModel.userNumber.bind{ value in self.presentationView.phoneLabel.text = value}.disposed(by: disposable)
         
     }
     

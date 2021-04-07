@@ -20,11 +20,18 @@ class TelaPerfilViewModel{
     
     
     var userName: BehaviorRelay<String> = BehaviorRelay<String>(value: "")
+    var userEmail: BehaviorRelay<String> = BehaviorRelay<String>(value: "")
+    var userLocale: BehaviorRelay<String> = BehaviorRelay<String>(value: "")
+    var userPhoto: BehaviorRelay<String> = BehaviorRelay<String>(value: "")
+    var userNumber: BehaviorRelay<String> = BehaviorRelay<String>(value: "")
     
    
     
     func bindViews(){
-        userName.accept((Auth.auth().currentUser?.displayName ?? Auth.auth().currentUser?.email) ?? "Loading...")
+        userName.accept((Auth.auth().currentUser!.displayName ?? "Usuario"))
+        userEmail.accept(Auth.auth().currentUser!.email ?? "Email Do Usuario")
+        userPhoto.accept("\(Auth.auth().currentUser!.photoURL)")
+        userNumber.accept(Auth.auth().currentUser!.phoneNumber ?? "Carregando")
         
     }
     

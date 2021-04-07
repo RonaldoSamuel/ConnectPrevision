@@ -176,6 +176,15 @@ class TelaHomeView: UIView {
         return componentes
     }()
     
+    var diaTodoLabel: UILabel = {
+        var lbl = UILabel()
+        lbl.text = "Dia Todo"
+        lbl.font = UIFont.boldSystemFont(ofSize: 14)
+        lbl.textColor = .gray
+        lbl.translatesAutoresizingMaskIntoConstraints = false
+        return lbl
+    }()
+    
     var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: UIScreen.main.bounds.width*0.2, height: 90)
@@ -365,6 +374,12 @@ class TelaHomeView: UIView {
             collectionView.bottomAnchor.constraint(equalTo: viewBottom.bottomAnchor,constant: -40),
             collectionView.leadingAnchor.constraint(equalTo: viewBottom.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: viewBottom.trailingAnchor)
+        ])
+        
+        viewBottom.addSubview(diaTodoLabel)
+        NSLayoutConstraint.activate([
+            diaTodoLabel.bottomAnchor.constraint(equalTo: collectionView.topAnchor,constant: size.height*0.02),
+            diaTodoLabel.centerXAnchor.constraint(equalTo: collectionView.centerXAnchor)
         ])
     }
     

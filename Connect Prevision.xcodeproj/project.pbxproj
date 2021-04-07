@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		10FA55E6C2DE475D528A35C8 /* Pods_Connect_Prevision_Connect_PrevisionUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4EC4B19B5F659FDB76044B3 /* Pods_Connect_Prevision_Connect_PrevisionUITests.framework */; };
+		25136AD6C7DA060BA9A5E030 /* Pods_Connect_Prevision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F658E608769F40E3B4C6A7D /* Pods_Connect_Prevision.framework */; };
 		62251FAE260CC00D00B3A2CC /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62251FAD260CC00D00B3A2CC /* DateExtension.swift */; };
 		62251FB3260CCFA300B3A2CC /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62251FB2260CCFA300B3A2CC /* APIConstants.swift */; };
 		62251FB9260CD0DB00B3A2CC /* PegarTempo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62251FB8260CD0DB00B3A2CC /* PegarTempo.swift */; };
@@ -32,10 +33,10 @@
 		6293C1C725E7E69900718F31 /* Connect_PrevisionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6293C1C625E7E69900718F31 /* Connect_PrevisionTests.swift */; };
 		6293C1D225E7E69900718F31 /* Connect_PrevisionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6293C1D125E7E69900718F31 /* Connect_PrevisionUITests.swift */; };
 		6293C1FB25E7E8BD00718F31 /* TelaLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6293C1FA25E7E8BD00718F31 /* TelaLoginView.swift */; };
-		6294CD8025ED521500F2555A /* TempoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6294CD7F25ED521500F2555A /* TempoModel.swift */; };
 		6294CD8625ED569C00F2555A /* TelaHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6294CD8525ED569C00F2555A /* TelaHomeView.swift */; };
 		6294CD8B25ED56A700F2555A /* TelaHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6294CD8A25ED56A700F2555A /* TelaHomeViewController.swift */; };
 		629980D3260A56B700E17414 /* Imagens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629980D2260A56B700E17414 /* Imagens.swift */; };
+		62ACA529261C7A05003195F0 /* ExtensionUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62ACA528261C7A05003195F0 /* ExtensionUIViewController.swift */; };
 		62B9BCFE260B547A003BCA2D /* HomeNavigationTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B9BCFD260B547A003BCA2D /* HomeNavigationTabViewController.swift */; };
 		62B9BD03260B5506003BCA2D /* NavigationBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B9BD02260B5506003BCA2D /* NavigationBarCoordinator.swift */; };
 		62B9BD0A260B5710003BCA2D /* TemperaturaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B9BD09260B5710003BCA2D /* TemperaturaView.swift */; };
@@ -58,7 +59,6 @@
 		62FAEEB925E958BE0094C58A /* TelaLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FAEEB825E958BE0094C58A /* TelaLoginViewModel.swift */; };
 		62FAEEBE25E95EBF0094C58A /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FAEEBD25E95EBF0094C58A /* String+Extension.swift */; };
 		91A727CF3F0AEDEDEE9ECDB8 /* Pods_Connect_PrevisionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58824572DA8C3D2A018943B3 /* Pods_Connect_PrevisionTests.framework */; };
-		E779D6777B16275EA1714BDD /* Pods_Connect_Prevision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F658E608769F40E3B4C6A7D /* Pods_Connect_Prevision.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,10 +112,10 @@
 		6293C1D125E7E69900718F31 /* Connect_PrevisionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connect_PrevisionUITests.swift; sourceTree = "<group>"; };
 		6293C1D325E7E69900718F31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6293C1FA25E7E8BD00718F31 /* TelaLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelaLoginView.swift; sourceTree = "<group>"; };
-		6294CD7F25ED521500F2555A /* TempoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempoModel.swift; sourceTree = "<group>"; };
 		6294CD8525ED569C00F2555A /* TelaHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelaHomeView.swift; sourceTree = "<group>"; };
 		6294CD8A25ED56A700F2555A /* TelaHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelaHomeViewController.swift; sourceTree = "<group>"; };
 		629980D2260A56B700E17414 /* Imagens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Imagens.swift; sourceTree = "<group>"; };
+		62ACA528261C7A05003195F0 /* ExtensionUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIViewController.swift; sourceTree = "<group>"; };
 		62B9BCFD260B547A003BCA2D /* HomeNavigationTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationTabViewController.swift; sourceTree = "<group>"; };
 		62B9BD02260B5506003BCA2D /* NavigationBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarCoordinator.swift; sourceTree = "<group>"; };
 		62B9BD09260B5710003BCA2D /* TemperaturaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperaturaView.swift; sourceTree = "<group>"; };
@@ -150,7 +150,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E779D6777B16275EA1714BDD /* Pods_Connect_Prevision.framework in Frameworks */,
+				25136AD6C7DA060BA9A5E030 /* Pods_Connect_Prevision.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,7 +377,6 @@
 		6294CD7E25ED520700F2555A /* TelaHome */ = {
 			isa = PBXGroup;
 			children = (
-				6294CD7F25ED521500F2555A /* TempoModel.swift */,
 				6247B30B260E4E1F00B8961A /* TempoModelForeCast.swift */,
 			);
 			path = TelaHome;
@@ -428,6 +427,7 @@
 			children = (
 				62B9BD24260B5FBA003BCA2D /* ExtensionUIView.swift */,
 				62732A57261B2ADE0074E53C /* ExtensionString.swift */,
+				62ACA528261C7A05003195F0 /* ExtensionUIViewController.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -818,8 +818,8 @@
 				62BC6E842608E4CE00A04F73 /* LoginCoordinator.swift in Sources */,
 				62F0AD7A2604CC0C0011115A /* MainCoordinator.swift in Sources */,
 				62B9BD14260B572E003BCA2D /* PerfilView.swift in Sources */,
+				62ACA529261C7A05003195F0 /* ExtensionUIViewController.swift in Sources */,
 				62FAEEBE25E95EBF0094C58A /* String+Extension.swift in Sources */,
-				6294CD8025ED521500F2555A /* TempoModel.swift in Sources */,
 				62B9BD25260B5FBA003BCA2D /* ExtensionUIView.swift in Sources */,
 				62FAEEB925E958BE0094C58A /* TelaLoginViewModel.swift in Sources */,
 				62B9BCFE260B547A003BCA2D /* HomeNavigationTabViewController.swift in Sources */,
@@ -986,7 +986,6 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				"EXCLUDED_ARCHS[sdk=*]" = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -1014,6 +1013,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 44V9FMY9WF;
+				"EXCLUDED_ARCHS[sdk=*]" = arm64;
 				INFOPLIST_FILE = "Connect Prevision/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1036,6 +1036,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 44V9FMY9WF;
+				"EXCLUDED_ARCHS[sdk=*]" = arm64;
 				INFOPLIST_FILE = "Connect Prevision/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

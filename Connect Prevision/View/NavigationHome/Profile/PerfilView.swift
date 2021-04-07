@@ -10,6 +10,28 @@ import MaterialComponents
 
 class PerfilView: UIView{
     
+    var imagemNuvem1: UIImageView = {
+        var img = UIImageView()
+        img.image = UIImage(named: .nuvem_1)?.withRenderingMode(.alwaysTemplate)
+        img.tintColor = UIColor(red: 0.73, green: 0.87, blue: 0.98, alpha: 1.00)
+        img.translatesAutoresizingMaskIntoConstraints = false
+        return img
+    }()
+    
+    var imagemNuvem2: UIImageView = {
+        var img = UIImageView()
+        img.image = UIImage(named: .nuvem_2)
+        img.translatesAutoresizingMaskIntoConstraints = false
+        return img
+    }()
+    
+    var imagemNuvem3: UIImageView = {
+        var img = UIImageView()
+        img.image = UIImage(named: .nuvem_4)
+        img.translatesAutoresizingMaskIntoConstraints = false
+        return img
+    }()
+    
     var topView: UIView = {
         var view = UIView()
         view.backgroundColor = .white
@@ -27,89 +49,116 @@ class PerfilView: UIView{
     
     var nameLabel: UILabel = {
         var lbl = UILabel()
-        lbl.text = "Loading..."
+        lbl.text = "Carregando..."
         lbl.textColor = .black
+        lbl.font = UIFont.boldSystemFont(ofSize: 26)
         lbl.translatesAutoresizingMaskIntoConstraints = false
         return lbl
     }()
     
-    var changeProfileButton: UIButton = {
-        var btn = UIButton()
-        btn.setTitle("Change Profile", for: .normal)
-        btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 12)
-        btn.setTitleColor(.blue, for: .normal)
-        btn.backgroundColor = .clear
-        btn.translatesAutoresizingMaskIntoConstraints = false
-        return btn
+    var phoneLabel: UILabel = {
+        var lbl = UILabel()
+        
+        lbl.text = "(14) 99628-2935"
+        lbl.translatesAutoresizingMaskIntoConstraints = false
+        return lbl
     }()
     
-    var yourCountView: UIView = {
+    var lineView1: UIView = {
         var view = UIView()
-        view.backgroundColor = UIColor(red: 0.98, green: 0.98, blue: 0.98, alpha: 1.00)
+        view.backgroundColor = .gray
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    var yourCountLabel: UILabel = {
+    var cidadeLabel: UILabel = {
         var lbl = UILabel()
-        lbl.text = "Sua Conta"
-        lbl.font = UIFont.boldSystemFont(ofSize: 22)
+        lbl.text = "Garça - São Paulo"
+        lbl.font = UIFont.boldSystemFont(ofSize: 16)
+        lbl.textColor = .gray
         lbl.translatesAutoresizingMaskIntoConstraints = false
         return lbl
     }()
     
-    
-    var stackVerticalComponents: UIStackView = {
-        var stk = UIStackView()
-        stk.distribution = .fillEqually
-        stk.spacing = 2
-        stk.axis = .vertical
-        stk.translatesAutoresizingMaskIntoConstraints = false
-        return stk
+    var cepLabel: UILabel = {
+        var lbl = UILabel()
+        lbl.text = "17400-000"
+        lbl.font = UIFont.boldSystemFont(ofSize: 16)
+        lbl.textColor = .gray
+        lbl.translatesAutoresizingMaskIntoConstraints = false
+        return lbl
     }()
     
-    var componenteYourCount1: PerfilComponent = {
-        var comp = PerfilComponent()
-        comp.setIcon(named: .ic_sino)
-        comp.setupContentText(conteudo: "Seus Lembretes")
-        return comp
+    var lineView2: UIView = {
+        var view = UIView()
+        view.backgroundColor = .gray
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
     }()
     
-    var componenteYourCount2: PerfilComponent = {
-        var comp = PerfilComponent()
-        comp.setIcon(named: .ic_form)
-        comp.setupContentText(conteudo: "Seus Pedidos")
-        return comp
+    var bottomView: UIView = {
+        var view = UIView()
+        view.backgroundColor = .white
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
     }()
     
-    var componenteYourCount3: PerfilComponent = {
-        var comp = PerfilComponent()
-        comp.setIcon(named: .ic_cartao)
-        comp.setupContentText(conteudo: "Seus Cartões")
-        return comp
+    var contaLabel: UILabel = {
+        var lbl = UILabel()
+        lbl.text = "SUA CONTA"
+        lbl.textColor = .gray
+        lbl.font = UIFont.boldSystemFont(ofSize: 20)
+        lbl.translatesAutoresizingMaskIntoConstraints = false
+        return lbl
     }()
     
-    var componenteYourCount4: PerfilComponent = {
-        var comp = PerfilComponent()
-        comp.setIcon(named: .ic_mapa)
-        comp.setupContentText(conteudo: "Seus endereços")
-        return comp
+    var emailLabel: UILabel = {
+        var lbl = UILabel()
+        lbl.textColor = .gray
+        lbl.font = UIFont.boldSystemFont(ofSize: 16)
+        lbl.text = "ronaldo.samuel2021@gmail.com"
+        lbl.translatesAutoresizingMaskIntoConstraints = false
+        return lbl
     }()
     
-    var componenteYourCount5: PerfilComponent = {
-        var comp = PerfilComponent()
-        comp.setIcon(named: .ic_lock)
-        comp.setupContentText(conteudo: "Alterar Senha")
-        return comp
+    var emailIcon: UIImageView = {
+        var img = UIImageView()
+        img.image = UIImage(named: "EmailIcon")?.withRenderingMode(.alwaysTemplate)
+        img.tintColor = .gray
+        img.translatesAutoresizingMaskIntoConstraints = false
+        return img
+    }()
+    
+    var poweredLabel: UILabel = {
+        var lbl = UILabel()
+        lbl.textColor = .gray
+        lbl.text = "Powered by"
+        lbl.translatesAutoresizingMaskIntoConstraints = false
+        return lbl
+    }()
+    
+    var siteAPILabel: UILabel = {
+        var lbl = UILabel()
+        lbl.textColor = .blue
+        lbl.text = "WeatherAPI.com"
+        lbl.translatesAutoresizingMaskIntoConstraints = false
+        return lbl
     }()
     
     var botaoDeslogar: MDCButton = {
         var btn = MDCButton()
-        btn.setImage(UIImage(named: "exit"), for: .normal)
+        btn.setImage(UIImage(named: "exit")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        btn.setImageTintColor(.red, for: .normal)
         btn.contentMode = .scaleAspectFit
         btn.setBackgroundColor(.clear,for: .normal)
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
+    }()
+    
+    var imageView: UIImageView = {
+        var img = UIImageView()
+        img.translatesAutoresizingMaskIntoConstraints = false
+        return img
     }()
     
     override init(frame: CGRect) {
@@ -123,83 +172,147 @@ class PerfilView: UIView{
     }
     
     func createSubViews(){
-        backgroundColor = .white
-        setupBotaoDeslogar()
-        
+        backgroundColor = UIColor(red: 0.23, green: 0.45, blue: 0.96, alpha: 1.00)
+        setupNuvens()
         setupviewTopo()
-        setupViewYourCount()
-        setupStackVerticalComponentes()
+        setupViewBottom()
+        setupBotaoDeslogar()
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        topView.roundCorners([.topLeft, .topRight], radius: 25)
+        
+    }
+    
+    func setupNuvens(){
+        addSubview(imagemNuvem1)
+        NSLayoutConstraint.activate([
+            imagemNuvem1.topAnchor.constraint(equalTo: topAnchor,constant: size.height*0.08),
+            imagemNuvem1.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
+            imagemNuvem1.widthAnchor.constraint(equalToConstant: 100),
+            imagemNuvem1.heightAnchor.constraint(equalToConstant: 100)
+        ])
+        
+        addSubview(imagemNuvem2)
+        NSLayoutConstraint.activate([
+            imagemNuvem2.topAnchor.constraint(equalTo: topAnchor,constant: size.height*0.03),
+            imagemNuvem2.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -20),
+            imagemNuvem2.widthAnchor.constraint(equalToConstant: 100),
+            imagemNuvem2.heightAnchor.constraint(equalToConstant: 100)
+        ])
+        addSubview(imagemNuvem3)
+        NSLayoutConstraint.activate([
+            imagemNuvem3.topAnchor.constraint(equalTo: topAnchor,constant: size.height*0.15),
+            imagemNuvem3.leadingAnchor.constraint(equalTo: leadingAnchor,constant: size.width*0.4),
+            imagemNuvem3.widthAnchor.constraint(equalToConstant: 100),
+            imagemNuvem3.heightAnchor.constraint(equalToConstant: 100)
+        ])
     }
     
     func setupviewTopo(){
         addSubview(topView)
         NSLayoutConstraint.activate([
-            topView.topAnchor.constraint(equalTo: topAnchor),
-            topView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            topView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            topView.heightAnchor.constraint(equalToConstant: 150)
+            topView.topAnchor.constraint(equalTo: topAnchor,constant: size.height*0.3),
+            topView.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 10),
+            topView.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -10),
+            topView.bottomAnchor.constraint(equalTo: bottomAnchor,constant: -size.height*0.25)
         ])
         
-        topView.addSubview(iconImage)
+        topView.addSubview(imageView)
         NSLayoutConstraint.activate([
-            iconImage.leadingAnchor.constraint(equalTo: topView.leadingAnchor,constant: 20),
-            iconImage.centerYAnchor.constraint(equalTo: topView.centerYAnchor,constant: 10),
-            iconImage.widthAnchor.constraint(equalToConstant: 50),
-            iconImage.heightAnchor.constraint(equalToConstant: 50)
+            imageView.leadingAnchor.constraint(equalTo: topView.leadingAnchor,constant: 20),
+            imageView.topAnchor.constraint(equalTo: topView.topAnchor,constant: 20),
+            imageView.widthAnchor.constraint(equalToConstant: 100),
+            imageView.heightAnchor.constraint(equalToConstant: 100)
         ])
         
         topView.addSubview(nameLabel)
         NSLayoutConstraint.activate([
-            nameLabel.centerYAnchor.constraint(equalTo: topView.centerYAnchor,constant: 0),
-            nameLabel.leadingAnchor.constraint(equalTo: iconImage.trailingAnchor,constant: 15)
+            nameLabel.centerYAnchor.constraint(equalTo: imageView.centerYAnchor,constant: -10),
+            nameLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor,constant: 15)
         ])
         
-        topView.addSubview(changeProfileButton)
+        topView.addSubview(phoneLabel)
         NSLayoutConstraint.activate([
-            changeProfileButton.centerYAnchor.constraint(equalTo: topView.centerYAnchor,constant: 20),
-            changeProfileButton.leadingAnchor.constraint(equalTo: iconImage.trailingAnchor,constant: 15)
+            phoneLabel.centerYAnchor.constraint(equalTo: imageView.centerYAnchor,constant: 20),
+            phoneLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor,constant: 15)
+        ])
+        
+        topView.addSubview(lineView1)
+        NSLayoutConstraint.activate([
+            lineView1.topAnchor.constraint(equalTo: imageView.bottomAnchor,constant: 20),
+            lineView1.leadingAnchor.constraint(equalTo: topView.leadingAnchor),
+            lineView1.trailingAnchor.constraint(equalTo: topView.trailingAnchor),
+            lineView1.heightAnchor.constraint(equalToConstant: 2)
+        ])
+        
+        topView.addSubview(cidadeLabel)
+        NSLayoutConstraint.activate([
+            cidadeLabel.topAnchor.constraint(equalTo: lineView1.bottomAnchor,constant: 20),
+            cidadeLabel.centerXAnchor.constraint(equalTo: topView.centerXAnchor)
+        ])
+        
+        topView.addSubview(lineView2)
+        NSLayoutConstraint.activate([
+            lineView2.bottomAnchor.constraint(equalTo: topView.bottomAnchor,constant: -20),
+            lineView2.leadingAnchor.constraint(equalTo: topView.leadingAnchor),
+            lineView2.trailingAnchor.constraint(equalTo: topView.trailingAnchor),
+            lineView2.heightAnchor.constraint(equalToConstant: 2)
+        ])
+        
+        topView.addSubview(cepLabel)
+        NSLayoutConstraint.activate([
+            cepLabel.bottomAnchor.constraint(equalTo: lineView2.topAnchor,constant: -20),
+            cepLabel.centerXAnchor.constraint(equalTo: topView.centerXAnchor)
         ])
     }
     
-    func setupViewYourCount(){
-        addSubview(yourCountView)
+    func setupViewBottom(){
+        addSubview(bottomView)
         NSLayoutConstraint.activate([
-            yourCountView.topAnchor.constraint(equalTo: topView.bottomAnchor),
-            yourCountView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            yourCountView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            yourCountView.heightAnchor.constraint(equalToConstant: 60)
+            bottomView.topAnchor.constraint(equalTo: topView.bottomAnchor,constant: 0),
+            bottomView.bottomAnchor.constraint(equalTo: bottomAnchor,constant: 10),
+            bottomView.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 10),
+            bottomView.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -10)
         ])
         
-        yourCountView.addSubview(yourCountLabel)
+        bottomView.addSubview(contaLabel)
         NSLayoutConstraint.activate([
-            yourCountLabel.centerYAnchor.constraint(equalTo: yourCountView.centerYAnchor),
-            yourCountLabel.leadingAnchor.constraint(equalTo: yourCountView.leadingAnchor,constant: 30)
+            contaLabel.topAnchor.constraint(equalTo: bottomView.topAnchor,constant: 10),
+            contaLabel.leadingAnchor.constraint(equalTo: bottomView.leadingAnchor,constant: 40)
         ])
-       
         
+        bottomView.addSubview(emailLabel)
+        NSLayoutConstraint.activate([
+            emailLabel.centerYAnchor.constraint(equalTo: bottomView.centerYAnchor,constant: -30),
+            emailLabel.leadingAnchor.constraint(equalTo: bottomView.leadingAnchor,constant: 80)
+        ])
+        
+        bottomView.addSubview(emailIcon)
+        NSLayoutConstraint.activate([
+            emailIcon.centerYAnchor.constraint(equalTo: bottomView.centerYAnchor,constant: -30),
+            emailIcon.leadingAnchor.constraint(equalTo: bottomView.leadingAnchor,constant: 50)
+        ])
+        
+        bottomView.addSubview(poweredLabel)
+        NSLayoutConstraint.activate([
+            poweredLabel.bottomAnchor.constraint(equalTo: bottomView.bottomAnchor,constant: -20),
+            poweredLabel.centerXAnchor.constraint(equalTo: bottomView.centerXAnchor,constant: -60)
+        ])
+        bottomView.addSubview(siteAPILabel)
+        NSLayoutConstraint.activate([
+            siteAPILabel.bottomAnchor.constraint(equalTo: bottomView.bottomAnchor,constant: -20),
+            siteAPILabel.leadingAnchor.constraint(equalTo: poweredLabel.trailingAnchor,constant: 4)
+        ])
     }
     
-    func setupStackVerticalComponentes (){
-        addSubview(stackVerticalComponents)
-        NSLayoutConstraint.activate([
-            stackVerticalComponents.topAnchor.constraint(equalTo: yourCountView.bottomAnchor,constant: 2),
-            stackVerticalComponents.leadingAnchor.constraint(equalTo: yourCountView.leadingAnchor),
-            stackVerticalComponents.trailingAnchor.constraint(equalTo: yourCountView.trailingAnchor),
-            stackVerticalComponents.bottomAnchor.constraint(equalTo: bottomAnchor,constant: -size.height*0.4)
-        ])
-        
-        stackVerticalComponents.addArrangedSubview(componenteYourCount1)
-        stackVerticalComponents.addArrangedSubview(componenteYourCount2)
-        stackVerticalComponents.addArrangedSubview(componenteYourCount3)
-        stackVerticalComponents.addArrangedSubview(componenteYourCount4)
-        stackVerticalComponents.addArrangedSubview(componenteYourCount5)
-    }
     
     func setupBotaoDeslogar(){
         topView.addSubview(botaoDeslogar)
         NSLayoutConstraint.activate([
-            botaoDeslogar.trailingAnchor.constraint(equalTo: topView.trailingAnchor,constant: -20),
-            botaoDeslogar.bottomAnchor.constraint(equalTo: topView.bottomAnchor,constant: -20),
+            botaoDeslogar.trailingAnchor.constraint(equalTo: topView.trailingAnchor,constant: -10),
+            botaoDeslogar.topAnchor.constraint(equalTo: topView.topAnchor,constant: 20),
         ])
     }
     
