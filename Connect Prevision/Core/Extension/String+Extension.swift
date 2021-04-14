@@ -9,6 +9,12 @@ import Foundation
 
 extension String {
     
+    var translate: String {
+        get {
+            return TranslateHelper.translate(self)
+        }
+    }
+    
     func printValue(){
         print(self)
     }
@@ -18,10 +24,6 @@ extension String {
             .joined()
     }
     
-    var translate: String {
-        get {
-            return TranslateHelper.translate(self)
-        }
-    }
+    
     
 }

@@ -75,9 +75,9 @@ class TelaHomeViewController: UITabBarController{
     }
     
     func atualizarDadosTela(){
-        guard let current = self.viewModel.data?.current else { return }
-        guard let location = self.viewModel.data?.location else { return }
-        guard let forecast = self.viewModel.data?.forecast else { return }
+        guard let current = self.viewModel.dataSourse.value.current else { return }
+        guard let location = self.viewModel.dataSourse.value.location else { return }
+        guard let forecast = self.viewModel.dataSourse.value.forecast else { return }
         if "language".translate == "us"{
             self.presentationView.tempLabel.text = "\(current.tempF)"
             self.presentationView.feelsLike.text = ("feels_like".translate)+"\(current.feelslikeF)°f"
