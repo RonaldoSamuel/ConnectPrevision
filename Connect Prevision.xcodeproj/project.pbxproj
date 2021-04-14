@@ -26,7 +26,6 @@
 		625EA79125E9133D0030DC26 /* TextFieldFormulario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625EA79025E9133D0030DC26 /* TextFieldFormulario.swift */; };
 		626BC63A2608CFC4000AC793 /* CadastroCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626BC6392608CFC4000AC793 /* CadastroCoordinator.swift */; };
 		626DD7D1260A09EF001A7931 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 626DD7D0260A09EF001A7931 /* GoogleService-Info.plist */; };
-		62732A58261B2ADE0074E53C /* ExtensionString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62732A57261B2ADE0074E53C /* ExtensionString.swift */; };
 		62853FB226148BBF00154E77 /* TelaHomeCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62853FB126148BBF00154E77 /* TelaHomeCollectionCell.swift */; };
 		6293C1B025E7E69900718F31 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6293C1AF25E7E69900718F31 /* AppDelegate.swift */; };
 		6293C1B425E7E69900718F31 /* TelaLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6293C1B325E7E69900718F31 /* TelaLoginViewController.swift */; };
@@ -102,7 +101,6 @@
 		625EA79025E9133D0030DC26 /* TextFieldFormulario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldFormulario.swift; sourceTree = "<group>"; };
 		626BC6392608CFC4000AC793 /* CadastroCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroCoordinator.swift; sourceTree = "<group>"; };
 		626DD7D0260A09EF001A7931 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
-		62732A57261B2ADE0074E53C /* ExtensionString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionString.swift; sourceTree = "<group>"; };
 		62853FB126148BBF00154E77 /* TelaHomeCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelaHomeCollectionCell.swift; sourceTree = "<group>"; };
 		6293C1AC25E7E69900718F31 /* Connect Prevision.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Connect Prevision.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6293C1AF25E7E69900718F31 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -204,16 +202,6 @@
 				62251FB2260CCFA300B3A2CC /* APIConstants.swift */,
 			);
 			path = Constants;
-			sourceTree = "<group>";
-		};
-		6225699B25E7EC1E003B0F59 /* Extentions */ = {
-			isa = PBXGroup;
-			children = (
-				625EA77C25E9042B0030DC26 /* UIView.swift */,
-				62FAEEBD25E95EBF0094C58A /* String+Extension.swift */,
-				62251FAD260CC00D00B3A2CC /* DateExtension.swift */,
-			);
-			path = Extentions;
 			sourceTree = "<group>";
 		};
 		6225699C25E7EC26003B0F59 /* Helper */ = {
@@ -340,14 +328,13 @@
 		6293C1F525E7E88900718F31 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				622FE4ED26248BC5009B6740 /* Supporting Files */,
-				62B9BD23260B5FA4003BCA2D /* Extension */,
-				62BC6E882608E78A00A04F73 /* Protocol */,
-				62F0AD732604CBF50011115A /* Navigation */,
-				62FAEE9F25E954D60094C58A /* Firebase */,
 				625EA78F25E9130F0030DC26 /* Components */,
 				6225699A25E7EC0A003B0F59 /* Constants */,
-				6225699B25E7EC1E003B0F59 /* Extentions */,
+				62B9BD23260B5FA4003BCA2D /* Extension */,
+				62FAEE9F25E954D60094C58A /* Firebase */,
+				622FE4ED26248BC5009B6740 /* Supporting Files */,
+				62BC6E882608E78A00A04F73 /* Protocol */,
+				62F0AD732604CBF50011115A /* Navigation */,
 				6225699C25E7EC26003B0F59 /* Helper */,
 				6225699D25E7EC33003B0F59 /* Networking */,
 			);
@@ -442,7 +429,9 @@
 		62B9BD23260B5FA4003BCA2D /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				62732A57261B2ADE0074E53C /* ExtensionString.swift */,
+				625EA77C25E9042B0030DC26 /* UIView.swift */,
+				62FAEEBD25E95EBF0094C58A /* String+Extension.swift */,
+				62251FAD260CC00D00B3A2CC /* DateExtension.swift */,
 				62ACA528261C7A05003195F0 /* ExtensionUIViewController.swift */,
 			);
 			path = Extension;
@@ -822,7 +811,6 @@
 				62D6DA132615EBD200D2CF46 /* TelaPerfilViewModel.swift in Sources */,
 				626BC63A2608CFC4000AC793 /* CadastroCoordinator.swift in Sources */,
 				62251FB3260CCFA300B3A2CC /* APIConstants.swift in Sources */,
-				62732A58261B2ADE0074E53C /* ExtensionString.swift in Sources */,
 				625EA77D25E9042B0030DC26 /* UIView.swift in Sources */,
 				62FAEE5025E9396B0094C58A /* TelaCadastroViewModel.swift in Sources */,
 				625EA78325E90E690030DC26 /* TelaCadastroViewController.swift in Sources */,
