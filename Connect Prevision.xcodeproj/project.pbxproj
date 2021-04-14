@@ -332,11 +332,11 @@
 				6225699A25E7EC0A003B0F59 /* Constants */,
 				62B9BD23260B5FA4003BCA2D /* Extension */,
 				62FAEE9F25E954D60094C58A /* Firebase */,
-				622FE4ED26248BC5009B6740 /* Supporting Files */,
-				62BC6E882608E78A00A04F73 /* Protocol */,
-				62F0AD732604CBF50011115A /* Navigation */,
 				6225699C25E7EC26003B0F59 /* Helper */,
+				62F0AD732604CBF50011115A /* Navigation */,
 				6225699D25E7EC33003B0F59 /* Networking */,
+				62BC6E882608E78A00A04F73 /* Protocol */,
+				622FE4ED26248BC5009B6740 /* Supporting Files */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -344,10 +344,10 @@
 		6293C1F625E7E88D00718F31 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				62D6DA112615EBBF00D2CF46 /* TelaPerfil */,
-				62F0AD7E2604E00D0011115A /* TelaHome */,
 				62FAEE4E25E939590094C58A /* TelaCadastro */,
+				62F0AD7E2604E00D0011115A /* TelaHome */,
 				62FAEEB725E958880094C58A /* TelaLogin */,
+				62D6DA112615EBBF00D2CF46 /* TelaPerfil */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -493,8 +493,8 @@
 		62FAEEAD25E9551F0094C58A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				6294CD7E25ED520700F2555A /* TelaHome */,
 				62FAEEB625E958750094C58A /* TelaCadastro */,
+				6294CD7E25ED520700F2555A /* TelaHome */,
 			);
 			path = Model;
 			sourceTree = "<group>";
