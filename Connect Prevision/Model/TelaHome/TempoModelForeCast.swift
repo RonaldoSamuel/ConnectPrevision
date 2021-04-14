@@ -7,6 +7,7 @@ import Foundation
 
 // MARK: - ForeCastModel
 struct ForeCastModel: Codable {
+    
     let location: Location?
     let current: Current?
     let forecast: Forecast?

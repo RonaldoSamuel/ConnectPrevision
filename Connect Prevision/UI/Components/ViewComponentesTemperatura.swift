@@ -1,8 +1,8 @@
 //
-//  PerfilComponent.swift
+//  ViewComponentesTemperatura.swift
 //  Connect Prevision
 //
-//  Created by Ronaldo Filho on 01/04/21.
+//  Created by Ronaldo Filho on 24/03/21.
 //
 
 import UIKit
@@ -10,7 +10,7 @@ import MaterialComponents
 import RxSwift
 import RxCocoa
 
-class PerfilComponent: UIView {
+class ViewComponentesTemperatura: UIView {
     
     var disposable = DisposeBag()
     
@@ -23,7 +23,6 @@ class PerfilComponent: UIView {
     
     var stackHorizontal: UIStackView = {
         var stk = UIStackView()
-        stk.backgroundColor = UIColor(red: 0.98, green: 0.98, blue: 0.98, alpha: 1.00)
         stk.distribution = .fillEqually
         stk.axis = .horizontal
         stk.spacing = 2
@@ -31,10 +30,19 @@ class PerfilComponent: UIView {
         return stk
     }()
     
-    var iconTheme: UIImageView = {
-        var img = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
-        img.translatesAutoresizingMaskIntoConstraints = false
-        return img
+    var stackVertical: UIStackView = {
+        var stk = UIStackView()
+        stk.distribution = .fillEqually
+        stk.axis = .vertical
+        stk.spacing = 2
+        stk.translatesAutoresizingMaskIntoConstraints = false
+        return stk
+    }()
+    
+    var descLabel: UILabel = {
+        var lbl = UILabel()
+        lbl.translatesAutoresizingMaskIntoConstraints = false
+        return lbl
     }()
     
     var contentLabel: UILabel = {
@@ -43,7 +51,7 @@ class PerfilComponent: UIView {
         return lbl
     }()
     
-    var nextIcon: UIImageView = {
+    var iconTheme: UIImageView = {
         var img = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
         img.translatesAutoresizingMaskIntoConstraints = false
         return img
@@ -53,12 +61,20 @@ class PerfilComponent: UIView {
         super.init(frame: frame)
         bindView()
         createSubViews()
+        settingDefaultsDescLabel()
+        settingDefaultsContentLabel()
+        settingDefaltsIconTheme()
+        setupView()
     }
     
     required public init?(coder: NSCoder) {
         super.init(coder: coder)
         bindView()
         createSubViews()
+        settingDefaultsDescLabel()
+        settingDefaultsContentLabel()
+        settingDefaltsIconTheme()
+        setupView()
     }
     
     func bindView(){
@@ -66,10 +82,6 @@ class PerfilComponent: UIView {
     }
     
     func createSubViews(){
-        setupView()
-        
-        settingDefaultsContentLabel()
-        settingDefaltsIconTheme()
         setupView()
     }
     
@@ -82,34 +94,38 @@ class PerfilComponent: UIView {
             view.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
         
-        view.addSubview(iconTheme)
+        view.addSubview(stackHorizontal)
         NSLayoutConstraint.activate([
-            iconTheme.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            iconTheme.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 20),
-            iconTheme.heightAnchor.constraint(equalToConstant: 30),
-            iconTheme.widthAnchor.constraint(equalToConstant: 30)
+            stackHorizontal.topAnchor.constraint(equalTo: view.topAnchor),
+            stackHorizontal.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            stackHorizontal.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            stackHorizontal.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
         
-        
-        view.addSubview(contentLabel)
+        stackHorizontal.addArrangedSubview(iconTheme)
         NSLayoutConstraint.activate([
-            contentLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            contentLabel.leadingAnchor.constraint(equalTo: iconTheme.trailingAnchor,constant: 15)
+            iconTheme.heightAnchor.constraint(equalToConstant: 40),
+            iconTheme.widthAnchor.constraint(equalToConstant: size.height*0.2)
         ])
+        stackHorizontal.addArrangedSubview(stackVertical)
         
-        view.addSubview(nextIcon)
-        NSLayoutConstraint.activate([
-            nextIcon.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            nextIcon.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: -20),
-            nextIcon.heightAnchor.constraint(equalToConstant: 30),
-            nextIcon.widthAnchor.constraint(equalToConstant: 30)
-        ])
+        stackVertical.addArrangedSubview(descLabel)
+        stackVertical.addArrangedSubview(contentLabel)
         
+    }
+    
+    func settingDefaultsDescLabel(){
+        descLabel.textColor = .lightGray
+        descLabel.font = UIFont.boldSystemFont(ofSize: 10)
+    }
+    
+    func setDesLabelText(conteudo: String){
+        descLabel.text = conteudo
     }
     
     func settingDefaultsContentLabel(){
         contentLabel.textColor = UIColor(red: 0.33, green: 0.29, blue: 0.34, alpha: 1.00)
-        contentLabel.font = UIFont.boldSystemFont(ofSize: 17)
+        contentLabel.font = UIFont.boldSystemFont(ofSize: 15)
     }
     
     func setupContentText(conteudo: String){
@@ -118,15 +134,11 @@ class PerfilComponent: UIView {
     
     func settingDefaltsIconTheme(){
         iconTheme.contentMode = .scaleAspectFit
-        nextIcon.contentMode = .scaleAspectFit
-        iconTheme.tintColor = UIColor(red: 0.23, green: 0.51, blue: 0.78, alpha: 1.00)
-        nextIcon.tintColor = UIColor(red: 0.23, green: 0.51, blue: 0.78, alpha: 1.00)
+        iconTheme.tintColor = UIColor(red: 0.75, green: 0.92, blue: 0.99, alpha: 1.00)
     }
     
     func setIcon(named: String){
+        iconTheme.contentMode = .scaleAspectFit
         iconTheme.image = UIImage(named: named)?.withRenderingMode(.alwaysTemplate)
-        nextIcon.image = UIImage(named: .ic_arrow_right)?.withRenderingMode(.alwaysTemplate)
     }
-    
 }
-

@@ -8,9 +8,9 @@
 import Foundation
 
 struct FireBaseLoginSignModel: Codable {
+    
     var email: String
     var password: String
-    
 }
 
 extension FireBaseLoginSignModel {

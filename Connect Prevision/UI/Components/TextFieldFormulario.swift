@@ -87,9 +87,7 @@ class TextFieldFormulario: UIView {
     
     func togglePasswordVisible(){
         isSecureTextEntry = !isSecureTextEntry
-        
         txt.isSecureTextEntry = isSecureTextEntry
-        
     }
     
     func setIcon(named: String){

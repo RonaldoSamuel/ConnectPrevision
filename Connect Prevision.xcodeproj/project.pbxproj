@@ -25,7 +25,6 @@
 		625EA78B25E90E720030DC26 /* TelaCadastroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625EA78A25E90E720030DC26 /* TelaCadastroView.swift */; };
 		625EA79125E9133D0030DC26 /* TextFieldFormulario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625EA79025E9133D0030DC26 /* TextFieldFormulario.swift */; };
 		626BC63A2608CFC4000AC793 /* CadastroCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626BC6392608CFC4000AC793 /* CadastroCoordinator.swift */; };
-		626DD7D1260A09EF001A7931 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 626DD7D0260A09EF001A7931 /* GoogleService-Info.plist */; };
 		62853FB226148BBF00154E77 /* TelaHomeCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62853FB126148BBF00154E77 /* TelaHomeCollectionCell.swift */; };
 		6293C1B025E7E69900718F31 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6293C1AF25E7E69900718F31 /* AppDelegate.swift */; };
 		6293C1B425E7E69900718F31 /* TelaLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6293C1B325E7E69900718F31 /* TelaLoginViewController.swift */; };
@@ -60,6 +59,7 @@
 		62FAEEB925E958BE0094C58A /* TelaLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FAEEB825E958BE0094C58A /* TelaLoginViewModel.swift */; };
 		62FAEEBE25E95EBF0094C58A /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FAEEBD25E95EBF0094C58A /* String+Extension.swift */; };
 		91A727CF3F0AEDEDEE9ECDB8 /* Pods_Connect_PrevisionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58824572DA8C3D2A018943B3 /* Pods_Connect_PrevisionTests.framework */; };
+		F6862A1B262725BD0011E454 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F6862A1A262725BD0011E454 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,7 +100,6 @@
 		625EA78A25E90E720030DC26 /* TelaCadastroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelaCadastroView.swift; sourceTree = "<group>"; };
 		625EA79025E9133D0030DC26 /* TextFieldFormulario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldFormulario.swift; sourceTree = "<group>"; };
 		626BC6392608CFC4000AC793 /* CadastroCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroCoordinator.swift; sourceTree = "<group>"; };
-		626DD7D0260A09EF001A7931 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		62853FB126148BBF00154E77 /* TelaHomeCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelaHomeCollectionCell.swift; sourceTree = "<group>"; };
 		6293C1AC25E7E69900718F31 /* Connect Prevision.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Connect Prevision.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6293C1AF25E7E69900718F31 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -147,6 +146,7 @@
 		8E31829D91A67AD087D64C57 /* Pods-Connect Prevision-Connect PrevisionUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Connect Prevision-Connect PrevisionUITests.release.xcconfig"; path = "Target Support Files/Pods-Connect Prevision-Connect PrevisionUITests/Pods-Connect Prevision-Connect PrevisionUITests.release.xcconfig"; sourceTree = "<group>"; };
 		EBA1D7ADFBA0F6BA1ECD8BC9 /* Pods-Connect Prevision-Connect PrevisionUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Connect Prevision-Connect PrevisionUITests.debug.xcconfig"; path = "Target Support Files/Pods-Connect Prevision-Connect PrevisionUITests/Pods-Connect Prevision-Connect PrevisionUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F4EC4B19B5F659FDB76044B3 /* Pods_Connect_Prevision_Connect_PrevisionUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Connect_Prevision_Connect_PrevisionUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6862A1A262725BD0011E454 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,6 +226,8 @@
 		622FE4ED26248BC5009B6740 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F6862A1A262725BD0011E454 /* GoogleService-Info.plist */,
+				6293C1BD25E7E69900718F31 /* Info.plist */,
 				62CB10FD2625DABA00FC4399 /* InfoPlist.strings */,
 				622FE51126248F02009B6740 /* Localizable.strings */,
 			);
@@ -287,12 +289,12 @@
 				6293C1F725E7E89300718F31 /* App */,
 				6293C1F825E7E8A000718F31 /* Assets */,
 				6293C1F525E7E88900718F31 /* Core */,
+				622FE4ED26248BC5009B6740 /* Supporting Files */,
 				62FAEEAD25E9551F0094C58A /* Model */,
+				F6862A25262727830011E454 /* UI */,
 				6293C1F425E7E88300718F31 /* View */,
 				6293C1F625E7E88D00718F31 /* ViewModel */,
-				626DD7D0260A09EF001A7931 /* GoogleService-Info.plist */,
 				6293C1BA25E7E69900718F31 /* LaunchScreen.storyboard */,
-				6293C1BD25E7E69900718F31 /* Info.plist */,
 			);
 			path = "Connect Prevision";
 			sourceTree = "<group>";
@@ -328,15 +330,13 @@
 		6293C1F525E7E88900718F31 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				625EA78F25E9130F0030DC26 /* Components */,
 				6225699A25E7EC0A003B0F59 /* Constants */,
 				62B9BD23260B5FA4003BCA2D /* Extension */,
-				62FAEE9F25E954D60094C58A /* Firebase */,
 				6225699C25E7EC26003B0F59 /* Helper */,
+				62FAEE9F25E954D60094C58A /* Firebase */,
 				62F0AD732604CBF50011115A /* Navigation */,
 				6225699D25E7EC33003B0F59 /* Networking */,
 				62BC6E882608E78A00A04F73 /* Protocol */,
-				622FE4ED26248BC5009B6740 /* Supporting Files */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -528,6 +528,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		F6862A25262727830011E454 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				625EA78F25E9130F0030DC26 /* Components */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -642,9 +650,9 @@
 				6293C1BC25E7E69900718F31 /* LaunchScreen.storyboard in Resources */,
 				622FE50F26248F02009B6740 /* Localizable.strings in Resources */,
 				6293C1B925E7E69900718F31 /* Assets.xcassets in Resources */,
-				626DD7D1260A09EF001A7931 /* GoogleService-Info.plist in Resources */,
 				623676D52626FEB00006FF29 /* icones.xcassets in Resources */,
 				62CB10FB2625DABA00FC4399 /* InfoPlist.strings in Resources */,
+				F6862A1B262725BD0011E454 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1041,7 +1049,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 44V9FMY9WF;
 				"EXCLUDED_ARCHS[sdk=*]" = arm64;
-				INFOPLIST_FILE = "Connect Prevision/Info.plist";
+				INFOPLIST_FILE = "Connect Prevision/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1064,7 +1072,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 44V9FMY9WF;
 				"EXCLUDED_ARCHS[sdk=*]" = arm64;
-				INFOPLIST_FILE = "Connect Prevision/Info.plist";
+				INFOPLIST_FILE = "Connect Prevision/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

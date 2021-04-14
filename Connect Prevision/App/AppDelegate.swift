@@ -31,7 +31,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         
         let navController = UINavigationController()
         coordinator = MainCoordinator(navigationcontroller: navController)
-        
         coordinator?.start()
         
         window = UIWindow(frame: UIScreen.main.bounds)
@@ -62,33 +61,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             print(error.localizedDescription)
             return
         }
+        
         let credential = FacebookAuthProvider.credential(withAccessToken: AccessToken.current!.tokenString)
-        Auth.auth().signIn(with: credential, completion: {authResult, Error in if let Error = Error as NSError? {
-            switch AuthErrorCode(rawValue: Error.code){
-            case .operationNotAllowed:
-                break
-            case .emailAlreadyInUse:
-                
-                break
-            case .invalidEmail:
-                break
-            case .weakPassword:
-                break
-                
-            default:
-                print("Error: \(Error.localizedDescription)")
+        
+        Auth.auth().signIn(with: credential) { authResult, Error in
+            if let Error = Error as NSError? {
+                switch AuthErrorCode(rawValue: Error.code){
+                case .operationNotAllowed:
+                    break
+                case .emailAlreadyInUse:
+                    
+                    break
+                case .invalidEmail:
+                    break
+                case .weakPassword:
+                    break
+                    
+                default:
+                    print("Error: \(Error.localizedDescription)")
+                }
+            } else {
+                self.coordinator?.home()
             }
-            
-        } else {
-            self.coordinator?.home()
         }
-        
-        })
-        
     }
     
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!,
-              withError error: Error!) {
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        
         if let error = error {
             if (error as NSError).code == GIDSignInErrorCode.hasNoAuthInKeychain.rawValue {
                 print("The user has not signed in before or they have since signed out.")
@@ -101,32 +100,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             // [END_EXCLUDE]
             return
         }
+        
         guard let authentication = user.authentication else { return }
         let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
                                                        accessToken: authentication.accessToken)
-        
         print(credential)
         
-        Auth.auth().signIn(with: credential, completion: {authResult, Error in if let Error = Error as NSError? {
-            switch AuthErrorCode(rawValue: Error.code){
-            case .operationNotAllowed:
-                break
-            case .emailAlreadyInUse:
-                break
-            case .invalidEmail:
-                break
-            case .weakPassword:
-                break
+        Auth.auth().signIn(with: credential) { authResult, Error in
+            if let Error = Error as NSError? {
+                switch AuthErrorCode(rawValue: Error.code){
+                case .operationNotAllowed:
+                    break
+                case .emailAlreadyInUse:
+                    break
+                case .invalidEmail:
+                    break
+                case .weakPassword:
+                    break
+                    
+                default:
+                    print("Error: \(Error.localizedDescription)")
+                }
                 
-            default:
-                print("Error: \(Error.localizedDescription)")
+            } else {
+                self.coordinator?.home()
             }
-            
-        } else {
-            self.coordinator?.home()
         }
-        
-        })
         
         // [START_EXCLUDE]
         NotificationCenter.default.post(
