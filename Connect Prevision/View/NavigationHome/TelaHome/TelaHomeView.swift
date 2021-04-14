@@ -66,7 +66,6 @@ class TelaHomeView: UIView {
         return lbl
     }()
     
-    
     var imagemGrau: UIImageView = {
         var img = UIImageView()
         if "language".translate == "us" {

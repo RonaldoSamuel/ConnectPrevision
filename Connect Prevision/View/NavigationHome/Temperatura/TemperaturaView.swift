@@ -9,6 +9,13 @@ import UIKit
 
 class TemperaturaView: UIView{
     
+    var topView: UIView = {
+        var view = UIView()
+        view.backgroundColor = .white
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     var descricaoLabel: UILabel = {
         var lbl = UILabel()
         lbl.text = "seven_days".translate
@@ -61,26 +68,43 @@ class TemperaturaView: UIView{
         createSubViews()
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        topView.roundCorners([.topLeft, .topRight], radius: 50)
+        
+    }
+    
     func createSubViews(){
-        backgroundColor = .white
+        backgroundColor = .gray
+        setupTopView()
         setupDescricaoLabel()
         setupTableView()
     }
     
-    func setupDescricaoLabel(){
-        addSubview(descricaoLabel)
+    func setupTopView(){
+        addSubview(topView)
         NSLayoutConstraint.activate([
-            descricaoLabel.topAnchor.constraint(equalTo: topAnchor,constant: size.height*0.25),
-            descricaoLabel.centerXAnchor.constraint(equalTo: centerXAnchor,constant: -size.width*0.25)
+            topView.topAnchor.constraint(equalTo: topAnchor,constant: size.height*0.2),
+            topView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            topView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            topView.trailingAnchor.constraint(equalTo: trailingAnchor)
+        ])
+    }
+    
+    func setupDescricaoLabel(){
+        topView.addSubview(descricaoLabel)
+        NSLayoutConstraint.activate([
+            descricaoLabel.topAnchor.constraint(equalTo: topView.topAnchor,constant: 25),
+            descricaoLabel.centerXAnchor.constraint(equalTo: topView.centerXAnchor,constant: -size.width*0.20)
         ])
     }
     
     func setupTableView(){
-        addSubview(contentTableView)
+        topView.addSubview(contentTableView)
         NSLayoutConstraint.activate([
             contentTableView.topAnchor.constraint(equalTo: descricaoLabel.bottomAnchor,constant: 10),
-            contentTableView.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 0),
-            contentTableView.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -0),
+            contentTableView.leadingAnchor.constraint(equalTo: topView.leadingAnchor,constant: 0),
+            contentTableView.trailingAnchor.constraint(equalTo: topView.trailingAnchor,constant: -0),
             contentTableView.heightAnchor.constraint(equalToConstant: size.height*0.6)
         ])
     }

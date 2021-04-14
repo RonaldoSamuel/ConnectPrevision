@@ -181,30 +181,35 @@ class PerfilView: UIView{
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        topView.roundCorners([.topLeft, .topRight], radius: 25)
+        topView.roundCorners([.topLeft, .topRight], radius: 50)
+        UIView.animate(withDuration: 1.0) {
+            self.imagemNuvem1.transform = CGAffineTransform(translationX: self.size.width*0.3+100, y: -self.size.height*0.1-100)
+            self.imagemNuvem2.transform = CGAffineTransform(translationX: -self.size.width*0.3-200, y: -self.size.height*0.06+200)
+            self.imagemNuvem3.transform = CGAffineTransform(translationX: self.size.width*0.1+150, y: self.size.height*0.02-150)
+        }
         
     }
     
     func setupNuvens(){
         addSubview(imagemNuvem1)
         NSLayoutConstraint.activate([
-            imagemNuvem1.topAnchor.constraint(equalTo: topAnchor,constant: size.height*0.08),
-            imagemNuvem1.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
+            imagemNuvem1.topAnchor.constraint(equalTo: topAnchor,constant: size.height*0.15+100),
+            imagemNuvem1.centerXAnchor.constraint(equalTo: centerXAnchor,constant: -100),
             imagemNuvem1.widthAnchor.constraint(equalToConstant: 100),
             imagemNuvem1.heightAnchor.constraint(equalToConstant: 100)
         ])
         
         addSubview(imagemNuvem2)
         NSLayoutConstraint.activate([
-            imagemNuvem2.topAnchor.constraint(equalTo: topAnchor,constant: size.height*0.03),
-            imagemNuvem2.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -20),
+            imagemNuvem2.topAnchor.constraint(equalTo: topAnchor,constant: size.height*0.15-200),
+            imagemNuvem2.centerXAnchor.constraint(equalTo: centerXAnchor,constant: +200),
             imagemNuvem2.widthAnchor.constraint(equalToConstant: 100),
             imagemNuvem2.heightAnchor.constraint(equalToConstant: 100)
         ])
         addSubview(imagemNuvem3)
         NSLayoutConstraint.activate([
-            imagemNuvem3.topAnchor.constraint(equalTo: topAnchor,constant: size.height*0.15),
-            imagemNuvem3.leadingAnchor.constraint(equalTo: leadingAnchor,constant: size.width*0.4),
+            imagemNuvem3.topAnchor.constraint(equalTo: topAnchor,constant: size.height*0.15+150),
+            imagemNuvem3.centerXAnchor.constraint(equalTo: centerXAnchor,constant: -150),
             imagemNuvem3.widthAnchor.constraint(equalToConstant: 100),
             imagemNuvem3.heightAnchor.constraint(equalToConstant: 100)
         ])
@@ -244,26 +249,26 @@ class PerfilView: UIView{
             lineView1.topAnchor.constraint(equalTo: imageView.bottomAnchor,constant: 20),
             lineView1.leadingAnchor.constraint(equalTo: topView.leadingAnchor),
             lineView1.trailingAnchor.constraint(equalTo: topView.trailingAnchor),
-            lineView1.heightAnchor.constraint(equalToConstant: 2)
+            lineView1.heightAnchor.constraint(equalToConstant: 0.04)
         ])
         
         topView.addSubview(cidadeLabel)
         NSLayoutConstraint.activate([
-            cidadeLabel.topAnchor.constraint(equalTo: lineView1.bottomAnchor,constant: 20),
+            cidadeLabel.topAnchor.constraint(equalTo: lineView1.bottomAnchor,constant: size.height*0.04),
             cidadeLabel.centerXAnchor.constraint(equalTo: topView.centerXAnchor)
         ])
         
         topView.addSubview(lineView2)
         NSLayoutConstraint.activate([
-            lineView2.bottomAnchor.constraint(equalTo: topView.bottomAnchor,constant: -20),
+            lineView2.bottomAnchor.constraint(equalTo: lineView1.bottomAnchor,constant: 140),
             lineView2.leadingAnchor.constraint(equalTo: topView.leadingAnchor),
             lineView2.trailingAnchor.constraint(equalTo: topView.trailingAnchor),
-            lineView2.heightAnchor.constraint(equalToConstant: 2)
+            lineView2.heightAnchor.constraint(equalToConstant: 0.04)
         ])
         
         topView.addSubview(cepLabel)
         NSLayoutConstraint.activate([
-            cepLabel.bottomAnchor.constraint(equalTo: lineView2.topAnchor,constant: -20),
+            cepLabel.bottomAnchor.constraint(equalTo: lineView2.topAnchor,constant: -size.height*0.04),
             cepLabel.centerXAnchor.constraint(equalTo: topView.centerXAnchor)
         ])
     }
