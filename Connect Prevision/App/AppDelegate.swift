@@ -29,7 +29,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         GIDSignIn.sharedInstance().clientID = "770182017392-ceifqf8010a4ar4k3r0fe2039b8k4qr3.apps.googleusercontent.com"
         GIDSignIn.sharedInstance().delegate = self
         
-        
         let navController = UINavigationController()
         coordinator = MainCoordinator(navigationcontroller: navController)
         
@@ -63,40 +62,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             print(error.localizedDescription)
             return
         }
-        print("=================================================================")
-        print("==================Inciando Login Facebook========================")
-        print("=================================================================")
         let credential = FacebookAuthProvider.credential(withAccessToken: AccessToken.current!.tokenString)
         Auth.auth().signIn(with: credential, completion: {authResult, Error in if let Error = Error as NSError? {
             switch AuthErrorCode(rawValue: Error.code){
             case .operationNotAllowed:
                 break
             case .emailAlreadyInUse:
-                print("Email Ja Existe")
+                
                 break
             case .invalidEmail:
-                print("Email Invalido")
                 break
             case .weakPassword:
-                
-                print("Sua Senha é fraca")
                 break
                 
             default:
                 print("Error: \(Error.localizedDescription)")
             }
             
-            
         } else {
-            print("Usuario Google Logado")
             self.coordinator?.home()
         }
         
         })
         
-        print("=================================================================")
-        print("=================================================================")
-        print("=================================================================")
     }
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!,
@@ -124,25 +112,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             case .operationNotAllowed:
                 break
             case .emailAlreadyInUse:
-                print("Email Ja Existe")
                 break
             case .invalidEmail:
-                print("Email Invalido")
                 break
             case .weakPassword:
-                
-                print("Sua Senha é fraca")
                 break
                 
             default:
                 print("Error: \(Error.localizedDescription)")
             }
             
-            
         } else {
-            print("usuario criado")
             self.coordinator?.home()
-            
         }
         
         })
