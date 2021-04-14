@@ -19,17 +19,12 @@ class TelaLoginViewModel {
     var email: BehaviorRelay<String> = BehaviorRelay<String>(value: "")
     var password: BehaviorRelay<String> = BehaviorRelay<String>(value: "")
     
-    
     var isEmailPreenchido: BehaviorRelay<Bool> = BehaviorRelay<Bool>(value: false)
     var isPasswordPreenchido: BehaviorRelay<Bool> = BehaviorRelay<Bool>(value: false)
-    
     var isFormPreenchido: BehaviorRelay<Bool> = BehaviorRelay<Bool>(value: false)
-    
     var isUserLogged: BehaviorRelay<Bool> = BehaviorRelay<Bool>(value: false)
     
     func viewDidLoad(){
-        
-        
         
         Observable.combineLatest(isEmailPreenchido, isPasswordPreenchido) { (email,password) in
             return email == true && password == true
@@ -61,7 +56,7 @@ class TelaLoginViewModel {
         firebaseHelper.logarFirebase(emailModel: loginModel) {
             [weak self] (value) in  self?.isUserLogged.accept(value)
         }
-       
+        
     }
     
 }

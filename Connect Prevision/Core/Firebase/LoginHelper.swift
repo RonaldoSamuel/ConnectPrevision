@@ -52,7 +52,6 @@ class LoginHelper {
         }
     }
     
-    
     func snackbar(message: String){
         let action = MDCSnackbarMessage()
         action.text = message

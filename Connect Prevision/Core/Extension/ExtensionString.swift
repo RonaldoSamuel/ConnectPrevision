@@ -12,4 +12,11 @@ extension String {
         return components(separatedBy: CharacterSet.decimalDigits.inverted)
             .joined()
     }
+    
+    var translate: String {
+        get {
+            return TranslateHelper.translate(self)
+        }
+    }
+    
 }

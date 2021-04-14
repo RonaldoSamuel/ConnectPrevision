@@ -40,7 +40,7 @@ class TelaLoginView: UIView {
     
     var logoView: UIImageView = {
         var image = UIImageView()
-        image.image = UIImage(named: "Logo")
+        image.image = UIImage(named: .ic_logo)
         image.contentMode = .scaleAspectFit
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
@@ -59,7 +59,7 @@ class TelaLoginView: UIView {
     var subDescricaoLabel: UILabel = {
         var lbl = UILabel()
         lbl.textAlignment = .center
-        lbl.text = "Log in to your existant account of Q allure"
+        lbl.text = "login_using_exist_account".translate
         lbl.font = UIFont.systemFont(ofSize: 12)
         lbl.textColor = .gray
         lbl.translatesAutoresizingMaskIntoConstraints = false
@@ -68,16 +68,16 @@ class TelaLoginView: UIView {
     
     var txtEmail: TextFieldFormulario = {
         var txt = TextFieldFormulario()
-        txt.setIcon(named: "UserIcon")
-        txt.setPlaceholder("E-mail")
+        txt.setIcon(named: .ic_user)
+        txt.setPlaceholder("email".translate)
         txt.translatesAutoresizingMaskIntoConstraints = false
         return txt
     }()
     
     var txtPassword: TextFieldFormulario = {
         var txt = TextFieldFormulario()
-        txt.setIcon(named: "PasswordIcon")
-        txt.setPlaceholder("Password")
+        txt.setIcon(named: .ic_password)
+        txt.setPlaceholder("password".translate)
         txt.togglePasswordVisible()
         txt.translatesAutoresizingMaskIntoConstraints = false
         return txt
@@ -85,7 +85,7 @@ class TelaLoginView: UIView {
     
     var btnChange: UIButton = {
         var btn = UIButton()
-        btn.setImage(UIImage(named: "notVisible")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        btn.setImage(UIImage(named: .ic_not_visible)?.withRenderingMode(.alwaysTemplate), for: .normal)
         btn.tintColor = .gray
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
@@ -93,7 +93,7 @@ class TelaLoginView: UIView {
     
     var forgotButton: UIButton = {
         var btn = UIButton()
-        btn.setTitle("Forgot Password?", for: .normal)
+        btn.setTitle("forgot_pass".translate, for: .normal)
         btn.setTitleColor(UIColor(red: 0.36, green: 0.39, blue: 0.42, alpha: 1.00), for: .normal)
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 12)
         btn.backgroundColor = .clear
@@ -107,7 +107,7 @@ class TelaLoginView: UIView {
         btn.setShadowColor(UIColor(red: 0.14, green: 0.29, blue: 0.64, alpha: 1.00), for: .normal)
         btn.layer.cornerRadius = 24
         btn.setBackgroundColor(UIColor(red: 0.14, green: 0.29, blue: 0.64, alpha: 1.00), for: .normal)
-        btn.setTitle("Log In", for: .normal)
+        btn.setTitle("log_in".translate, for: .normal)
         btn.setTitleColor(.gray, for: .disabled)
         btn.disabledAlpha = 0.75
         btn.setElevation(.raisedButtonPressed, for: .normal)
@@ -117,10 +117,9 @@ class TelaLoginView: UIView {
     
     var otherloginMethodLabel: UILabel = {
         var lbl = UILabel()
-        lbl.text = "Or Connect Using"
+        lbl.text = "other_login_method".translate
         lbl.textAlignment = .center
         lbl.textColor = .gray
-        //        lbl.font = UIFont.
         lbl.translatesAutoresizingMaskIntoConstraints = false
         return lbl
     }()
@@ -131,18 +130,15 @@ class TelaLoginView: UIView {
         return btn
     }()
     
-    
-    
     var googleTest: GIDSignInButton = {
         var btn = GIDSignInButton()
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
     }()
     
-    
     var dontHaveAccountLabel: UILabel = {
         var lbl = UILabel()
-        lbl.text = "Don't have an account? "
+        lbl.text = "dont_have_account".translate
         lbl.textAlignment = .right
         lbl.font = UIFont.systemFont(ofSize: 14)
         lbl.translatesAutoresizingMaskIntoConstraints = false
@@ -152,7 +148,7 @@ class TelaLoginView: UIView {
     var signUpButton: UIButton = {
         var btn = UIButton()
         btn.backgroundColor = .clear
-        btn.setTitle("Sign Up", for: .normal)
+        btn.setTitle("sign_up".translate, for: .normal)
         btn.contentHorizontalAlignment = .left
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
         btn.setTitleColor(UIColor(red: 0.23, green: 0.48, blue: 0.97, alpha: 1.00), for: .normal)
@@ -278,8 +274,6 @@ class TelaLoginView: UIView {
             otherloginMethodLabel.trailingAnchor.constraint(equalTo: viewItensFormulario.trailingAnchor,constant: -25)
         ])
         
-        
-        
         viewItensFormulario.addSubview(googleTest)
         NSLayoutConstraint.activate([
             googleTest.topAnchor.constraint(equalTo: otherloginMethodLabel.bottomAnchor,constant: 15),
@@ -306,8 +300,8 @@ class TelaLoginView: UIView {
         viewItensFormulario.addSubview(signUpButton)
         NSLayoutConstraint.activate([
             signUpButton.topAnchor.constraint(equalTo: dontHaveAccountLabel.topAnchor,constant: -7),
-            signUpButton.leadingAnchor.constraint(equalTo: dontHaveAccountLabel.trailingAnchor,constant: 2),
-            signUpButton.trailingAnchor.constraint(equalTo: viewItensFormulario.trailingAnchor,constant: -self.size.width*0.20),
+            signUpButton.leadingAnchor.constraint(equalTo: dontHaveAccountLabel.trailingAnchor,constant: 5),
+            signUpButton.trailingAnchor.constraint(equalTo: viewItensFormulario.trailingAnchor,constant: -self.size.width*0.10),
             signUpButton.bottomAnchor.constraint(equalTo: viewItensFormulario.bottomAnchor, constant: -20)
         ])
     }

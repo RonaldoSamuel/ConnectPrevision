@@ -11,7 +11,7 @@ class TemperaturaView: UIView{
     
     var descricaoLabel: UILabel = {
         var lbl = UILabel()
-        lbl.text = "Next 7 Days"
+        lbl.text = "seven_days".translate
         lbl.font = UIFont.boldSystemFont(ofSize: 30)
         lbl.translatesAutoresizingMaskIntoConstraints = false
         return lbl

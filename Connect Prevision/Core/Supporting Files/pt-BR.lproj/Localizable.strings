@@ -1,0 +1,41 @@
+/* 
+ Localizable.strings
+ Connect Prevision
+ 
+ Created by Ronaldo Filho on 12/04/21.
+ 
+ */
+"language" = "pt";
+"login_using_exist_account" = "Entre em sua conta existente em Connect Prevision";
+"email" = "E-mail";
+"password" = "Senha";
+"forgot_pass" = "Esqueceu sua senha?";
+"log_in" = "Logar";
+"other_login_method" = "Ou entre utilizando";
+"dont_have_account" = "Não possui uma conta?";
+"cad_description" = "Vamos Começar!";
+"cad_sub_description" = "Criar uma conta em Connect Prevision para usar suas funções";
+"sign_up" = "Cadastrar-se";
+"cad_name" = "Nome";
+"cad_email" = "E-Mail";
+"cad_phone" = "Telefone";
+"cad_password" = "Senha";
+"cad_confirm_pass" = "Confirme Sua Senha";
+"cad_confirm_button" = "CRIAR";
+"cad_already_have_account" = "Já possui uma conta? ";
+"cad_login" = "Logue Aqui";
+"loading" = "Carregando...";
+"sunrise" = "Nasceu do Sol";
+"sunset" = "Por do Sol";
+"humidity" = "Humidade";
+"uiv_light" = "Luz UV";
+"all_day" = "Dia Todo";
+"feels_like" = "Sensação de ";
+"low" = "Baixo";
+"moderate" = "Moderada";
+"high" = "Elevada";
+"very_high" = "Alta";
+"home" = "Pagina Inicial";
+"seven_days" = "Proximos Dias";
+"profile" = "Perfil";
+"your_account" = "SUA CONTA";

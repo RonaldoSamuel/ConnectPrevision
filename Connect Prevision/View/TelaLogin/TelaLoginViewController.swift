@@ -14,7 +14,7 @@ import GoogleSignIn
 
 
 class TelaLoginViewController: UIViewController{
-
+    
     var presentationView = TelaLoginView()
     weak var coordinator: LoginCoordinator?
     var disposable = DisposeBag()
@@ -30,9 +30,7 @@ class TelaLoginViewController: UIViewController{
         bindView()
         viewModel.viewDidLoad()
         
-        
         GIDSignIn.sharedInstance()?.presentingViewController = self
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -49,7 +47,7 @@ class TelaLoginViewController: UIViewController{
         
         presentationView.btnChange.rx.tap.bind { _ in
             let value = self.presentationView.txtPassword.isSecureTextEntry
-            value ? self.presentationView.btnChange.setImage(UIImage(named: "visible")?.withRenderingMode(.alwaysTemplate), for: .normal) : self.presentationView.btnChange.setImage(UIImage(named: "notVisible")?.withRenderingMode(.alwaysTemplate), for: .normal)
+            value ? self.presentationView.btnChange.setImage(UIImage(named: .ic_visible)?.withRenderingMode(.alwaysTemplate), for: .normal) : self.presentationView.btnChange.setImage(UIImage(named: .ic_not_visible)?.withRenderingMode(.alwaysTemplate), for: .normal)
             self.presentationView.txtPassword.togglePasswordVisible()
         }.disposed(by: disposable)
         
@@ -76,16 +74,11 @@ class TelaLoginViewController: UIViewController{
                 print("falso")
             }}.disposed(by: disposable)
         
-        
         presentationView.signUpButton.rx
             .tap
             .bind {
                 self.coordinator?.parentCoordinator?.cadastro()
             }.disposed(by: disposable)
-       
     }
     
-   
-    
-   
 }

@@ -46,9 +46,6 @@ class TelaHomeViewController: UITabBarController{
     
     func bindView(){
         
-        viewModel.bindViewModel()
-                
-        
         timer = Timer.scheduledTimer(timeInterval: 60, target: self, selector: #selector(atualizaData(_:)), userInfo: nil, repeats: true)
         atualizaData(timer!)
         
@@ -72,7 +69,7 @@ class TelaHomeViewController: UITabBarController{
             atualizarDadosTela()
             break
         default:
-            print("Status sem validação")
+            print("Carregando")
             break
         }
     }
@@ -81,20 +78,25 @@ class TelaHomeViewController: UITabBarController{
         guard let current = self.viewModel.data?.current else { return }
         guard let location = self.viewModel.data?.location else { return }
         guard let forecast = self.viewModel.data?.forecast else { return }
+        if "language".translate == "us"{
+            self.presentationView.tempLabel.text = "\(current.tempF)"
+            self.presentationView.feelsLike.text = ("feels_like".translate)+"\(current.feelslikeF)°f"
+        }else{
+            self.presentationView.tempLabel.text = "\(current.tempC)"
+            self.presentationView.feelsLike.text = ("feels_like".translate)+"\(current.feelslikeC)°c"
+        }
         
-        self.presentationView.tempLabel.text = "\(current.tempC)"
-        self.presentationView.feelsLike.text = "Sensação de \(current.feelslikeC)"
         self.presentationView.componente3.setupContentText(conteudo: "\(current.humidity)%")
         self.presentationView.localLabel.text = "\(location.name) - \(location.region)"
-        
+        print(current.lastUpdated)
         if current.uv < 4 {
-            self.presentationView.componente1.setupContentText(conteudo: "Baixo")
+            self.presentationView.componente1.setupContentText(conteudo: "low".translate)
         }else if current.uv < 7 {
-            self.presentationView.componente1.setupContentText(conteudo: "Moderada")
+            self.presentationView.componente1.setupContentText(conteudo: "moderate".translate)
         }else if current.uv < 10 {
-            self.presentationView.componente1.setupContentText(conteudo: "Elevada")
+            self.presentationView.componente1.setupContentText(conteudo: "high".translate)
         }else{
-            self.presentationView.componente1.setupContentText(conteudo: "Alta")
+            self.presentationView.componente1.setupContentText(conteudo: "bery_high".translate)
         }
         
         self.presentationView.componente2.setupContentText(conteudo: (forecast.forecastday[0].astro.sunrise))
@@ -104,7 +106,13 @@ class TelaHomeViewController: UITabBarController{
     @objc func atualizaData(_ timer: Timer){
         
         let dateFormmater = DateFormatter()
-        dateFormmater.dateFormat = "EE, MMM dd HH:mm"
+        let loc = Locale(identifier: "language".translate)
+        dateFormmater.locale = loc
+        if "language".translate == "us"{
+            dateFormmater.dateFormat = "EE, MMM dd HH:mm"
+        }else{
+            dateFormmater.dateFormat = "EEEE dd/MMM HH:mm"
+        }
         let date1 = Date()
         presentationView.dateLabel.text = dateFormmater.string(from: date1)
     }
@@ -123,17 +131,17 @@ extension TelaHomeViewController: UICollectionViewDelegateFlowLayout {
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.bounds.size.width/5, height: 100)
     }
-
+    
     // item spacing = vertical spacing in horizontal flow
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return (UIScreen.main.bounds.width*0.1)
     }
-
+    
     // line spacing = horizontal spacing in horizontal flow
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return (UIScreen.main.bounds.width*0.05)
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: (UIScreen.main.bounds.width*0.1 / 2.0),
                             bottom: 0, right: (UIScreen.main.bounds.width*0.1 / 2.0))

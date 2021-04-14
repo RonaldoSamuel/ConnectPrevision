@@ -30,7 +30,7 @@ class TelaPerfilViewModel{
     func bindViews(){
         userName.accept((Auth.auth().currentUser!.displayName ?? "Usuario"))
         userEmail.accept(Auth.auth().currentUser!.email ?? "Email Do Usuario")
-        userPhoto.accept("\(Auth.auth().currentUser!.photoURL)")
+        userPhoto.accept("\(String(describing: Auth.auth().currentUser!.photoURL))")
         userNumber.accept(Auth.auth().currentUser!.phoneNumber ?? "Carregando")
         
     }

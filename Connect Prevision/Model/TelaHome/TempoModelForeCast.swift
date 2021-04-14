@@ -38,7 +38,7 @@ struct Current: Codable {
     let visKM, visMiles, uv: Double
     let gustMph: Double
     let gustKph: Double
-
+    
     enum CodingKeys: String, CodingKey {
         case lastUpdatedEpoch = "last_updated_epoch"
         case lastUpdated = "last_updated"
@@ -82,7 +82,7 @@ struct Forecastday: Codable {
     let day: Day
     let astro: Astro
     let hour: [Hour]
-
+    
     enum CodingKeys: String, CodingKey {
         case date
         case dateEpoch = "date_epoch"
@@ -94,7 +94,7 @@ struct Forecastday: Codable {
 struct Astro: Codable {
     let sunrise, sunset, moonrise, moonset: String
     let moonPhase, moonIllumination: String
-
+    
     enum CodingKeys: String, CodingKey {
         case sunrise, sunset, moonrise, moonset
         case moonPhase = "moon_phase"
@@ -114,7 +114,7 @@ struct Day: Codable {
     let dailyChanceOfSnow: String
     let condition: Condition
     let uv: Double
-
+    
     enum CodingKeys: String, CodingKey {
         case maxtempC = "maxtemp_c"
         case maxtempF = "maxtemp_f"
@@ -156,7 +156,7 @@ struct Hour: Codable {
     let visKM: Double?
     let gustMph, gustKph: Double?
     let uv: Double?
-
+    
     enum CodingKeys: String, CodingKey {
         case timeEpoch = "time_epoch"
         case time
@@ -229,7 +229,7 @@ struct Location: Codable {
     let tzID: String
     let localtimeEpoch: Double
     let localtime: String
-
+    
     enum CodingKeys: String, CodingKey {
         case name, region, country, lat, lon
         case tzID = "tz_id"

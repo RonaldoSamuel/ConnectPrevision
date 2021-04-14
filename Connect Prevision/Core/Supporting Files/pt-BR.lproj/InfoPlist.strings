@@ -1,0 +1,10 @@
+/* 
+ InfoPlist.strings
+ Connect Prevision
+ 
+ Created by Ronaldo Filho on 13/04/21.
+ 
+ */
+
+NSLocationAlwaysAndWhenInUseUsageDescription = "Usaremos isto para melhorar sua experiencia";
+NSLocationWhenInUseUsageDescription = "Usaremos isto para melhorar sua experiencia";

@@ -12,7 +12,7 @@ import RxCocoa
 class TelaCadastroViewController: UIViewController {
     
     var disposable = DisposeBag()
-   weak var coordinator: CadastroCoordinator?
+    weak var coordinator: CadastroCoordinator?
     var presentationView = TelaCadastroView()
     var viewModel = TelaCadastroViewModel()
     
@@ -29,8 +29,6 @@ class TelaCadastroViewController: UIViewController {
     
     func bindView(){
         
-        
-        
         presentationView.signUpButton.rx.tap.bind { self.viewModel.create()}.disposed(by: disposable)
         
         presentationView.txtNome.text.bind(to: viewModel.nome).disposed(by: disposable)
@@ -43,11 +41,9 @@ class TelaCadastroViewController: UIViewController {
         
         presentationView.txtConfirmSenha.text.bind(to: viewModel.confirmPassword).disposed(by: disposable)
         
-//        viewModel.isPasswordEqual.bind { value in self.presentationView.signUpButton.isEnabled = value }.disposed(by: disposable)
-        
         presentationView.btnChange.rx.tap.bind {
             let value = self.presentationView.txtSenha.isSecureTextEntry
-            value ? self.presentationView.btnChange.setImage(UIImage(named: "visible")?.withRenderingMode(.alwaysTemplate), for: .normal) : self.presentationView.btnChange.setImage(UIImage(named: "notVisible")?.withRenderingMode(.alwaysTemplate), for: .normal)
+            value ? self.presentationView.btnChange.setImage(UIImage(named: .ic_visible)?.withRenderingMode(.alwaysTemplate), for: .normal) : self.presentationView.btnChange.setImage(UIImage(named: .ic_not_visible)?.withRenderingMode(.alwaysTemplate), for: .normal)
             self.presentationView.txtSenha.togglePasswordVisible()
             self.presentationView.txtConfirmSenha.togglePasswordVisible()
         }.disposed(by: disposable)

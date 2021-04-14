@@ -81,7 +81,7 @@ class PerfilComponent: UIView {
             view.trailingAnchor.constraint(equalTo: trailingAnchor),
             view.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
-                
+        
         view.addSubview(iconTheme)
         NSLayoutConstraint.activate([
             iconTheme.centerYAnchor.constraint(equalTo: view.centerYAnchor),
@@ -107,7 +107,6 @@ class PerfilComponent: UIView {
         
     }
     
-   
     func settingDefaultsContentLabel(){
         contentLabel.textColor = UIColor(red: 0.33, green: 0.29, blue: 0.34, alpha: 1.00)
         contentLabel.font = UIFont.boldSystemFont(ofSize: 17)

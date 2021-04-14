@@ -64,7 +64,7 @@ class TemperaturaViewController: UIViewController{
     }
     
     func fetchBreachs(){
-            self.presentationView.contentTableView.reloadData()
+        self.presentationView.contentTableView.reloadData()
     }
     
 }

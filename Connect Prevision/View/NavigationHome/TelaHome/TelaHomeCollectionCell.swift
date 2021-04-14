@@ -87,11 +87,10 @@ class TelaHomeCollectionCell: UICollectionViewCell {
         verticalStack.addArrangedSubview(horarioLabel)
         verticalStack.addArrangedSubview(imagemItem)
         NSLayoutConstraint.activate([
-            imagemItem.widthAnchor.constraint(equalToConstant: 50),
-            imagemItem.heightAnchor.constraint(equalToConstant: 50)
+            imagemItem.widthAnchor.constraint(equalToConstant: 70),
+            imagemItem.heightAnchor.constraint(equalToConstant: 70)
         ])
         verticalStack.addArrangedSubview(labelDescricao)
-        
         
     }
     
@@ -107,14 +106,19 @@ class TelaHomeCollectionCell: UICollectionViewCell {
     }
     
     func configCell(_ item: Hour){
-        guard let horario = item.time, let temperatura = item.tempC else { return }
-        
-        
+        guard let horario = item.time, let temperatura = item.tempC, let temperaturaf = item.tempF else { return }
         let icone = "\(item.condition!.icon)"
         let iconCode = String(icone.suffix(7)).digits
-                
+        
         horarioLabel.text = "\(convertDateFormat(inputDate: horario))"
         imagemItem.image = UIImage(named: iconCode)?.withRenderingMode(.alwaysOriginal)
-        labelDescricao.text = "\(temperatura)°"
+        
+        if "language".translate == "us"{
+            labelDescricao.text = "\(temperaturaf)°f"
+        }else{
+            labelDescricao.text = "\(temperatura)°c"
+        }
+        
     }
+    
 }

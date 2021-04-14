@@ -41,7 +41,7 @@ class PerfilView: UIView{
     
     var iconImage: UIImageView = {
         var img = UIImageView()
-        img.image = UIImage(named: "Logo")?.withRenderingMode(.alwaysOriginal )
+        img.image = UIImage(named: .ic_logo)?.withRenderingMode(.alwaysOriginal )
         img.layer.cornerRadius = 25
         img.translatesAutoresizingMaskIntoConstraints = false
         return img
@@ -49,7 +49,7 @@ class PerfilView: UIView{
     
     var nameLabel: UILabel = {
         var lbl = UILabel()
-        lbl.text = "Carregando..."
+        lbl.text = "loading".translate
         lbl.textColor = .black
         lbl.font = UIFont.boldSystemFont(ofSize: 26)
         lbl.translatesAutoresizingMaskIntoConstraints = false
@@ -105,7 +105,7 @@ class PerfilView: UIView{
     
     var contaLabel: UILabel = {
         var lbl = UILabel()
-        lbl.text = "SUA CONTA"
+        lbl.text = "your_account".translate
         lbl.textColor = .gray
         lbl.font = UIFont.boldSystemFont(ofSize: 20)
         lbl.translatesAutoresizingMaskIntoConstraints = false
@@ -123,7 +123,7 @@ class PerfilView: UIView{
     
     var emailIcon: UIImageView = {
         var img = UIImageView()
-        img.image = UIImage(named: "EmailIcon")?.withRenderingMode(.alwaysTemplate)
+        img.image = UIImage(named: .ic_email)?.withRenderingMode(.alwaysTemplate)
         img.tintColor = .gray
         img.translatesAutoresizingMaskIntoConstraints = false
         return img
@@ -147,7 +147,7 @@ class PerfilView: UIView{
     
     var botaoDeslogar: MDCButton = {
         var btn = MDCButton()
-        btn.setImage(UIImage(named: "exit")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        btn.setImage(UIImage(named: .ic_logout)?.withRenderingMode(.alwaysTemplate), for: .normal)
         btn.setImageTintColor(.red, for: .normal)
         btn.contentMode = .scaleAspectFit
         btn.setBackgroundColor(.clear,for: .normal)
@@ -214,8 +214,8 @@ class PerfilView: UIView{
         addSubview(topView)
         NSLayoutConstraint.activate([
             topView.topAnchor.constraint(equalTo: topAnchor,constant: size.height*0.3),
-            topView.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 10),
-            topView.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -10),
+            topView.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 0),
+            topView.trailingAnchor.constraint(equalTo: trailingAnchor,constant: 0),
             topView.bottomAnchor.constraint(equalTo: bottomAnchor,constant: -size.height*0.25)
         ])
         
@@ -273,8 +273,8 @@ class PerfilView: UIView{
         NSLayoutConstraint.activate([
             bottomView.topAnchor.constraint(equalTo: topView.bottomAnchor,constant: 0),
             bottomView.bottomAnchor.constraint(equalTo: bottomAnchor,constant: 10),
-            bottomView.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 10),
-            bottomView.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -10)
+            bottomView.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 0),
+            bottomView.trailingAnchor.constraint(equalTo: trailingAnchor,constant: 0)
         ])
         
         bottomView.addSubview(contaLabel)
@@ -306,7 +306,6 @@ class PerfilView: UIView{
             siteAPILabel.leadingAnchor.constraint(equalTo: poweredLabel.trailingAnchor,constant: 4)
         ])
     }
-    
     
     func setupBotaoDeslogar(){
         topView.addSubview(botaoDeslogar)

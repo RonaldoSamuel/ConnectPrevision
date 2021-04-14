@@ -16,7 +16,7 @@ class HomeCoordinator: Coordinator{
         self.navigationController = navigationController
     }
     
-  func start(){
+    func start(){
         home()
     }
     

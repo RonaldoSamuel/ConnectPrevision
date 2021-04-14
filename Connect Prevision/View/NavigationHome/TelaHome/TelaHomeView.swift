@@ -52,7 +52,7 @@ class TelaHomeView: UIView {
         lbl.textAlignment = .center
         lbl.textColor = .white
         lbl.font = UIFont.boldSystemFont(ofSize: 18)
-        lbl.text = "Loading..."
+        lbl.text = "loading".translate
         lbl.translatesAutoresizingMaskIntoConstraints = false
         return lbl
     }()
@@ -66,9 +66,15 @@ class TelaHomeView: UIView {
         return lbl
     }()
     
+    
     var imagemGrau: UIImageView = {
         var img = UIImageView()
-        img.image = UIImage(named: "ic_celsius")?.withRenderingMode(.alwaysTemplate)
+        if "language".translate == "us" {
+            img.image = UIImage(named: .ic_farenheit)?.withRenderingMode(.alwaysTemplate)
+        }else{
+            img.image = UIImage(named: .ic_celsius)?.withRenderingMode(.alwaysTemplate)
+        }
+        
         img.tintColor = .white
         img.translatesAutoresizingMaskIntoConstraints = false
         return img
@@ -93,7 +99,7 @@ class TelaHomeView: UIView {
         lbl.layer.backgroundColor = UIColor(red: 0.24, green: 0.53, blue: 0.98, alpha: 1.00).cgColor
         lbl.textColor = .white
         lbl.font = UIFont.boldSystemFont(ofSize: 18)
-        lbl.text = "Loading"
+        lbl.text = "loading".translate
         lbl.translatesAutoresizingMaskIntoConstraints = false
         return lbl
     }()
@@ -103,14 +109,6 @@ class TelaHomeView: UIView {
         view.backgroundColor = .white
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
-    }()
-    var botaoDeslogar: MDCButton = {
-        var btn = MDCButton()
-        btn.setTitle("Deslogar", for: .normal)
-        btn.setTitleColor(.white, for: .normal)
-        btn.setBackgroundColor(.black,for: .normal)
-        btn.translatesAutoresizingMaskIntoConstraints = false
-        return btn
     }()
     
     var stackComponentesDadosHorizontal: UIStackView = {
@@ -131,6 +129,7 @@ class TelaHomeView: UIView {
         return stk
     }()
     
+    
     var stackComponentesDadosColuna2: UIStackView = {
         var stk = UIStackView()
         stk.distribution = .fillEqually
@@ -142,43 +141,43 @@ class TelaHomeView: UIView {
     
     var componente1: ViewComponentesTemperatura = {
         var componentes = ViewComponentesTemperatura()
-        componentes.setDesLabelText(conteudo: "UIV Index")
+        componentes.setDesLabelText(conteudo: "uiv_light".translate)
         componentes.setupContentText(conteudo: "...")
-        componentes.setIcon(named: "uivlight")
+        componentes.setIcon(named: .ic_uiv_light)
         componentes.translatesAutoresizingMaskIntoConstraints = false
         return componentes
     }()
     
     var componente2: ViewComponentesTemperatura = {
         var componentes = ViewComponentesTemperatura()
-        componentes.setDesLabelText(conteudo: "Sunrise")
+        componentes.setDesLabelText(conteudo: "sunrise".translate)
         componentes.setupContentText(conteudo: "...")
-        componentes.setIcon(named: "sunrise")
+        componentes.setIcon(named: .ic_sunrise)
         componentes.translatesAutoresizingMaskIntoConstraints = false
         return componentes
     }()
     
     var componente3: ViewComponentesTemperatura = {
         var componentes = ViewComponentesTemperatura()
-        componentes.setDesLabelText(conteudo: "Humidade")
+        componentes.setDesLabelText(conteudo: "humidity".translate)
         componentes.setupContentText(conteudo: "...")
-        componentes.setIcon(named: "humidity")
+        componentes.setIcon(named: .ic_humidity)
         componentes.translatesAutoresizingMaskIntoConstraints = false
         return componentes
     }()
     
     var componente4: ViewComponentesTemperatura = {
         var componentes = ViewComponentesTemperatura()
-        componentes.setDesLabelText(conteudo: "Sunset")
+        componentes.setDesLabelText(conteudo: "sunset".translate)
         componentes.setupContentText(conteudo: "...")
-        componentes.setIcon(named: "sunset")
+        componentes.setIcon(named: .ic_sunset)
         componentes.translatesAutoresizingMaskIntoConstraints = false
         return componentes
     }()
     
     var diaTodoLabel: UILabel = {
         var lbl = UILabel()
-        lbl.text = "Dia Todo"
+        lbl.text = "all_day".translate
         lbl.font = UIFont.boldSystemFont(ofSize: 14)
         lbl.textColor = .gray
         lbl.translatesAutoresizingMaskIntoConstraints = false
@@ -228,7 +227,6 @@ class TelaHomeView: UIView {
         setupNuvem2()
         setupNuvem3()
         setupNuvem4()
-        setupBotaoDeslogar()
         setupLabelLocal()
         setupLabelData()
         setupLabelTemperatura()
@@ -340,15 +338,6 @@ class TelaHomeView: UIView {
         ])
     }
     
-    func setupBotaoDeslogar(){
-        addSubview(botaoDeslogar)
-        NSLayoutConstraint.activate([
-            botaoDeslogar.centerXAnchor.constraint(equalTo: centerXAnchor),
-            botaoDeslogar.centerYAnchor.constraint(equalTo: centerYAnchor),
-            botaoDeslogar.widthAnchor.constraint(equalToConstant: 100),
-            botaoDeslogar.heightAnchor.constraint(equalToConstant: 50)
-        ])
-    }
     
     func setupStacks(){
         viewBottom.addSubview(stackComponentesDadosHorizontal)
@@ -370,15 +359,15 @@ class TelaHomeView: UIView {
     func setupCollectionView(){
         viewBottom.addSubview(collectionView)
         NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: stackComponentesDadosHorizontal.bottomAnchor,constant: 40),
-            collectionView.bottomAnchor.constraint(equalTo: viewBottom.bottomAnchor,constant: -40),
+            collectionView.topAnchor.constraint(equalTo: stackComponentesDadosHorizontal.bottomAnchor,constant: 80),
+            collectionView.bottomAnchor.constraint(equalTo: viewBottom.bottomAnchor,constant: -20),
             collectionView.leadingAnchor.constraint(equalTo: viewBottom.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: viewBottom.trailingAnchor)
         ])
         
         viewBottom.addSubview(diaTodoLabel)
         NSLayoutConstraint.activate([
-            diaTodoLabel.bottomAnchor.constraint(equalTo: collectionView.topAnchor,constant: size.height*0.02),
+            diaTodoLabel.bottomAnchor.constraint(equalTo: collectionView.topAnchor,constant: 10),
             diaTodoLabel.centerXAnchor.constraint(equalTo: collectionView.centerXAnchor)
         ])
     }

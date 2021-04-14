@@ -29,12 +29,11 @@ class SignHelper {
                 self.snackbar(message: Error.localizedDescription)
                 print("Sua Senha é fraca")
                 break
-            
+                
             default:
                 self.snackbar(message: Error.localizedDescription)
                 print("Error: \(Error.localizedDescription)")
             }
-            
             
         } else {
             self.snackbar(message: "Usuario Cadastrado com Sucesso")

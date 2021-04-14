@@ -35,7 +35,7 @@ class SeteDiasCell: UITableViewCell {
         lbl.textAlignment = .center
         lbl.font = UIFont.systemFont(ofSize: 16)
         lbl.textColor = .black
-        lbl.numberOfLines = 0
+        lbl.numberOfLines = 1
         return lbl
     }()
     
@@ -44,7 +44,7 @@ class SeteDiasCell: UITableViewCell {
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.textAlignment = .center
         lbl.font = UIFont.systemFont(ofSize: 16)
-        lbl.numberOfLines = 0
+        lbl.numberOfLines = 1
         return lbl
     }()
     
@@ -53,7 +53,7 @@ class SeteDiasCell: UITableViewCell {
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.textAlignment = .center
         lbl.font = UIFont.systemFont(ofSize: 16)
-        lbl.numberOfLines = 0
+        lbl.numberOfLines = 1
         return lbl
     }()
     
@@ -71,9 +71,9 @@ class SeteDiasCell: UITableViewCell {
         var lbl = UILabel()
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.textColor = .blue
-        lbl.textAlignment = .center
+        lbl.textAlignment = .left
         lbl.font = UIFont.systemFont(ofSize: 16)
-        lbl.numberOfLines = 0
+        lbl.numberOfLines = 1
         return lbl
     }()
     
@@ -107,56 +107,81 @@ class SeteDiasCell: UITableViewCell {
     }
     
     func setupStack(){
-        cardTable.addSubview(stackDentro)
+        cardTable.addSubview(diaSemana)
         NSLayoutConstraint.activate([
-            stackDentro.topAnchor.constraint(equalTo: cardTable.topAnchor),
-            stackDentro.leadingAnchor.constraint(equalTo: cardTable.leadingAnchor),
-            stackDentro.trailingAnchor.constraint(equalTo: cardTable.trailingAnchor),
-            stackDentro.heightAnchor.constraint(equalToConstant: 30)
+            diaSemana.topAnchor.constraint(equalTo: cardTable.topAnchor),
+            diaSemana.leadingAnchor.constraint(equalTo: cardTable.leadingAnchor,constant: 20),
+            diaSemana.trailingAnchor.constraint(equalTo: diaSemana.leadingAnchor,constant: 40),
+            diaSemana.bottomAnchor.constraint(equalTo: cardTable.bottomAnchor)
         ])
         
-        stackDentro.addArrangedSubview(diaSemana)
-        stackDentro.addArrangedSubview(tempC)
-        stackDentro.addArrangedSubview(feelsLike)
-        stackDentro.addArrangedSubview(btnProximo)
+        cardTable.addSubview(tempC)
         NSLayoutConstraint.activate([
-            btnProximo.widthAnchor.constraint(equalToConstant: 30),
-            btnProximo.heightAnchor.constraint(equalToConstant: 30)
+            tempC.topAnchor.constraint(equalTo: cardTable.topAnchor),
+            tempC.leadingAnchor.constraint(equalTo: diaSemana.trailingAnchor,constant: 10),
+            tempC.trailingAnchor.constraint(equalTo: tempC.leadingAnchor,constant: 50),
+            tempC.bottomAnchor.constraint(equalTo: cardTable.bottomAnchor)
         ])
-        stackDentro.addArrangedSubview(condiction)
         
+        cardTable.addSubview(feelsLike)
+        NSLayoutConstraint.activate([
+            feelsLike.topAnchor.constraint(equalTo: cardTable.topAnchor),
+            feelsLike.leadingAnchor.constraint(equalTo: tempC.trailingAnchor,constant: 5),
+            feelsLike.trailingAnchor.constraint(equalTo: feelsLike.leadingAnchor,constant: 50),
+            feelsLike.bottomAnchor.constraint(equalTo: cardTable.bottomAnchor)
+        ])
+        
+        cardTable.addSubview(btnProximo)
+        NSLayoutConstraint.activate([
+            btnProximo.topAnchor.constraint(equalTo: cardTable.topAnchor),
+            btnProximo.leadingAnchor.constraint(equalTo: feelsLike.trailingAnchor,constant: 10),
+            btnProximo.trailingAnchor.constraint(equalTo: btnProximo.leadingAnchor,constant: 40),
+            btnProximo.bottomAnchor.constraint(equalTo: cardTable.bottomAnchor)
+        ])
+        
+        cardTable.addSubview(condiction)
+        NSLayoutConstraint.activate([
+            condiction.topAnchor.constraint(equalTo: cardTable.topAnchor),
+            condiction.leadingAnchor.constraint(equalTo: btnProximo.trailingAnchor,constant: 10),
+            condiction.trailingAnchor.constraint(equalTo: cardTable.trailingAnchor,constant: -20),
+            condiction.bottomAnchor.constraint(equalTo: cardTable.bottomAnchor)
+        ])
     }
     
     func convertDateFormat(inputDate: String) -> String {
-        print(inputDate)
         let olDateFormatter = DateFormatter()
         olDateFormatter.dateFormat = "yyyy-MM-dd"
         
         guard let oldDate = (olDateFormatter.date(from: inputDate)) else { return "falso" }
         let convertDateFormatter = DateFormatter()
         
+        let loc = Locale(identifier: "language".translate)
+        convertDateFormatter.locale = loc
         convertDateFormatter.dateFormat = "EE"
         return convertDateFormatter.string(from: oldDate)
     }
     
     
     func configCell(_ item: Forecastday,index: Int){
-        let horario = item.date
-        diaSemana.text = "\(convertDateFormat(inputDate: item.date))"
-        
-        tempC.text = "\(item.day.avgtempC)"
-        tempC.textColor = UIColor(red: 0.24, green: 0.53, blue: 0.98, alpha: 0.80)
-        
-        feelsLike.text = "\(item.day.maxtempC)"
-        feelsLike.textColor = .gray
-        
         let icone = "\(item.day.condition.icon)"
         let iconCode = String(icone.suffix(7)).digits
-        
         btnProximo.setImage(UIImage(named: iconCode), for: .normal)
         
+        diaSemana.text = "\(convertDateFormat(inputDate: item.date))"
         condiction.text = "\(item.day.condition.text)"
+        
+        if "language".translate == "us"{
+            tempC.text = "\(item.day.avgtempF)°f"
+            feelsLike.text = "\(item.day.maxtempF)°f"
+        }else{
+            tempC.text = "\(item.day.avgtempC)°c"
+            feelsLike.text = "\(item.day.maxtempC)°c"
+        }
+        
+        tempC.textColor = UIColor(red: 0.24, green: 0.53, blue: 0.98, alpha: 0.80)
         condiction.textColor = UIColor(red: 0.24, green: 0.53, blue: 0.98, alpha: 1.00)
+        feelsLike.textColor = .gray
+        
         backgroundColor = .clear
     }
 }

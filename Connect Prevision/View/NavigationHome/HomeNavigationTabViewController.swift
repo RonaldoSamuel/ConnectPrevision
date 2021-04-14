@@ -27,20 +27,20 @@ class HomeNavigationTabViewController: UITabBarController {
         
         let homeView = TelaHomeViewController()
         homeView.coordinator = coordinator
-        let homeImg = UIImage(named: "ic_home")
-        let homeItem = UITabBarItem(title: "home", image: homeImg, tag: 1)
+        let homeImg = UIImage(named: .ic_home)
+        let homeItem = UITabBarItem(title: "home".translate, image: homeImg, tag: 1)
         homeView.tabBarItem = homeItem
         
         let TemperaturaView = TemperaturaViewController()
         TemperaturaView.coordinator = coordinator
-        let devicesImg = UIImage(named: "ic_person_location")
-        let devicesItem = UITabBarItem(title: "Next Days", image: devicesImg, tag: 1)
+        let devicesImg = UIImage(named: .ic_perfil_location)
+        let devicesItem = UITabBarItem(title: "seven_days".translate, image: devicesImg, tag: 1)
         TemperaturaView.tabBarItem = devicesItem
         
         let perfilView = PerfilViewController()
         perfilView.coordinator = coordinator
-        let perfilImg = UIImage(named: "ic_perfil")
-        let perfilItem = UITabBarItem(title: "perfil", image: perfilImg, tag: 1)
+        let perfilImg = UIImage(named: .ic_perfil)
+        let perfilItem = UITabBarItem(title: "profile".translate, image: perfilImg, tag: 1)
         perfilView.tabBarItem = perfilItem
         
         mainViewControllers.append(homeView)

@@ -1,0 +1,41 @@
+/* 
+ Localizable.strings
+ Connect Prevision
+ 
+ Created by Ronaldo Filho on 12/04/21.
+ 
+ */
+"language" = "us";
+"login_using_exist_account" = "Log in to your existant account of Connect Prevision";
+"email" = "E-mail";
+"password" = "Password";
+"forgot_pass" = "Forgot Password?";
+"log_in" = "LOG IN";
+"other_login_method" = "Or Connect Using";
+"dont_have_account" = "Don't have an account?";
+"cad_description" = "Let's Get Started";
+"cad_sub_description" = "Create an account to Connect Prevision to get all features";
+"sign_up" = "Sign Up";
+"cad_name" = "Name";
+"cad_email" = "E-Mail";
+"cad_phone" = "Phone";
+"cad_password" = "Password";
+"cad_confirm_pass" = "Confirm Password";
+"cad_confirm_button" = "";
+"cad_already_have_account" = "Already have an account? ";
+"cad_login" = "Login here";
+"loading" = "Loading...";
+"sunrise" = "Sunrise";
+"sunset" = "Sunset";
+"humidity" = "Humidity";
+"uiv_light" = "UIV Light";
+"all_day" = "Today";
+"feels_like" = "Feels Like ";
+"low" = "Low";
+"moderate" = "Moderate";
+"high" = "High";
+"very_high" = "Very High";
+"home" = "Home";
+"seven_days" = "Seven Days";
+"profile" = "Profile";
+"your_account" = "YOUR ACCOUNT";

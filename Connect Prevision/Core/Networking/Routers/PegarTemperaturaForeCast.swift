@@ -28,7 +28,7 @@ enum PegarTemperaturaForeCast: APIConfiguration {
                 "days": 7,
                 "aqi": "no",
                 "alerts": "no",
-                "lang": "pt"
+                "lang": "language".translate
             ])
         }
     }

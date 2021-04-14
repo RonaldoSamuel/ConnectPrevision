@@ -16,16 +16,12 @@ enum TelaHomeStatus {
 }
 
 class TelaHomeViewModel: NSObject {
-    
-    var breachesRX: BehaviorRelay<[Forecastday]> = BehaviorRelay<[Forecastday]>(value: [])
-    
     var firebaseHelper = LoginHelper()
-    var dataSourse: BehaviorRelay<ForeCastModel> = BehaviorRelay<ForeCastModel>(value: ForeCastModel())
-    var dataSourseHour: BehaviorRelay<[Hour]> = BehaviorRelay<[Hour]>(value: [])
     let locationManager = CLLocationManager()
     
-   
-    var data: ForeCastModel?
+    var breachesRX: BehaviorRelay<[Forecastday]> = BehaviorRelay<[Forecastday]>(value: [])
+    var dataSourse: BehaviorRelay<ForeCastModel> = BehaviorRelay<ForeCastModel>(value: ForeCastModel())
+    var dataSourseHour: BehaviorRelay<[Hour]> = BehaviorRelay<[Hour]>(value: [])
     
     var statusFeedback: BehaviorRelay<TelaHomeStatus> = BehaviorRelay<TelaHomeStatus>(value: .DEFAULT)
     
@@ -44,7 +40,6 @@ class TelaHomeViewModel: NSObject {
             lat: lat,
             long: long,
             completion: { result in
-                self.data = result
                 self.dataSourse.accept(result)
                 self.breachesRX.accept(result.forecast!.forecastday)
                 self.dataSourseHour.accept(result.forecast!.forecastday[0].hour)

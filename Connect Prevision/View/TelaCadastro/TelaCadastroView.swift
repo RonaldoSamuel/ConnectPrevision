@@ -19,7 +19,7 @@ class TelaCadastroView: UIView {
     }()
     
     var stackCadastro: UIStackView = {
-      var stk = UIStackView()
+        var stk = UIStackView()
         stk.axis = .vertical
         stk.translatesAutoresizingMaskIntoConstraints = false
         return stk
@@ -33,7 +33,7 @@ class TelaCadastroView: UIView {
     
     var descricaoLabel: UILabel = {
         var lbl = UILabel()
-        lbl.text = "Let's Get Started!"
+        lbl.text = "cad_description".translate
         lbl.textAlignment = .center
         lbl.textColor = .black
         lbl.font = UIFont.boldSystemFont(ofSize: 30)
@@ -43,8 +43,9 @@ class TelaCadastroView: UIView {
     
     var subDescricaolabel: UILabel = {
         var lbl = UILabel()
-        lbl.text = "Create an account to Q Allure to get all features"
+        lbl.text = "cad_sub_description".translate
         lbl.textAlignment = .center
+        lbl.numberOfLines = 0
         lbl.textColor = .gray
         lbl.font = UIFont.systemFont(ofSize: 15)
         lbl.translatesAutoresizingMaskIntoConstraints = false
@@ -53,39 +54,39 @@ class TelaCadastroView: UIView {
     
     var txtNome: TextFieldFormulario = {
         var txt = TextFieldFormulario()
-        txt.setPlaceholder("Name")
-        txt.setIcon(named: "UserIcon")
+        txt.setPlaceholder("cad_name".translate)
+        txt.setIcon(named: .ic_user)
         txt.translatesAutoresizingMaskIntoConstraints = false
         return txt
     }()
     
     var txtEmail: TextFieldFormulario = {
         var txt = TextFieldFormulario()
-        txt.setPlaceholder("E-Mail")
-        txt.setIcon(named: "EmailIcon")
+        txt.setPlaceholder("cad_email".translate)
+        txt.setIcon(named: .ic_email)
         txt.translatesAutoresizingMaskIntoConstraints = false
         return txt
     }()
     
     var txtPhone: TextFieldFormulario = {
         var txt = TextFieldFormulario()
-        txt.setPlaceholder("Phone")
-        txt.setIcon(named: "PhoneIcon")
+        txt.setPlaceholder("cad_phone".translate)
+        txt.setIcon(named: .ic_phone)
         txt.translatesAutoresizingMaskIntoConstraints = false
         return txt
     }()
     
     var txtSenha: TextFieldFormulario = {
         var txt = TextFieldFormulario()
-        txt.setPlaceholder("Password")
-        txt.setIcon(named: "PasswordIcon")
+        txt.setPlaceholder("cad_password".translate)
+        txt.setIcon(named: .ic_password)
         txt.translatesAutoresizingMaskIntoConstraints = false
         return txt
     }()
     
     var btnChange: UIButton = {
-       var btn = UIButton()
-        btn.setImage(UIImage(named: "visible")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        var btn = UIButton()
+        btn.setImage(UIImage(named: .ic_visible)?.withRenderingMode(.alwaysTemplate), for: .normal)
         btn.tintColor = .gray
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
@@ -93,26 +94,26 @@ class TelaCadastroView: UIView {
     
     var txtConfirmSenha: TextFieldFormulario = {
         var txt = TextFieldFormulario()
-        txt.setPlaceholder("Confirm Password")
-        txt.setIcon(named: "PasswordIcon")
+        txt.setPlaceholder("cad_confirm_pass".translate)
+        txt.setIcon(named: .ic_password)
         txt.translatesAutoresizingMaskIntoConstraints = false
         return txt
     }()
     
     var signUpButton: MDCButton = {
         var btn = MDCButton()
-         btn.setShadowColor(UIColor(red: 0.14, green: 0.29, blue: 0.64, alpha: 1.00), for: .normal)
-         btn.layer.cornerRadius = 24
-         btn.setBackgroundColor(UIColor(red: 0.14, green: 0.29, blue: 0.64, alpha: 1.00), for: .normal)
-         btn.setTitle("CREATE", for: .normal)
-         btn.setElevation(.raisedButtonPressed, for: .normal)
-         btn.translatesAutoresizingMaskIntoConstraints = false
-         return btn
+        btn.setShadowColor(UIColor(red: 0.14, green: 0.29, blue: 0.64, alpha: 1.00), for: .normal)
+        btn.layer.cornerRadius = 24
+        btn.setBackgroundColor(UIColor(red: 0.14, green: 0.29, blue: 0.64, alpha: 1.00), for: .normal)
+        btn.setTitle("cad_confirm_button".translate, for: .normal)
+        btn.setElevation(.raisedButtonPressed, for: .normal)
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        return btn
     }()
     
     var haveACount: UILabel = {
         var lbl = UILabel()
-        lbl.text = "Already have an account? "
+        lbl.text = "cad_already_have_account".translate
         lbl.textAlignment = .right
         lbl.font = UIFont.systemFont(ofSize: 14)
         lbl.translatesAutoresizingMaskIntoConstraints = false
@@ -122,7 +123,7 @@ class TelaCadastroView: UIView {
     var loginButton: UIButton = {
         var btn = UIButton()
         btn.backgroundColor = .clear
-        btn.setTitle("Login here", for: .normal)
+        btn.setTitle("cad_login".translate, for: .normal)
         btn.contentHorizontalAlignment = .left
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 15)
         btn.setTitleColor(UIColor(red: 0.23, green: 0.48, blue: 0.97, alpha: 1.00), for: .normal)
@@ -176,19 +177,19 @@ class TelaCadastroView: UIView {
     
     func setupViewCadastroForm(){
         stackCadastro.addArrangedSubview(viewItensForm)
-    
+        
         viewItensForm.addSubview(descricaoLabel)
         NSLayoutConstraint.activate([
             descricaoLabel.topAnchor.constraint(equalTo: viewItensForm.topAnchor,constant: size.height*0.13),
             descricaoLabel.leadingAnchor.constraint(equalTo: viewItensForm.leadingAnchor),
             descricaoLabel.trailingAnchor.constraint(equalTo: viewItensForm.trailingAnchor)
         ])
-    
+        
         viewItensForm.addSubview(subDescricaolabel)
         NSLayoutConstraint.activate([
             subDescricaolabel.topAnchor.constraint(equalTo: descricaoLabel.bottomAnchor,constant: 5),
-            subDescricaolabel.leadingAnchor.constraint(equalTo: viewItensForm.leadingAnchor),
-            subDescricaolabel.trailingAnchor.constraint(equalTo: viewItensForm.trailingAnchor)
+            subDescricaolabel.leadingAnchor.constraint(equalTo: viewItensForm.leadingAnchor,constant: 20),
+            subDescricaolabel.trailingAnchor.constraint(equalTo: viewItensForm.trailingAnchor,constant: -20)
         ])
         
         viewItensForm.addSubview(txtNome)
@@ -198,21 +199,21 @@ class TelaCadastroView: UIView {
             txtNome.trailingAnchor.constraint(equalTo: viewItensForm.trailingAnchor,constant: -25),
             txtNome.heightAnchor.constraint(equalToConstant: 60)
         ])
-    
+        
         viewItensForm.addSubview(txtEmail)
         NSLayoutConstraint.activate([
             txtEmail.topAnchor.constraint(equalTo: txtNome.bottomAnchor,constant: size.height*0.03),
             txtEmail.leadingAnchor.constraint(equalTo: viewItensForm.leadingAnchor,constant: 25),
             txtEmail.trailingAnchor.constraint(equalTo: viewItensForm.trailingAnchor,constant: -25)
         ])
-    
+        
         viewItensForm.addSubview(txtPhone)
         NSLayoutConstraint.activate([
             txtPhone.topAnchor.constraint(equalTo: txtEmail.bottomAnchor,constant: size.height*0.03),
             txtPhone.leadingAnchor.constraint(equalTo: viewItensForm.leadingAnchor,constant: 25),
             txtPhone.trailingAnchor.constraint(equalTo: viewItensForm.trailingAnchor,constant: -25)
         ])
-    
+        
         viewItensForm.addSubview(txtSenha)
         NSLayoutConstraint.activate([
             txtSenha.topAnchor.constraint(equalTo: txtPhone.bottomAnchor,constant: size.height*0.03),
@@ -226,14 +227,14 @@ class TelaCadastroView: UIView {
             btnChange.bottomAnchor.constraint(equalTo: txtSenha.bottomAnchor),
             btnChange.trailingAnchor.constraint(equalTo: txtSenha.trailingAnchor,constant: -15)
         ])
-    
+        
         viewItensForm.addSubview(txtConfirmSenha)
         NSLayoutConstraint.activate([
             txtConfirmSenha.topAnchor.constraint(equalTo: txtSenha.bottomAnchor,constant: size.height*0.03),
             txtConfirmSenha.leadingAnchor.constraint(equalTo: viewItensForm.leadingAnchor,constant: 25),
             txtConfirmSenha.trailingAnchor.constraint(equalTo: viewItensForm.trailingAnchor,constant: -25)
         ])
-    
+        
         viewItensForm.addSubview(signUpButton)
         NSLayoutConstraint.activate([
             signUpButton.topAnchor.constraint(equalTo: txtConfirmSenha.bottomAnchor,constant: size.height*0.05),
@@ -241,14 +242,14 @@ class TelaCadastroView: UIView {
             signUpButton.trailingAnchor.constraint(equalTo: viewItensForm.trailingAnchor,constant: -size.width*0.25),
             signUpButton.heightAnchor.constraint(equalToConstant: 48)
         ])
-    
+        
         viewItensForm.addSubview(haveACount)
         NSLayoutConstraint.activate([
             haveACount.topAnchor.constraint(equalTo: signUpButton.bottomAnchor,constant: size.height*0.07),
             haveACount.leadingAnchor.constraint(equalTo: viewItensForm.leadingAnchor,constant: 25),
             haveACount.trailingAnchor.constraint(equalTo: viewItensForm.trailingAnchor,constant: -self.size.width*0.40)
         ])
-    
+        
         viewItensForm.addSubview(loginButton)
         NSLayoutConstraint.activate([
             loginButton.topAnchor.constraint(equalTo: haveACount.topAnchor),
@@ -258,5 +259,5 @@ class TelaCadastroView: UIView {
             loginButton.bottomAnchor.constraint(equalTo: viewItensForm.bottomAnchor,constant: -25)
         ])
     }
-        
+    
 }

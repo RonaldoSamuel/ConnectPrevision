@@ -16,7 +16,7 @@ class NavigationBarCoordinator: Coordinator{
         self.navigationController = navigationController
     }
     
-  func start(){
+    func start(){
         home()
     }
     

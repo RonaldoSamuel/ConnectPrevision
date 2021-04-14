@@ -16,7 +16,7 @@ class PerfilViewController: UIViewController{
     var viewModel = TelaPerfilViewModel()
     var disposable = DisposeBag()
     
-   
+    
     override func loadView() {
         view = presentationView
     }
@@ -53,10 +53,7 @@ class PerfilViewController: UIViewController{
                 self.presentationView.imageView.downloaded(from: value)
             }
             self.presentationView.imageView.image = UIImage(named: "Logo")
-           }.disposed(by: disposable)
-        
-//        viewModel.userEmail.bind{ value in self.presentationView.emailLabel.text = value }.disposed(by: disposable)
-//        viewModel.userNumber.bind{ value in self.presentationView.phoneLabel.text = value}.disposed(by: disposable)
+        }.disposed(by: disposable)
         
     }
     
