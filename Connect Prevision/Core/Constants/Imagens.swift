@@ -30,7 +30,7 @@ extension String {
     static let ic_farenheit = "ic_farenheit"
     static let ic_home = "ic_home"
     static let ic_perfil = "ic_perfil"
-    static let ic_perfil_location = "ic_perfil_location"
+    static let ic_person_location = "ic_person_location"
     static let ic_person = "ic_person"
     static let ic_logo = "Logo"
     static let ic_not_visible = "notVisible"

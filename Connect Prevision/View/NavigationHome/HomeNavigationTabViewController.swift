@@ -33,7 +33,7 @@ class HomeNavigationTabViewController: UITabBarController {
         
         let TemperaturaView = TemperaturaViewController()
         TemperaturaView.coordinator = coordinator
-        let devicesImg = UIImage(named: .ic_perfil_location)
+        let devicesImg = UIImage(named: .ic_person_location)
         let devicesItem = UITabBarItem(title: "seven_days".translate, image: devicesImg, tag: 1)
         TemperaturaView.tabBarItem = devicesItem
         
