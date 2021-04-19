@@ -259,7 +259,41 @@ class TelaHomeView: UIView {
             self.imagemNuvem3.transform = CGAffineTransform(translationX: self.size.width*0.3, y: self.size.height*0.05)
             self.imagemNuvem4.transform = CGAffineTransform(translationX: -self.size.width*0.25, y: self.size.height*0.1)
         }
-
+        
+        UIView.animate(withDuration: 9.0, delay: 0, options: [.repeat], animations: {
+            
+            self.rainParticle1.frame = CGRect(x: 0, y: self.size.height*0.6, width: self.size.width, height: self.size.height*0.4)
+            
+        }, completion: nil)
+        UIView.animate(withDuration: 7.0, delay: 0, options: [.repeat], animations: {
+            
+            self.rainParticle2.frame = CGRect(x: 0, y: self.size.height*0.6, width: self.size.width, height: self.size.height*0.4)
+            
+        }, completion: nil)
+        
+        UIView.animate(withDuration: 13.0, delay: 0, options: [.repeat], animations: {
+            
+            self.rainParticle3.frame = CGRect(x: 0, y: self.size.height*0.6, width: self.size.width, height: self.size.height*0.4)
+            
+        }, completion: nil)
+        
+        UIView.animate(withDuration: 4.0, delay: 0, options: [.repeat], animations: {
+            
+            self.rainParticle4.frame = CGRect(x: 0, y: self.size.height*0.6, width: self.size.width, height: self.size.height*0.4)
+            
+        }, completion: nil)
+        
+        UIView.animate(withDuration: 6.0, delay: 0, options: [.repeat], animations: {
+            
+            self.rainParticle5.frame = CGRect(x: 0, y: self.size.height*0.6, width: self.size.width, height: self.size.height*0.4)
+            
+        }, completion: nil)
+        
+        UIView.animate(withDuration: 11.0, delay: 0, options: [.repeat], animations: {
+            
+            self.rainParticle6.frame = CGRect(x: 0, y: self.size.height*0.6, width: self.size.width, height: self.size.height*0.4)
+            
+        }, completion: nil)
     }
     
     func createSubViews(){
@@ -424,15 +458,15 @@ class TelaHomeView: UIView {
                 rainParticle1.topAnchor.constraint(equalTo: topAnchor,constant: -size.height*0.5),
                 rainParticle1.leadingAnchor.constraint(equalTo: leadingAnchor),
                 rainParticle1.trailingAnchor.constraint(equalTo: trailingAnchor),
-                rainParticle1.bottomAnchor.constraint(equalTo: rainParticle1.topAnchor,constant: self.size.height*0.3)
+                rainParticle1.bottomAnchor.constraint(equalTo: rainParticle1.topAnchor,constant: self.size.height*0.45)
             ])
             sendSubviewToBack(rainParticle1)
             addSubview(rainParticle2)
             NSLayoutConstraint.activate([
                 rainParticle2.topAnchor.constraint(equalTo: topAnchor,constant: -size.height*0.5),
                 rainParticle2.leadingAnchor.constraint(equalTo: leadingAnchor),
-                rainParticle2.trailingAnchor.constraint(equalTo: trailingAnchor),
-                rainParticle2.bottomAnchor.constraint(equalTo: rainParticle2.topAnchor,constant: self.size.height*0.35)
+                rainParticle2.trailingAnchor.constraint(equalTo: trailingAnchor,constant: 20),
+                rainParticle2.bottomAnchor.constraint(equalTo: rainParticle2.topAnchor,constant: self.size.height*0.45)
             ])
             sendSubviewToBack(rainParticle2)
             addSubview(rainParticle3)
@@ -440,14 +474,14 @@ class TelaHomeView: UIView {
                 rainParticle3.topAnchor.constraint(equalTo: topAnchor,constant: -size.height*0.5),
                 rainParticle3.leadingAnchor.constraint(equalTo: leadingAnchor),
                 rainParticle3.trailingAnchor.constraint(equalTo: trailingAnchor),
-                rainParticle3.bottomAnchor.constraint(equalTo: rainParticle3.topAnchor,constant: self.size.height*0.4)
+                rainParticle3.bottomAnchor.constraint(equalTo: rainParticle3.topAnchor,constant: self.size.height*0.45)
             ])
             sendSubviewToBack(rainParticle3)
             addSubview(rainParticle4)
             NSLayoutConstraint.activate([
                 rainParticle4.topAnchor.constraint(equalTo: topAnchor,constant: -size.height*0.5),
                 rainParticle4.leadingAnchor.constraint(equalTo: leadingAnchor),
-                rainParticle4.trailingAnchor.constraint(equalTo: trailingAnchor),
+                rainParticle4.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -30),
                 rainParticle4.bottomAnchor.constraint(equalTo: rainParticle4.topAnchor,constant: self.size.height*0.45)
             ])
             sendSubviewToBack(rainParticle4)
@@ -462,7 +496,7 @@ class TelaHomeView: UIView {
             addSubview(rainParticle6)
             NSLayoutConstraint.activate([
                 rainParticle6.topAnchor.constraint(equalTo: topAnchor,constant: -size.height*0.5),
-                rainParticle6.leadingAnchor.constraint(equalTo: leadingAnchor),
+                rainParticle6.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 30),
                 rainParticle6.trailingAnchor.constraint(equalTo: trailingAnchor),
                 rainParticle6.bottomAnchor.constraint(equalTo: rainParticle6.topAnchor,constant: self.size.height*0.45)
             ])
@@ -470,6 +504,5 @@ class TelaHomeView: UIView {
         }
         
     }
-    
     
 }

@@ -112,15 +112,15 @@ class TelaHomeViewController: UITabBarController{
         self.presentationView.componente2.setupContentText(conteudo: (forecast.forecastday[0].astro.sunrise))
         self.presentationView.componente4.setupContentText(conteudo: (forecast.forecastday[0].astro.sunset))
         
-        if current.isDay == 1 {
-            if forecast.forecastday[0].day.dailyWillItRain == 1 {
+        if current.isDay == 0 {
+            if forecast.forecastday[0].day.dailyWillItRain == 0 {
                 self.viewModel.isRaining.accept(true)
                 setupRainTheme()
             }else{
             }
         }else{
             self.viewModel.isNight.accept(true)
-            if forecast.forecastday[0].day.dailyWillItRain == 1 {
+            if forecast.forecastday[0].day.dailyWillItRain == 0 {
                 self.viewModel.isRaining.accept(true)
                 setupRainTheme()
                 setupNightTheme()

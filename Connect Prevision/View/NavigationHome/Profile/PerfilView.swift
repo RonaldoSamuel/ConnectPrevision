@@ -161,8 +161,44 @@ class PerfilView: UIView{
         return img
     }()
     
-    let rainGif: UIImageView = {
+    let rainParticle1: UIImageView = {
         let gif = UIImageView()
+        gif.image = UIImage(named: "rainIcon")
+        gif.translatesAutoresizingMaskIntoConstraints = false
+        return gif
+    }()
+    
+    let rainParticle2: UIImageView = {
+        let gif = UIImageView()
+        gif.image = UIImage(named: "rainIcon")
+        gif.translatesAutoresizingMaskIntoConstraints = false
+        return gif
+    }()
+    
+    let rainParticle3: UIImageView = {
+        let gif = UIImageView()
+        gif.image = UIImage(named: "rainIcon")
+        gif.translatesAutoresizingMaskIntoConstraints = false
+        return gif
+    }()
+    
+    let rainParticle4: UIImageView = {
+        let gif = UIImageView()
+        gif.image = UIImage(named: "rainIcon")
+        gif.translatesAutoresizingMaskIntoConstraints = false
+        return gif
+    }()
+    
+    let rainParticle5: UIImageView = {
+        let gif = UIImageView()
+        gif.image = UIImage(named: "rainIcon")
+        gif.translatesAutoresizingMaskIntoConstraints = false
+        return gif
+    }()
+    
+    let rainParticle6: UIImageView = {
+        let gif = UIImageView()
+        gif.image = UIImage(named: "rainIcon")
         gif.translatesAutoresizingMaskIntoConstraints = false
         return gif
     }()
@@ -193,6 +229,41 @@ class PerfilView: UIView{
             self.imagemNuvem2.transform = CGAffineTransform(translationX: -self.size.width*0.3-200, y: -self.size.height*0.06+200)
             self.imagemNuvem3.transform = CGAffineTransform(translationX: self.size.width*0.1+150, y: self.size.height*0.02-150)
         }
+        
+        UIView.animate(withDuration: 9.0, delay: 0, options: [.repeat], animations: {
+            
+            self.rainParticle1.frame = CGRect(x: 0, y: self.size.height*0.6, width: self.size.width, height: self.size.height*0.4)
+            
+        }, completion: nil)
+        UIView.animate(withDuration: 7.0, delay: 0, options: [.repeat], animations: {
+            
+            self.rainParticle2.frame = CGRect(x: 0, y: self.size.height*0.6, width: self.size.width, height: self.size.height*0.4)
+            
+        }, completion: nil)
+        
+        UIView.animate(withDuration: 13.0, delay: 0, options: [.repeat], animations: {
+            
+            self.rainParticle3.frame = CGRect(x: 0, y: self.size.height*0.6, width: self.size.width, height: self.size.height*0.4)
+            
+        }, completion: nil)
+        
+        UIView.animate(withDuration: 4.0, delay: 0, options: [.repeat], animations: {
+            
+            self.rainParticle4.frame = CGRect(x: 0, y: self.size.height*0.6, width: self.size.width, height: self.size.height*0.4)
+            
+        }, completion: nil)
+        
+        UIView.animate(withDuration: 6.0, delay: 0, options: [.repeat], animations: {
+            
+            self.rainParticle5.frame = CGRect(x: 0, y: self.size.height*0.6, width: self.size.width, height: self.size.height*0.4)
+            
+        }, completion: nil)
+        
+        UIView.animate(withDuration: 11.0, delay: 0, options: [.repeat], animations: {
+            
+            self.rainParticle6.frame = CGRect(x: 0, y: self.size.height*0.6, width: self.size.width, height: self.size.height*0.4)
+            
+        }, completion: nil)
         
     }
     
@@ -328,18 +399,57 @@ class PerfilView: UIView{
     
     func setupThemeRainUI(remover: Bool){
         if remover {
-            rainGif.removeFromSuperview()
+            rainParticle1.removeFromSuperview()
         }else{
-            addSubview(rainGif)
+            addSubview(rainParticle1)
             NSLayoutConstraint.activate([
-                rainGif.topAnchor.constraint(equalTo: topAnchor),
-                rainGif.leadingAnchor.constraint(equalTo: leadingAnchor),
-                rainGif.trailingAnchor.constraint(equalTo: trailingAnchor),
-                rainGif.bottomAnchor.constraint(equalTo: centerYAnchor)
+                rainParticle1.topAnchor.constraint(equalTo: topAnchor,constant: -size.height*0.5),
+                rainParticle1.leadingAnchor.constraint(equalTo: leadingAnchor),
+                rainParticle1.trailingAnchor.constraint(equalTo: trailingAnchor),
+                rainParticle1.bottomAnchor.constraint(equalTo: rainParticle1.topAnchor,constant: self.size.height*0.45)
             ])
-            sendSubviewToBack(rainGif)
+            sendSubviewToBack(rainParticle1)
+            addSubview(rainParticle2)
+            NSLayoutConstraint.activate([
+                rainParticle2.topAnchor.constraint(equalTo: topAnchor,constant: -size.height*0.5),
+                rainParticle2.leadingAnchor.constraint(equalTo: leadingAnchor),
+                rainParticle2.trailingAnchor.constraint(equalTo: trailingAnchor,constant: 20),
+                rainParticle2.bottomAnchor.constraint(equalTo: rainParticle2.topAnchor,constant: self.size.height*0.45)
+            ])
+            sendSubviewToBack(rainParticle2)
+            addSubview(rainParticle3)
+            NSLayoutConstraint.activate([
+                rainParticle3.topAnchor.constraint(equalTo: topAnchor,constant: -size.height*0.5),
+                rainParticle3.leadingAnchor.constraint(equalTo: leadingAnchor),
+                rainParticle3.trailingAnchor.constraint(equalTo: trailingAnchor),
+                rainParticle3.bottomAnchor.constraint(equalTo: rainParticle3.topAnchor,constant: self.size.height*0.45)
+            ])
+            sendSubviewToBack(rainParticle3)
+            addSubview(rainParticle4)
+            NSLayoutConstraint.activate([
+                rainParticle4.topAnchor.constraint(equalTo: topAnchor,constant: -size.height*0.5),
+                rainParticle4.leadingAnchor.constraint(equalTo: leadingAnchor),
+                rainParticle4.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -30),
+                rainParticle4.bottomAnchor.constraint(equalTo: rainParticle4.topAnchor,constant: self.size.height*0.45)
+            ])
+            sendSubviewToBack(rainParticle4)
+            addSubview(rainParticle5)
+            NSLayoutConstraint.activate([
+                rainParticle5.topAnchor.constraint(equalTo: topAnchor,constant: -size.height*0.5),
+                rainParticle5.leadingAnchor.constraint(equalTo: leadingAnchor),
+                rainParticle5.trailingAnchor.constraint(equalTo: trailingAnchor),
+                rainParticle5.bottomAnchor.constraint(equalTo: rainParticle5.topAnchor,constant: self.size.height*0.45)
+            ])
+            sendSubviewToBack(rainParticle5)
+            addSubview(rainParticle6)
+            NSLayoutConstraint.activate([
+                rainParticle6.topAnchor.constraint(equalTo: topAnchor,constant: -size.height*0.5),
+                rainParticle6.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 30),
+                rainParticle6.trailingAnchor.constraint(equalTo: trailingAnchor),
+                rainParticle6.bottomAnchor.constraint(equalTo: rainParticle6.topAnchor,constant: self.size.height*0.45)
+            ])
+            sendSubviewToBack(rainParticle6)
         }
-        
     }
     
 }
