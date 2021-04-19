@@ -124,7 +124,6 @@ class TelaHomeViewController: UITabBarController{
                 self.viewModel.isRaining.accept(true)
                 setupRainTheme()
                 setupNightTheme()
-                self.presentationView.setupThemeNight()
             }
             else{
                 setupNightTheme()

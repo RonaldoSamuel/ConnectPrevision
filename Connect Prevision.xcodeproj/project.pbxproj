@@ -19,7 +19,6 @@
 		6247B314260E4EBA00B8961A /* PegarTemperaturaForeCast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6247B313260E4EBA00B8961A /* PegarTemperaturaForeCast.swift */; };
 		624F2957260E0A7C00372E34 /* Dados.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624F2956260E0A7C00372E34 /* Dados.swift */; };
 		625E29F92612005C006FA533 /* SeteDiasCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625E29F82612005C006FA533 /* SeteDiasCell.swift */; };
-		625E60562629F3420014CCA5 /* gif.gif in Resources */ = {isa = PBXBuildFile; fileRef = 625E60552629F3420014CCA5 /* gif.gif */; };
 		625EA77D25E9042B0030DC26 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625EA77C25E9042B0030DC26 /* UIView.swift */; };
 		625EA78325E90E690030DC26 /* TelaCadastroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625EA78225E90E690030DC26 /* TelaCadastroViewController.swift */; };
 		625EA78B25E90E720030DC26 /* TelaCadastroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625EA78A25E90E720030DC26 /* TelaCadastroView.swift */; };
@@ -98,7 +97,6 @@
 		6247B313260E4EBA00B8961A /* PegarTemperaturaForeCast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PegarTemperaturaForeCast.swift; sourceTree = "<group>"; };
 		624F2956260E0A7C00372E34 /* Dados.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dados.swift; sourceTree = "<group>"; };
 		625E29F82612005C006FA533 /* SeteDiasCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeteDiasCell.swift; sourceTree = "<group>"; };
-		625E60552629F3420014CCA5 /* gif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = gif.gif; sourceTree = "<group>"; };
 		625EA77C25E9042B0030DC26 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		625EA78225E90E690030DC26 /* TelaCadastroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelaCadastroViewController.swift; sourceTree = "<group>"; };
 		625EA78A25E90E720030DC26 /* TelaCadastroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelaCadastroView.swift; sourceTree = "<group>"; };
@@ -236,14 +234,6 @@
 			path = "Codable\t";
 			sourceTree = "<group>";
 		};
-		625E602A2629BCD60014CCA5 /* Gifs */ = {
-			isa = PBXGroup;
-			children = (
-				625E60552629F3420014CCA5 /* gif.gif */,
-			);
-			path = Gifs;
-			sourceTree = "<group>";
-		};
 		625EA78125E90E570030DC26 /* TelaCadastro */ = {
 			isa = PBXGroup;
 			children = (
@@ -366,7 +356,6 @@
 		6293C1F825E7E8A000718F31 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				625E602A2629BCD60014CCA5 /* Gifs */,
 				6293C1B825E7E69900718F31 /* Assets.xcassets */,
 				623676D42626FEB00006FF29 /* icones.xcassets */,
 			);
@@ -665,7 +654,6 @@
 				622FE50F26248F02009B6740 /* Localizable.strings in Resources */,
 				6293C1B925E7E69900718F31 /* Assets.xcassets in Resources */,
 				623676D52626FEB00006FF29 /* icones.xcassets in Resources */,
-				625E60562629F3420014CCA5 /* gif.gif in Resources */,
 				62CB10FB2625DABA00FC4399 /* InfoPlist.strings in Resources */,
 				F6862A1B262725BD0011E454 /* GoogleService-Info.plist in Resources */,
 			);
