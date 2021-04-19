@@ -33,12 +33,16 @@ class HomeNavigationTabViewController: UITabBarController {
         
         let TemperaturaView = TemperaturaViewController()
         TemperaturaView.coordinator = coordinator
+        TemperaturaView.viewModel = homeView.viewModel
         let devicesImg = UIImage(named: .ic_person_location)
         let devicesItem = UITabBarItem(title: "seven_days".translate, image: devicesImg, tag: 1)
         TemperaturaView.tabBarItem = devicesItem
         
         let perfilView = PerfilViewController()
         perfilView.coordinator = coordinator
+        perfilView.viewModel.isRaining = homeView.viewModel.isRaining
+        perfilView.viewModel.isNight = homeView.viewModel.isNight
+        perfilView.viewModel.dataSourse = homeView.viewModel.dataSourse
         let perfilImg = UIImage(named: .ic_perfil)
         let perfilItem = UITabBarItem(title: "profile".translate, image: perfilImg, tag: 1)
         perfilView.tabBarItem = perfilItem

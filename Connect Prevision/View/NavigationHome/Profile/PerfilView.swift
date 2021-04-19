@@ -161,6 +161,13 @@ class PerfilView: UIView{
         return img
     }()
     
+    let rainGif: UIImageView = {
+    let gif = UIImageView()
+//        gif.image = UIImage.gifImageWithName("rainTest")
+        gif.translatesAutoresizingMaskIntoConstraints = false
+        return gif
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         createSubViews()
@@ -187,7 +194,7 @@ class PerfilView: UIView{
             self.imagemNuvem2.transform = CGAffineTransform(translationX: -self.size.width*0.3-200, y: -self.size.height*0.06+200)
             self.imagemNuvem3.transform = CGAffineTransform(translationX: self.size.width*0.1+150, y: self.size.height*0.02-150)
         }
-        
+    
     }
     
     func setupNuvens(){
@@ -318,6 +325,22 @@ class PerfilView: UIView{
             botaoDeslogar.trailingAnchor.constraint(equalTo: topView.trailingAnchor,constant: -10),
             botaoDeslogar.topAnchor.constraint(equalTo: topView.topAnchor,constant: 20),
         ])
+    }
+    
+    func setupThemeRainUI(remover: Bool){
+        if remover {
+            rainGif.removeFromSuperview()
+        }else{
+            addSubview(rainGif)
+            NSLayoutConstraint.activate([
+                rainGif.topAnchor.constraint(equalTo: topAnchor),
+                rainGif.leadingAnchor.constraint(equalTo: leadingAnchor),
+                rainGif.trailingAnchor.constraint(equalTo: trailingAnchor),
+                rainGif.bottomAnchor.constraint(equalTo: centerYAnchor)
+            ])
+            sendSubviewToBack(rainGif)
+        }
+       
     }
     
 }

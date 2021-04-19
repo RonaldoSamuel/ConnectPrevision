@@ -9,6 +9,7 @@ import Foundation
 import Firebase
 import RxCocoa
 import RxSwift
+import MaterialComponents
 
 class TelaPerfilViewModel{
     
@@ -17,6 +18,8 @@ class TelaPerfilViewModel{
     var disposable = DisposeBag()
     
     var isUsuarioDeslogar: BehaviorRelay<Bool> = BehaviorRelay<Bool>(value: false)
+    var isRaining: BehaviorRelay<Bool> = BehaviorRelay<Bool>(value: false)
+    var isNight: BehaviorRelay<Bool> = BehaviorRelay<Bool>(value: false)
     
     
     var userName: BehaviorRelay<String> = BehaviorRelay<String>(value: "")
@@ -25,7 +28,7 @@ class TelaPerfilViewModel{
     var userPhoto: BehaviorRelay<String> = BehaviorRelay<String>(value: "")
     var userNumber: BehaviorRelay<String> = BehaviorRelay<String>(value: "")
     
-   
+    var dataSourse: BehaviorRelay<ForeCastModel> = BehaviorRelay<ForeCastModel>(value: ForeCastModel())
     
     func bindViews(){
         userName.accept((Auth.auth().currentUser!.displayName ?? "Usuario"))
@@ -38,5 +41,12 @@ class TelaPerfilViewModel{
     func deslogarUsuario(){
         firebaseHelper.deslogarFirebase()
         isUsuarioDeslogar.accept( Auth.auth().currentUser == nil ? true : false )
+    }
+    
+    func snackbar(message: String){
+        let action = MDCSnackbarMessage()
+        action.text = message
+        
+        MDCSnackbarManager.default.show(action)
     }
 }

@@ -31,6 +31,7 @@ struct Current: Codable {
     let isDay: Double
     let condition: Condition
     let windMph, windKph: Double
+    let windDir: String
     let windDegree: Double
     let pressureMB: Double
     let pressureIn, precipMm, precipIn: Double
@@ -50,6 +51,7 @@ struct Current: Codable {
         case windMph = "wind_mph"
         case windKph = "wind_kph"
         case windDegree = "wind_degree"
+        case windDir = "wind_dir"
         case pressureMB = "pressure_mb"
         case pressureIn = "pressure_in"
         case precipMm = "precip_mm"

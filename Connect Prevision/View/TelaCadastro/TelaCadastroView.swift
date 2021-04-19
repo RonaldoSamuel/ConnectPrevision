@@ -180,7 +180,7 @@ class TelaCadastroView: UIView {
         
         viewItensForm.addSubview(descricaoLabel)
         NSLayoutConstraint.activate([
-            descricaoLabel.topAnchor.constraint(equalTo: viewItensForm.topAnchor,constant: size.height*0.13),
+            descricaoLabel.topAnchor.constraint(equalTo: viewItensForm.topAnchor,constant: size.height*0.05),
             descricaoLabel.leadingAnchor.constraint(equalTo: viewItensForm.leadingAnchor),
             descricaoLabel.trailingAnchor.constraint(equalTo: viewItensForm.trailingAnchor)
         ])
@@ -199,7 +199,6 @@ class TelaCadastroView: UIView {
             txtNome.trailingAnchor.constraint(equalTo: viewItensForm.trailingAnchor,constant: -25),
             txtNome.heightAnchor.constraint(equalToConstant: 60)
         ])
-        
         viewItensForm.addSubview(txtEmail)
         NSLayoutConstraint.activate([
             txtEmail.topAnchor.constraint(equalTo: txtNome.bottomAnchor,constant: size.height*0.03),

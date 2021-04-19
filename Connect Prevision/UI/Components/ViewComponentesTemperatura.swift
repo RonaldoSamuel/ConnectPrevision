@@ -104,7 +104,7 @@ class ViewComponentesTemperatura: UIView {
         
         stackHorizontal.addArrangedSubview(iconTheme)
         NSLayoutConstraint.activate([
-            iconTheme.heightAnchor.constraint(equalToConstant: 40),
+            iconTheme.heightAnchor.constraint(equalToConstant: 55),
             iconTheme.widthAnchor.constraint(equalToConstant: size.height*0.2)
         ])
         stackHorizontal.addArrangedSubview(stackVertical)
@@ -116,7 +116,7 @@ class ViewComponentesTemperatura: UIView {
     
     func settingDefaultsDescLabel(){
         descLabel.textColor = .lightGray
-        descLabel.font = UIFont.boldSystemFont(ofSize: 10)
+        descLabel.font = UIFont.boldSystemFont(ofSize: 13)
     }
     
     func setDesLabelText(conteudo: String){
@@ -125,7 +125,7 @@ class ViewComponentesTemperatura: UIView {
     
     func settingDefaultsContentLabel(){
         contentLabel.textColor = UIColor(red: 0.33, green: 0.29, blue: 0.34, alpha: 1.00)
-        contentLabel.font = UIFont.boldSystemFont(ofSize: 15)
+        contentLabel.font = UIFont.boldSystemFont(ofSize: 16)
     }
     
     func setupContentText(conteudo: String){
@@ -140,5 +140,9 @@ class ViewComponentesTemperatura: UIView {
     func setIcon(named: String){
         iconTheme.contentMode = .scaleAspectFit
         iconTheme.image = UIImage(named: named)?.withRenderingMode(.alwaysTemplate)
+    }
+    
+    func setIconColor(color: UIColor) {
+        iconTheme.tintColor = color
     }
 }

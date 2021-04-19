@@ -42,5 +42,10 @@ extension String {
     static let ic_uiv_light = "uivlight"
     static let ic_user = "UserIcon"
     static let ic_phone = "PhoneIcon"
+    static let ic_wind = "wind"
+    static let ic_wind_direction = "ic_wind_direction"
+    static let ic_wind_speed = "ic_wind_speed"
+    static let ic_rain_chance = "ic_rain_chance"
+    static let ic_compass = "compess"
     
 }

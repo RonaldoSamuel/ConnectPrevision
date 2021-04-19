@@ -19,11 +19,16 @@ class TelaHomeViewModel: NSObject {
     var firebaseHelper = LoginHelper()
     let locationManager = CLLocationManager()
     
+    var isRaining: BehaviorRelay<Bool> = BehaviorRelay<Bool>(value: false)
+    var isNight: BehaviorRelay<Bool> = BehaviorRelay<Bool>(value: false)
+    
     var breachesRX: BehaviorRelay<[Forecastday]> = BehaviorRelay<[Forecastday]>(value: [])
     var dataSourse: BehaviorRelay<ForeCastModel> = BehaviorRelay<ForeCastModel>(value: ForeCastModel())
     var dataSourseHour: BehaviorRelay<[Hour]> = BehaviorRelay<[Hour]>(value: [])
     
     var statusFeedback: BehaviorRelay<TelaHomeStatus> = BehaviorRelay<TelaHomeStatus>(value: .DEFAULT)
+    
+    var grausRotacao: BehaviorRelay<Double> = BehaviorRelay<Double>(value: 0)
     
     func bindViewModel(){
         locationManager.requestAlwaysAuthorization()
@@ -33,6 +38,11 @@ class TelaHomeViewModel: NSObject {
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             locationManager.startUpdatingLocation()
         }
+        if (CLLocationManager.headingAvailable()) {
+                    locationManager.headingFilter = 1
+                    locationManager.startUpdatingHeading()
+                    locationManager.delegate = self
+                }
     }
     
     func pegarTemperatura(lat: Double, long: Double){
@@ -50,10 +60,17 @@ class TelaHomeViewModel: NSObject {
     }
 }
 
+
 extension TelaHomeViewModel: CLLocationManagerDelegate{
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
         self.pegarTemperatura(lat: locValue.latitude, long: locValue.longitude)
         locationManager.stopUpdatingLocation()
     }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateHeading heading: CLHeading) {
+            print (heading.magneticHeading)
+        grausRotacao.accept(heading.magneticHeading)
+        }
+    
 }

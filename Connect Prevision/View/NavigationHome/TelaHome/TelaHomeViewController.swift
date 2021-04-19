@@ -24,17 +24,6 @@ class TelaHomeViewController: UITabBarController{
         view = presentationView
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.isNavigationBarHidden = true
-        setNeedsStatusBarAppearanceUpdate()
-        timer?.fire()
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        .lightContent
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.bindViewModel()
@@ -44,8 +33,31 @@ class TelaHomeViewController: UITabBarController{
         presentationView.collectionView.rx.setDelegate(self).disposed(by: disposable)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = true
+        presentationView.layoutSubviews()
+        setNeedsStatusBarAppearanceUpdate()
+        if viewModel.isRaining.value {
+            self.presentationView.setupThemeRainUI(remover: false)
+        }
+        timer?.fire()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        self.view.layer.removeAllAnimations()
+        self.presentationView.setupThemeRainUI(remover: true)
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .lightContent
+    }
+    
+    
+    
     func bindView(){
-        
+       
         timer = Timer.scheduledTimer(timeInterval: 60, target: self, selector: #selector(atualizaData(_:)), userInfo: nil, repeats: true)
         atualizaData(timer!)
         
@@ -101,6 +113,50 @@ class TelaHomeViewController: UITabBarController{
         
         self.presentationView.componente2.setupContentText(conteudo: (forecast.forecastday[0].astro.sunrise))
         self.presentationView.componente4.setupContentText(conteudo: (forecast.forecastday[0].astro.sunset))
+        
+        if current.isDay == 0 {
+            if forecast.forecastday[0].day.dailyWillItRain == 1 {
+                self.viewModel.isRaining.accept(true)
+                setupRainTheme()
+            }else{
+                
+            }
+        }else{
+            self.viewModel.isNight.accept(true)
+            if forecast.forecastday[0].day.dailyWillItRain == 1 {
+                self.viewModel.isRaining.accept(true)
+                setupRainTheme()
+                setupNightTheme()
+                self.presentationView.setupThemeNight()
+            }
+            else{
+                setupNightTheme()
+                self.presentationView.setupThemeNight()
+            }
+        }
+        
+        
+    }
+    
+    func setupRainTheme(){
+        self.presentationView.imagemNuvem1.image = UIImage(named: "nuvem_chuva_1")
+        self.presentationView.imagemNuvem2.image = UIImage(named: "nuvem_chuva_2")
+        self.presentationView.imagemNuvem3.image = UIImage(named: "nuvem_chuva_3")
+        self.presentationView.imagemNuvem4.image = UIImage(named: "nuvem_chuva_4")
+        self.presentationView.feelsLike.layer.borderColor = UIColor.gray.cgColor
+        self.presentationView.feelsLike.layer.backgroundColor = UIColor.gray.cgColor
+        self.presentationView.backgroundColor = UIColor(red: 0.84, green: 0.84, blue: 0.84, alpha: 1.00)
+        self.presentationView.setupThemeRainUI(remover: false)
+    }
+    
+    func setupNightTheme(){
+        self.presentationView.imagemNuvem1.image = UIImage(named: "nuvem_chuva_1")
+        self.presentationView.imagemNuvem2.image = UIImage(named: "nuvem_chuva_2")
+        self.presentationView.imagemNuvem3.image = UIImage(named: "nuvem_chuva_3")
+        self.presentationView.imagemNuvem4.image = UIImage(named: "nuvem_chuva_4")
+        self.presentationView.feelsLike.layer.borderColor = UIColor.gray.cgColor
+        self.presentationView.feelsLike.layer.backgroundColor = UIColor.gray.cgColor
+        self.presentationView.backgroundColor = UIColor(red: 0.05, green: 0.03, blue: 0.30, alpha: 1.00)
     }
     
     @objc func atualizaData(_ timer: Timer){
@@ -117,10 +173,7 @@ class TelaHomeViewController: UITabBarController{
         presentationView.dateLabel.text = dateFormmater.string(from: date1)
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        timer?.invalidate()
-    }
+  
     
 }
 

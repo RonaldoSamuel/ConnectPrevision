@@ -10,6 +10,8 @@ import MaterialComponents
 
 class TelaHomeView: UIView {
     
+   
+    
     var refreshButton: UIButton = {
         var btn = UIButton(type: .custom)
         btn.setImage(UIImage(named: .ic_refresh)?.withRenderingMode(.alwaysTemplate), for: .normal)
@@ -199,6 +201,49 @@ class TelaHomeView: UIView {
         return collection
     }()
     
+    let rainParticle1: UIImageView = {
+    let gif = UIImageView()
+        gif.image = UIImage(named: "rainIcon")
+        gif.translatesAutoresizingMaskIntoConstraints = false
+        return gif
+    }()
+    
+    let rainParticle2: UIImageView = {
+    let gif = UIImageView()
+        gif.image = UIImage(named: "rainIcon")
+        gif.translatesAutoresizingMaskIntoConstraints = false
+        return gif
+    }()
+    
+    let rainParticle3: UIImageView = {
+    let gif = UIImageView()
+        gif.image = UIImage(named: "rainIcon")
+        gif.translatesAutoresizingMaskIntoConstraints = false
+        return gif
+    }()
+    
+    let rainParticle4: UIImageView = {
+    let gif = UIImageView()
+        gif.image = UIImage(named: "rainIcon")
+        gif.translatesAutoresizingMaskIntoConstraints = false
+        return gif
+    }()
+    
+    let rainParticle5: UIImageView = {
+    let gif = UIImageView()
+        gif.image = UIImage(named: "rainIcon")
+        gif.translatesAutoresizingMaskIntoConstraints = false
+        return gif
+    }()
+    
+    let rainParticle6: UIImageView = {
+    let gif = UIImageView()
+        gif.image = UIImage(named: "rainIcon")
+        gif.translatesAutoresizingMaskIntoConstraints = false
+        return gif
+    }()
+    
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         createSubViews()
@@ -217,6 +262,9 @@ class TelaHomeView: UIView {
             self.imagemNuvem3.transform = CGAffineTransform(translationX: self.size.width*0.3, y: self.size.height*0.05)
             self.imagemNuvem4.transform = CGAffineTransform(translationX: -self.size.width*0.25, y: self.size.height*0.1)
         }
+      
+    
+        
     }
     
     func createSubViews(){
@@ -244,6 +292,7 @@ class TelaHomeView: UIView {
             refreshButton.heightAnchor.constraint(equalToConstant: 30)
         ])
     }
+    
     
     func setupNuvem1(){
         addSubview(imagemNuvem1)
@@ -341,9 +390,9 @@ class TelaHomeView: UIView {
     func setupStacks(){
         viewBottom.addSubview(stackComponentesDadosHorizontal)
         NSLayoutConstraint.activate([
-            stackComponentesDadosHorizontal.topAnchor.constraint(equalTo: viewBottom.topAnchor,constant: 60),
-            stackComponentesDadosHorizontal.leadingAnchor.constraint(equalTo: viewBottom.leadingAnchor,constant: 40),
-            stackComponentesDadosHorizontal.trailingAnchor.constraint(equalTo: viewBottom.trailingAnchor,constant: -40),
+            stackComponentesDadosHorizontal.topAnchor.constraint(equalTo: viewBottom.topAnchor,constant: 40),
+            stackComponentesDadosHorizontal.leadingAnchor.constraint(equalTo: viewBottom.leadingAnchor,constant: 20),
+            stackComponentesDadosHorizontal.trailingAnchor.constraint(equalTo: viewBottom.trailingAnchor,constant: -20),
         ])
         
         stackComponentesDadosHorizontal.addArrangedSubview(stackComponentesDadosColuna1)
@@ -370,5 +419,62 @@ class TelaHomeView: UIView {
             diaTodoLabel.centerXAnchor.constraint(equalTo: collectionView.centerXAnchor)
         ])
     }
+    
+    func setupThemeRainUI(remover: Bool){
+        if remover {
+            rainParticle1.removeFromSuperview()
+        }else{
+            addSubview(rainParticle1)
+            NSLayoutConstraint.activate([
+                rainParticle1.topAnchor.constraint(equalTo: topAnchor,constant: -size.height*0.5),
+                rainParticle1.leadingAnchor.constraint(equalTo: leadingAnchor),
+                rainParticle1.trailingAnchor.constraint(equalTo: trailingAnchor),
+                rainParticle1.bottomAnchor.constraint(equalTo: rainParticle1.topAnchor,constant: self.size.height*0.3)
+            ])
+            sendSubviewToBack(rainParticle1)
+            addSubview(rainParticle2)
+            NSLayoutConstraint.activate([
+                rainParticle2.topAnchor.constraint(equalTo: topAnchor,constant: -size.height*0.5),
+                rainParticle2.leadingAnchor.constraint(equalTo: leadingAnchor),
+                rainParticle2.trailingAnchor.constraint(equalTo: trailingAnchor),
+                rainParticle2.bottomAnchor.constraint(equalTo: rainParticle2.topAnchor,constant: self.size.height*0.35)
+            ])
+            sendSubviewToBack(rainParticle2)
+            addSubview(rainParticle3)
+            NSLayoutConstraint.activate([
+                rainParticle3.topAnchor.constraint(equalTo: topAnchor,constant: -size.height*0.5),
+                rainParticle3.leadingAnchor.constraint(equalTo: leadingAnchor),
+                rainParticle3.trailingAnchor.constraint(equalTo: trailingAnchor),
+                rainParticle3.bottomAnchor.constraint(equalTo: rainParticle3.topAnchor,constant: self.size.height*0.4)
+            ])
+            sendSubviewToBack(rainParticle3)
+            addSubview(rainParticle4)
+            NSLayoutConstraint.activate([
+                rainParticle4.topAnchor.constraint(equalTo: topAnchor,constant: -size.height*0.5),
+                rainParticle4.leadingAnchor.constraint(equalTo: leadingAnchor),
+                rainParticle4.trailingAnchor.constraint(equalTo: trailingAnchor),
+                rainParticle4.bottomAnchor.constraint(equalTo: rainParticle4.topAnchor,constant: self.size.height*0.45)
+            ])
+            sendSubviewToBack(rainParticle4)
+            addSubview(rainParticle5)
+            NSLayoutConstraint.activate([
+                rainParticle5.topAnchor.constraint(equalTo: topAnchor,constant: -size.height*0.5),
+                rainParticle5.leadingAnchor.constraint(equalTo: leadingAnchor),
+                rainParticle5.trailingAnchor.constraint(equalTo: trailingAnchor),
+                rainParticle5.bottomAnchor.constraint(equalTo: rainParticle5.topAnchor,constant: self.size.height*0.45)
+            ])
+            sendSubviewToBack(rainParticle5)
+            addSubview(rainParticle6)
+            NSLayoutConstraint.activate([
+                rainParticle6.topAnchor.constraint(equalTo: topAnchor,constant: -size.height*0.5),
+                rainParticle6.leadingAnchor.constraint(equalTo: leadingAnchor),
+                rainParticle6.trailingAnchor.constraint(equalTo: trailingAnchor),
+                rainParticle6.bottomAnchor.constraint(equalTo: rainParticle6.topAnchor,constant: self.size.height*0.45)
+            ])
+            sendSubviewToBack(rainParticle6)
+        }
+       
+    }
+    
     
 }
