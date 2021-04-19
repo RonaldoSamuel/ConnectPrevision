@@ -110,8 +110,6 @@ class TemperaturaViewController: UIViewController{
         guard let current = self.viewModel.dataSourse.value.current else { return }
         guard let forecast = self.viewModel.dataSourse.value.forecast else { return }
         
-        
-        
         let angle = (-(180+current.windDegree) * .pi/180.0)
         UIView.animate(withDuration: 0.8) {
             print(angle)
@@ -138,7 +136,7 @@ class TemperaturaViewController: UIViewController{
             }else{
             }
         }.disposed(by: disposable)
-            
+        
         viewModel.isNight.bind{ value in
             if value {
                 if self.viewModel.isRaining.value {

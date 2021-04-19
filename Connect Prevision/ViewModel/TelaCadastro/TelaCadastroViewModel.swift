@@ -25,7 +25,6 @@ class TelaCadastroViewModel {
     var isPasswordEqual: BehaviorRelay<Bool> = BehaviorRelay<Bool>(value: false)
     var isFormPreenchido: BehaviorRelay<Bool> = BehaviorRelay<Bool>(value: false)
     
-    
     func viewDidLoad(){
         
         Observable.combineLatest(nome, email, phone, password, confirmPassword) { (value1,value2,value3,value4,value5) in

@@ -39,10 +39,10 @@ class TelaHomeViewModel: NSObject {
             locationManager.startUpdatingLocation()
         }
         if (CLLocationManager.headingAvailable()) {
-                    locationManager.headingFilter = 1
-                    locationManager.startUpdatingHeading()
-                    locationManager.delegate = self
-                }
+            locationManager.headingFilter = 1
+            locationManager.startUpdatingHeading()
+            locationManager.delegate = self
+        }
     }
     
     func pegarTemperatura(lat: Double, long: Double){
@@ -60,7 +60,6 @@ class TelaHomeViewModel: NSObject {
     }
 }
 
-
 extension TelaHomeViewModel: CLLocationManagerDelegate{
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
@@ -69,8 +68,8 @@ extension TelaHomeViewModel: CLLocationManagerDelegate{
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateHeading heading: CLHeading) {
-            print (heading.magneticHeading)
+        print (heading.magneticHeading)
         grausRotacao.accept(heading.magneticHeading)
-        }
+    }
     
 }

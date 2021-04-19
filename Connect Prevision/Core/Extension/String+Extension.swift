@@ -23,7 +23,5 @@ extension String {
         return components(separatedBy: CharacterSet.decimalDigits.inverted)
             .joined()
     }
-    
-    
-    
+
 }

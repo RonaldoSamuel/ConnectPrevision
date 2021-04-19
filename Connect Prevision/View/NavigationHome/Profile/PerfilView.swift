@@ -162,8 +162,7 @@ class PerfilView: UIView{
     }()
     
     let rainGif: UIImageView = {
-    let gif = UIImageView()
-//        gif.image = UIImage.gifImageWithName("rainTest")
+        let gif = UIImageView()
         gif.translatesAutoresizingMaskIntoConstraints = false
         return gif
     }()
@@ -194,7 +193,7 @@ class PerfilView: UIView{
             self.imagemNuvem2.transform = CGAffineTransform(translationX: -self.size.width*0.3-200, y: -self.size.height*0.06+200)
             self.imagemNuvem3.transform = CGAffineTransform(translationX: self.size.width*0.1+150, y: self.size.height*0.02-150)
         }
-    
+        
     }
     
     func setupNuvens(){
@@ -340,7 +339,7 @@ class PerfilView: UIView{
             ])
             sendSubviewToBack(rainGif)
         }
-       
+        
     }
     
 }

@@ -130,7 +130,6 @@ class TemperaturaView: UIView{
         return stk
     }()
     
-    
     var stackComponentesDadosColuna2: UIStackView = {
         var stk = UIStackView()
         stk.distribution = .fillEqually
@@ -186,12 +185,11 @@ class TemperaturaView: UIView{
     }()
     
     let rainGif: UIImageView = {
-    let gif = UIImageView()
-//        gif.image = UIImage.gifImageWithName("rainTest")
+        let gif = UIImageView()
         gif.translatesAutoresizingMaskIntoConstraints = false
         return gif
     }()
-   
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         createSubViews()
@@ -385,7 +383,7 @@ class TemperaturaView: UIView{
             ])
             sendSubviewToBack(rainGif)
         }
-       
+        
     }
     
 }

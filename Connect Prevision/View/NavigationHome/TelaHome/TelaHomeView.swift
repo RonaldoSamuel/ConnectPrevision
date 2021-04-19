@@ -10,8 +10,6 @@ import MaterialComponents
 
 class TelaHomeView: UIView {
     
-   
-    
     var refreshButton: UIButton = {
         var btn = UIButton(type: .custom)
         btn.setImage(UIImage(named: .ic_refresh)?.withRenderingMode(.alwaysTemplate), for: .normal)
@@ -202,47 +200,46 @@ class TelaHomeView: UIView {
     }()
     
     let rainParticle1: UIImageView = {
-    let gif = UIImageView()
+        let gif = UIImageView()
         gif.image = UIImage(named: "rainIcon")
         gif.translatesAutoresizingMaskIntoConstraints = false
         return gif
     }()
     
     let rainParticle2: UIImageView = {
-    let gif = UIImageView()
+        let gif = UIImageView()
         gif.image = UIImage(named: "rainIcon")
         gif.translatesAutoresizingMaskIntoConstraints = false
         return gif
     }()
     
     let rainParticle3: UIImageView = {
-    let gif = UIImageView()
+        let gif = UIImageView()
         gif.image = UIImage(named: "rainIcon")
         gif.translatesAutoresizingMaskIntoConstraints = false
         return gif
     }()
     
     let rainParticle4: UIImageView = {
-    let gif = UIImageView()
+        let gif = UIImageView()
         gif.image = UIImage(named: "rainIcon")
         gif.translatesAutoresizingMaskIntoConstraints = false
         return gif
     }()
     
     let rainParticle5: UIImageView = {
-    let gif = UIImageView()
+        let gif = UIImageView()
         gif.image = UIImage(named: "rainIcon")
         gif.translatesAutoresizingMaskIntoConstraints = false
         return gif
     }()
     
     let rainParticle6: UIImageView = {
-    let gif = UIImageView()
+        let gif = UIImageView()
         gif.image = UIImage(named: "rainIcon")
         gif.translatesAutoresizingMaskIntoConstraints = false
         return gif
     }()
-    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -262,9 +259,7 @@ class TelaHomeView: UIView {
             self.imagemNuvem3.transform = CGAffineTransform(translationX: self.size.width*0.3, y: self.size.height*0.05)
             self.imagemNuvem4.transform = CGAffineTransform(translationX: -self.size.width*0.25, y: self.size.height*0.1)
         }
-      
-    
-        
+
     }
     
     func createSubViews(){
@@ -473,7 +468,7 @@ class TelaHomeView: UIView {
             ])
             sendSubviewToBack(rainParticle6)
         }
-       
+        
     }
     
     

@@ -161,7 +161,6 @@ class SeteDiasCell: UITableViewCell {
         return convertDateFormatter.string(from: oldDate)
     }
     
-    
     func configCell(_ item: Forecastday,index: Int){
         let icone = "\(item.day.condition.icon)"
         let iconCode = String(icone.suffix(7)).digits

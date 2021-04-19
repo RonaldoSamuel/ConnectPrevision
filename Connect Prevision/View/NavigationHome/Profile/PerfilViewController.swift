@@ -77,7 +77,7 @@ class PerfilViewController: UIViewController{
             }else{
             }
         }.disposed(by: disposable)
-            
+        
         viewModel.isNight.bind{ value in
             if value {
                 if self.viewModel.isRaining.value {

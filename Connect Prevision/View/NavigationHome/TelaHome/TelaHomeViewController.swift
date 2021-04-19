@@ -54,10 +54,8 @@ class TelaHomeViewController: UITabBarController{
         .lightContent
     }
     
-    
-    
     func bindView(){
-       
+        
         timer = Timer.scheduledTimer(timeInterval: 60, target: self, selector: #selector(atualizaData(_:)), userInfo: nil, repeats: true)
         atualizaData(timer!)
         
@@ -114,12 +112,11 @@ class TelaHomeViewController: UITabBarController{
         self.presentationView.componente2.setupContentText(conteudo: (forecast.forecastday[0].astro.sunrise))
         self.presentationView.componente4.setupContentText(conteudo: (forecast.forecastday[0].astro.sunset))
         
-        if current.isDay == 0 {
+        if current.isDay == 1 {
             if forecast.forecastday[0].day.dailyWillItRain == 1 {
                 self.viewModel.isRaining.accept(true)
                 setupRainTheme()
             }else{
-                
             }
         }else{
             self.viewModel.isNight.accept(true)
@@ -134,7 +131,6 @@ class TelaHomeViewController: UITabBarController{
                 self.presentationView.setupThemeNight()
             }
         }
-        
         
     }
     
@@ -172,8 +168,6 @@ class TelaHomeViewController: UITabBarController{
         let date1 = Date()
         presentationView.dateLabel.text = dateFormmater.string(from: date1)
     }
-    
-  
     
 }
 
