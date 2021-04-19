@@ -247,38 +247,26 @@ class TemperaturaView: UIView{
         }
         
         UIView.animate(withDuration: 9.0, delay: 0, options: [.repeat], animations: {
-            
             self.rainParticle1.frame = CGRect(x: 0, y: self.size.height*0.6, width: self.size.width, height: self.size.height*0.4)
-            
         }, completion: nil)
         UIView.animate(withDuration: 7.0, delay: 0, options: [.repeat], animations: {
-            
             self.rainParticle2.frame = CGRect(x: 0, y: self.size.height*0.6, width: self.size.width, height: self.size.height*0.4)
-            
         }, completion: nil)
         
         UIView.animate(withDuration: 13.0, delay: 0, options: [.repeat], animations: {
-            
             self.rainParticle3.frame = CGRect(x: 0, y: self.size.height*0.6, width: self.size.width, height: self.size.height*0.4)
-            
         }, completion: nil)
         
         UIView.animate(withDuration: 4.0, delay: 0, options: [.repeat], animations: {
-            
             self.rainParticle4.frame = CGRect(x: 0, y: self.size.height*0.6, width: self.size.width, height: self.size.height*0.4)
-            
         }, completion: nil)
         
         UIView.animate(withDuration: 6.0, delay: 0, options: [.repeat], animations: {
-            
             self.rainParticle5.frame = CGRect(x: 0, y: self.size.height*0.6, width: self.size.width, height: self.size.height*0.4)
-            
         }, completion: nil)
         
         UIView.animate(withDuration: 11.0, delay: 0, options: [.repeat], animations: {
-            
             self.rainParticle6.frame = CGRect(x: 0, y: self.size.height*0.6, width: self.size.width, height: self.size.height*0.4)
-            
         }, completion: nil)
     }
     
