@@ -441,6 +441,11 @@ class TelaHomeView: UIView {
     func setupThemeRainUI(remover: Bool){
         if remover {
             rainParticle1.removeFromSuperview()
+            rainParticle2.removeFromSuperview()
+            rainParticle3.removeFromSuperview()
+            rainParticle4.removeFromSuperview()
+            rainParticle5.removeFromSuperview()
+            rainParticle6.removeFromSuperview()
         }else{
             addSubview(rainParticle1)
             NSLayoutConstraint.activate([

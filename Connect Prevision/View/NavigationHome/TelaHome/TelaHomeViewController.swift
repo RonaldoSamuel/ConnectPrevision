@@ -28,8 +28,6 @@ class TelaHomeViewController: UITabBarController{
         super.viewDidLoad()
         viewModel.bindViewModel()
         bindView()
-        presentationView.refreshButton.rx.tap.bind{}.disposed(by: disposable)
-        
         presentationView.collectionView.rx.setDelegate(self).disposed(by: disposable)
     }
     
@@ -58,6 +56,11 @@ class TelaHomeViewController: UITabBarController{
         
         timer = Timer.scheduledTimer(timeInterval: 60, target: self, selector: #selector(atualizaData(_:)), userInfo: nil, repeats: true)
         atualizaData(timer!)
+        
+        presentationView.refreshButton.rx.tap.bind{
+            self.viewModel.locationManager.startUpdatingLocation()
+            self.atualizarDadosTela()
+        }.disposed(by: disposable)
         
         viewModel.statusFeedback.bind { value in
             self.tratarFeedback(status: value)
