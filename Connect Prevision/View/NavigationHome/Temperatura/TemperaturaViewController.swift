@@ -110,9 +110,9 @@ class TemperaturaViewController: UIViewController{
         guard let current = self.viewModel.dataSourse.value.current else { return }
         guard let forecast = self.viewModel.dataSourse.value.forecast else { return }
         
-        let angle = (-(180+current.windDegree) * .pi/180.0)
+        let angle = ((current.windDegree+10) * .pi/2)
         UIView.animate(withDuration: 0.8) {
-            print(angle)
+            print("angulo \(angle), \(current.windDegree)")
             self.presentationView.viewPonteiro.transform = CGAffineTransform(rotationAngle: CGFloat(angle))
         }
         
@@ -153,20 +153,30 @@ class TemperaturaViewController: UIViewController{
     }
     
     func setupRainTheme(){
+        
+        //Nuvens Cinzas
         self.presentationView.imagemNuvem1.image = UIImage(named: "nuvem_chuva_1")
         self.presentationView.imagemNuvem2.image = UIImage(named: "nuvem_chuva_2")
         self.presentationView.imagemNuvem3.image = UIImage(named: "nuvem_chuva_3")
         self.presentationView.imagemNuvem4.image = UIImage(named: "nuvem_chuva_4")
-        self.presentationView.backgroundColor = UIColor(red: 0.84, green: 0.84, blue: 0.84, alpha: 1.00)
+        
+        UIView.animate(withDuration: 1.5, delay: 0.0, options:[], animations: {
+            self.presentationView.backgroundColor = UIColor(red: 0.84, green: 0.84, blue: 0.84, alpha: 1.00)
+           }, completion:nil)
         self.presentationView.setupThemeRainUI(remover: false)
     }
     
     func setupNightTheme(){
+        
+        //Nuvens Cinzas
         self.presentationView.imagemNuvem1.image = UIImage(named: "nuvem_chuva_1")
         self.presentationView.imagemNuvem2.image = UIImage(named: "nuvem_chuva_2")
         self.presentationView.imagemNuvem3.image = UIImage(named: "nuvem_chuva_3")
         self.presentationView.imagemNuvem4.image = UIImage(named: "nuvem_chuva_4")
-        self.presentationView.backgroundColor = UIColor(red: 0.05, green: 0.03, blue: 0.30, alpha: 1.00)
+        
+        UIView.animate(withDuration: 1.5, delay: 0.0, options:[], animations: {
+            self.presentationView.backgroundColor = UIColor(red: 0.05, green: 0.03, blue: 0.30, alpha: 1.00)
+           }, completion:nil)
     }
     
 }

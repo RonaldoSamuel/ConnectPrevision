@@ -21,7 +21,6 @@ class TelaPerfilViewModel{
     var isRaining: BehaviorRelay<Bool> = BehaviorRelay<Bool>(value: false)
     var isNight: BehaviorRelay<Bool> = BehaviorRelay<Bool>(value: false)
     
-    
     var userName: BehaviorRelay<String> = BehaviorRelay<String>(value: "")
     var userEmail: BehaviorRelay<String> = BehaviorRelay<String>(value: "")
     var userLocale: BehaviorRelay<String> = BehaviorRelay<String>(value: "")

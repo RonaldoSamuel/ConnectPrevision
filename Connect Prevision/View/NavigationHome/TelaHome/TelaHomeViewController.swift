@@ -138,24 +138,36 @@ class TelaHomeViewController: UITabBarController{
     }
     
     func setupRainTheme(){
+        
+        //Nuvens Cinzas
         self.presentationView.imagemNuvem1.image = UIImage(named: "nuvem_chuva_1")
         self.presentationView.imagemNuvem2.image = UIImage(named: "nuvem_chuva_2")
         self.presentationView.imagemNuvem3.image = UIImage(named: "nuvem_chuva_3")
         self.presentationView.imagemNuvem4.image = UIImage(named: "nuvem_chuva_4")
+        
         self.presentationView.feelsLike.layer.borderColor = UIColor.gray.cgColor
         self.presentationView.feelsLike.layer.backgroundColor = UIColor.gray.cgColor
-        self.presentationView.backgroundColor = UIColor(red: 0.84, green: 0.84, blue: 0.84, alpha: 1.00)
         self.presentationView.setupThemeRainUI(remover: false)
+        
+        UIView.animate(withDuration: 1.5, delay: 0.0, options:[], animations: {
+            self.presentationView.backgroundColor = UIColor(red: 0.84, green: 0.84, blue: 0.84, alpha: 1.00)
+           }, completion:nil)
     }
     
     func setupNightTheme(){
+        
+        //Nuvens Cinzas
         self.presentationView.imagemNuvem1.image = UIImage(named: "nuvem_chuva_1")
         self.presentationView.imagemNuvem2.image = UIImage(named: "nuvem_chuva_2")
         self.presentationView.imagemNuvem3.image = UIImage(named: "nuvem_chuva_3")
         self.presentationView.imagemNuvem4.image = UIImage(named: "nuvem_chuva_4")
+        
         self.presentationView.feelsLike.layer.borderColor = UIColor.gray.cgColor
         self.presentationView.feelsLike.layer.backgroundColor = UIColor.gray.cgColor
-        self.presentationView.backgroundColor = UIColor(red: 0.05, green: 0.03, blue: 0.30, alpha: 1.00)
+        
+        UIView.animate(withDuration: 1.5, delay: 0.0, options:[], animations: {
+            self.presentationView.backgroundColor = UIColor(red: 0.05, green: 0.03, blue: 0.30, alpha: 1.00)
+           }, completion:nil)
     }
     
     @objc func atualizaData(_ timer: Timer){

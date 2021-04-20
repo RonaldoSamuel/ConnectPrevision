@@ -47,5 +47,10 @@ extension String {
     static let ic_wind_speed = "ic_wind_speed"
     static let ic_rain_chance = "ic_rain_chance"
     static let ic_compass = "compess"
-    
+    static let ic_nuvem_chuva1 = "nuvem_chuva_1"
+    static let ic_nuvem_chuva2 = "nuvem_chuva_2"
+    static let ic_nuvem_chuva3 = "nuvem_chuva_3"
+    static let ic_nuvem_chuva4 = "nuvem_chuva_4"
+    static let ic_noite_estrelas = "noite_estrelas"
+    static let ic_chuva_gotas = "ic_chuva_gotas"
 }

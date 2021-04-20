@@ -15,6 +15,7 @@
 		62251FC9260CD6B900B3A2CC /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62251FC8260CD6B900B3A2CC /* APIClient.swift */; };
 		622FE50F26248F02009B6740 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 622FE51126248F02009B6740 /* Localizable.strings */; };
 		623676D52626FEB00006FF29 /* icones.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 623676D42626FEB00006FF29 /* icones.xcassets */; };
+		624600FB262F079000874C3F /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624600FA262F079000874C3F /* LoginModel.swift */; };
 		6247B30C260E4E1F00B8961A /* TempoModelForeCast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6247B30B260E4E1F00B8961A /* TempoModelForeCast.swift */; };
 		6247B314260E4EBA00B8961A /* PegarTemperaturaForeCast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6247B313260E4EBA00B8961A /* PegarTemperaturaForeCast.swift */; };
 		624F2957260E0A7C00372E34 /* Dados.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624F2956260E0A7C00372E34 /* Dados.swift */; };
@@ -32,7 +33,6 @@
 		6293C1C725E7E69900718F31 /* Connect_PrevisionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6293C1C625E7E69900718F31 /* Connect_PrevisionTests.swift */; };
 		6293C1D225E7E69900718F31 /* Connect_PrevisionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6293C1D125E7E69900718F31 /* Connect_PrevisionUITests.swift */; };
 		6293C1FB25E7E8BD00718F31 /* TelaLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6293C1FA25E7E8BD00718F31 /* TelaLoginView.swift */; };
-		629434A42628D7330033A53F /* Pods_Connect_Prevision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B538344C6156F170E9242108 /* Pods_Connect_Prevision.framework */; };
 		6294CD8625ED569C00F2555A /* TelaHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6294CD8525ED569C00F2555A /* TelaHomeView.swift */; };
 		6294CD8B25ED56A700F2555A /* TelaHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6294CD8A25ED56A700F2555A /* TelaHomeViewController.swift */; };
 		629980D3260A56B700E17414 /* Imagens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629980D2260A56B700E17414 /* Imagens.swift */; };
@@ -93,6 +93,7 @@
 		622FE51026248F02009B6740 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		622FE53B26248F18009B6740 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		623676D42626FEB00006FF29 /* icones.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = icones.xcassets; sourceTree = "<group>"; };
+		624600FA262F079000874C3F /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		6247B30B260E4E1F00B8961A /* TempoModelForeCast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempoModelForeCast.swift; sourceTree = "<group>"; };
 		6247B313260E4EBA00B8961A /* PegarTemperaturaForeCast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PegarTemperaturaForeCast.swift; sourceTree = "<group>"; };
 		624F2956260E0A7C00372E34 /* Dados.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dados.swift; sourceTree = "<group>"; };
@@ -156,7 +157,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				629434A42628D7330033A53F /* Pods_Connect_Prevision.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,6 +224,14 @@
 				622FE51126248F02009B6740 /* Localizable.strings */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		624600F9262F078100874C3F /* TelaLogin */ = {
+			isa = PBXGroup;
+			children = (
+				624600FA262F079000874C3F /* LoginModel.swift */,
+			);
+			path = TelaLogin;
 			sourceTree = "<group>";
 		};
 		624F2955260E0A4F00372E34 /* Codable	 */ = {
@@ -486,6 +494,7 @@
 		62FAEEAD25E9551F0094C58A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				624600F9262F078100874C3F /* TelaLogin */,
 				62FAEEB625E958750094C58A /* TelaCadastro */,
 				6294CD7E25ED520700F2555A /* TelaHome */,
 			);
@@ -842,6 +851,7 @@
 				62FAEEBE25E95EBF0094C58A /* String+Extension.swift in Sources */,
 				62FAEEB925E958BE0094C58A /* TelaLoginViewModel.swift in Sources */,
 				62B9BCFE260B547A003BCA2D /* HomeNavigationTabViewController.swift in Sources */,
+				624600FB262F079000874C3F /* LoginModel.swift in Sources */,
 				62B9BD03260B5506003BCA2D /* NavigationBarCoordinator.swift in Sources */,
 				62F0AD752604CC030011115A /* Coordinator.swift in Sources */,
 				6294CD8625ED569C00F2555A /* TelaHomeView.swift in Sources */,

@@ -12,9 +12,9 @@ import Firebase
 
 class TelaCadastroViewModel {
     
-    var signUpModel = FireBaseLoginSignModel()
     var firebaseHelper = SignHelper()
-    var disposable = DisposeBag()
+    var disposable: DisposeBag = DisposeBag()
+    var model: FireBaseLoginSignModel = FireBaseLoginSignModel()
     
     var nome: BehaviorRelay<String> = BehaviorRelay<String>(value: "")
     var email: BehaviorRelay<String> = BehaviorRelay<String>(value: "")
@@ -30,23 +30,38 @@ class TelaCadastroViewModel {
         Observable.combineLatest(nome, email, phone, password, confirmPassword) { (value1,value2,value3,value4,value5) in
             return (value1 != "" && value2 != "" && value3 != "" && value4 != "" && value5 != "")}.bind(to: self.isFormPreenchido).disposed(by: disposable)
         
+        nome.asObservable()
+            .subscribe(onNext: {value in
+                self.model.setNome(value)
+            }).disposed(by: disposable)
+        
         email.asObservable()
             .subscribe(onNext: {value in
-                self.signUpModel.email = value
+                self.model.setEmail(value)
             }
             ).disposed(by: disposable)
         
+        phone.asObservable()
+            .subscribe(onNext: {value in
+                self.model.setPhone(value)
+            }).disposed(by: disposable)
+        
         password.asObservable()
             .subscribe(onNext: {value in
-                self.signUpModel.password = value
+                self.model.setPassword(value)
             }
             ).disposed(by: disposable)
+        
+        confirmPassword.asObservable()
+            .subscribe(onNext: {value in
+                self.model.setConfirmPassword(value)
+            }).disposed(by: disposable)
         
         Observable.combineLatest(password, confirmPassword) { (value1,value2) in return value1 == value2 && value1 != "" }.bind(to: self.isPasswordEqual).disposed(by: disposable)
     }
     
     func create(){
-        firebaseHelper.criarConta(emailModel: signUpModel)
+        firebaseHelper.criarConta(emailModel: model)
     }
     
 }

@@ -12,9 +12,9 @@ import Firebase
 import MaterialComponents
 
 class LoginHelper {
-    func logarFirebase(emailModel: FireBaseLoginSignModel,completion: @escaping((Bool)->Void)){
+    func logarFirebase(emailModel: LoginModel,completion: @escaping((Bool)->Void)){
         
-        Auth.auth().signIn(withEmail: emailModel.email, password: emailModel.password, completion: { (authResult, error) in
+        Auth.auth().signIn(withEmail: emailModel.email, password: emailModel.senha, completion: { (authResult, error) in
             if let error = error as NSError? {
                 switch AuthErrorCode(rawValue: error.code) {
                 case .operationNotAllowed:

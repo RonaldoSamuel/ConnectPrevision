@@ -39,10 +39,6 @@ class TelaLoginViewController: UIViewController{
     
     func bindView(){
         
-        viewModel.isFormPreenchido.bind {value in
-            self.presentationView.loginButton.isEnabled = value
-        }.disposed(by: disposable)
-        
         print(viewModel.isUserLogged.value)
         
         presentationView.btnChange.rx.tap.bind { _ in
