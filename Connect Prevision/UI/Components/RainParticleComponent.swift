@@ -5,7 +5,6 @@
 //  Created by Ronaldo Filho on 15/04/21.
 //
 
-
 import UIKit
 import MaterialComponents
 import RxSwift
@@ -27,7 +26,6 @@ class RainParticleComponent: UIView {
         img.translatesAutoresizingMaskIntoConstraints = false
         return img
     }()
-    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -79,5 +77,3 @@ class RainParticleComponent: UIView {
         iconTheme.image = UIImage(named: named)?.withRenderingMode(.alwaysOriginal)
     }
 }
-
-

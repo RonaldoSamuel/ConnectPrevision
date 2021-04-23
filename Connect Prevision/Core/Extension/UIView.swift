@@ -14,14 +14,14 @@ extension UIView {
         
         let rainGif: UIImageView = {
             let gif = UIImageView()
-            gif.image = UIImage(named: "night-icon")
+            gif.image = UIImage(named: "icon_stars")
             gif.translatesAutoresizingMaskIntoConstraints = false
             return gif
         }()
         
         addSubview(rainGif)
         NSLayoutConstraint.activate([
-            rainGif.topAnchor.constraint(equalTo: topAnchor),
+            rainGif.topAnchor.constraint(equalTo: topAnchor,constant: -size.height*0.1),
             rainGif.leadingAnchor.constraint(equalTo: leadingAnchor),
             rainGif.trailingAnchor.constraint(equalTo: trailingAnchor),
             rainGif.bottomAnchor.constraint(equalTo: centerYAnchor,constant: size.height*0.15)

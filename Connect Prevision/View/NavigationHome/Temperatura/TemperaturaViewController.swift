@@ -110,8 +110,9 @@ class TemperaturaViewController: UIViewController{
         guard let current = self.viewModel.dataSourse.value.current else { return }
         guard let forecast = self.viewModel.dataSourse.value.forecast else { return }
         
-        let angle = ((current.windDegree+10) * .pi/2)
+        let angle = ((current.windDegree) * .pi/180)
         UIView.animate(withDuration: 0.8) {
+            
             print("angulo \(angle), \(current.windDegree)")
             self.presentationView.viewPonteiro.transform = CGAffineTransform(rotationAngle: CGFloat(angle))
         }

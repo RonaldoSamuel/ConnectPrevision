@@ -106,7 +106,7 @@ class TemperaturaView: UIView{
     var imagePonteiro: UIImageView = {
         var view = UIImageView()
         view.image = UIImage(named: .ic_wind)?.withRenderingMode(.alwaysTemplate)
-        view.tintColor = .black
+        view.tintColor = .systemBlue
         view.contentMode = .scaleAspectFit
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -401,10 +401,11 @@ class TemperaturaView: UIView{
         
         viewPonteiro.addSubview(imagePonteiro)
         NSLayoutConstraint.activate([
-            imagePonteiro.centerYAnchor.constraint(equalTo: viewPonteiro.centerYAnchor),
+            imagePonteiro.topAnchor.constraint(equalTo: viewPonteiro.topAnchor),
+            imagePonteiro.centerXAnchor.constraint(equalTo: viewPonteiro.centerXAnchor),
             imagePonteiro.leadingAnchor.constraint(equalTo: viewPonteiro.trailingAnchor,constant: -15),
             imagePonteiro.trailingAnchor.constraint(equalTo: viewPonteiro.trailingAnchor,constant: 5),
-            imagePonteiro.heightAnchor.constraint(equalToConstant: 45)
+            imagePonteiro.heightAnchor.constraint(equalToConstant: 10)
         ])
         
     }

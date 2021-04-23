@@ -425,7 +425,7 @@ class TelaHomeView: UIView {
     func setupCollectionView(){
         viewBottom.addSubview(collectionView)
         NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: stackComponentesDadosHorizontal.bottomAnchor,constant: 80),
+            collectionView.topAnchor.constraint(equalTo: viewBottom.bottomAnchor,constant: -120),
             collectionView.bottomAnchor.constraint(equalTo: viewBottom.bottomAnchor,constant: -20),
             collectionView.leadingAnchor.constraint(equalTo: viewBottom.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: viewBottom.trailingAnchor)
@@ -433,7 +433,7 @@ class TelaHomeView: UIView {
         
         viewBottom.addSubview(diaTodoLabel)
         NSLayoutConstraint.activate([
-            diaTodoLabel.bottomAnchor.constraint(equalTo: collectionView.topAnchor,constant: 10),
+            diaTodoLabel.bottomAnchor.constraint(equalTo: collectionView.topAnchor,constant: -20),
             diaTodoLabel.centerXAnchor.constraint(equalTo: collectionView.centerXAnchor)
         ])
     }

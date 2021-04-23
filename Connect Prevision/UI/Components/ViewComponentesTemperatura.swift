@@ -59,22 +59,12 @@ class ViewComponentesTemperatura: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        bindView()
         createSubViews()
-        settingDefaultsDescLabel()
-        settingDefaultsContentLabel()
-        settingDefaltsIconTheme()
-        setupView()
     }
     
     required public init?(coder: NSCoder) {
         super.init(coder: coder)
-        bindView()
         createSubViews()
-        settingDefaultsDescLabel()
-        settingDefaultsContentLabel()
-        settingDefaltsIconTheme()
-        setupView()
     }
     
     func bindView(){
@@ -82,7 +72,11 @@ class ViewComponentesTemperatura: UIView {
     }
     
     func createSubViews(){
+        bindView()
         setupView()
+        settingDefaultsDescLabel()
+        settingDefaultsContentLabel()
+        settingDefaltsIconTheme()
     }
     
     func setupView(){
