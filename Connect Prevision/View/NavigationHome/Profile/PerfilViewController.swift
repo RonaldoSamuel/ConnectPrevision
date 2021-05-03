@@ -49,7 +49,6 @@ class PerfilViewController: UIViewController{
     
     func bindView(){
         
-        viewModel.userName.bind{ value in self.presentationView.nameLabel.text = value }.disposed(by: disposable)
         
         presentationView.botaoDeslogar.rx
             .tap
@@ -66,9 +65,9 @@ class PerfilViewController: UIViewController{
             
             if(!value.isEmpty){
                 print(value)
-                self.presentationView.imageView.downloaded(from: value)
+                self.presentationView.fotoUsuario.downloaded(from: value)
             }
-            self.presentationView.imageView.image = UIImage(named: "Logo")
+            self.presentationView.fotoUsuario.image = UIImage(named: "Logo")
         }.disposed(by: disposable)
         
         viewModel.isRaining.bind { value in

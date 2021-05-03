@@ -32,13 +32,19 @@ class PerfilComponent: UIView {
     }()
     
     var iconTheme: UIImageView = {
-        var img = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+        var img = UIImageView(frame: CGRect(x: 0, y: 0, width: 15, height: 15))
         img.translatesAutoresizingMaskIntoConstraints = false
         return img
     }()
     
     var contentLabel: UILabel = {
         var lbl = UILabel()
+        lbl.translatesAutoresizingMaskIntoConstraints = false
+        return lbl
+    }()
+    
+    var infoUserLabel: UILabel = {
+       var lbl = UILabel()
         lbl.translatesAutoresizingMaskIntoConstraints = false
         return lbl
     }()
@@ -86,8 +92,8 @@ class PerfilComponent: UIView {
         NSLayoutConstraint.activate([
             iconTheme.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             iconTheme.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 20),
-            iconTheme.heightAnchor.constraint(equalToConstant: 30),
-            iconTheme.widthAnchor.constraint(equalToConstant: 30)
+            iconTheme.heightAnchor.constraint(equalToConstant: 15),
+            iconTheme.widthAnchor.constraint(equalToConstant: 15)
         ])
         
         
@@ -101,19 +107,33 @@ class PerfilComponent: UIView {
         NSLayoutConstraint.activate([
             nextIcon.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             nextIcon.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: -20),
-            nextIcon.heightAnchor.constraint(equalToConstant: 30),
-            nextIcon.widthAnchor.constraint(equalToConstant: 30)
+            nextIcon.heightAnchor.constraint(equalToConstant: 10),
+            nextIcon.widthAnchor.constraint(equalToConstant: 10)
+        ])
+        
+        view.addSubview(infoUserLabel)
+        NSLayoutConstraint.activate([
+            infoUserLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            infoUserLabel.trailingAnchor.constraint(equalTo: nextIcon.leadingAnchor,constant: -10),
+            infoUserLabel.leadingAnchor.constraint(equalTo: contentLabel.trailingAnchor,constant: 10),
         ])
         
     }
     
     func settingDefaultsContentLabel(){
         contentLabel.textColor = UIColor(red: 0.33, green: 0.29, blue: 0.34, alpha: 1.00)
-        contentLabel.font = UIFont.boldSystemFont(ofSize: 17)
+        contentLabel.font = UIFont.boldSystemFont(ofSize: 13)
+        infoUserLabel.textColor = .gray
+        infoUserLabel.font = UIFont.boldSystemFont(ofSize: 13)
+        infoUserLabel.textAlignment = .right
     }
     
     func setupContentText(conteudo: String){
         contentLabel.text = conteudo
+    }
+    
+    func setupInfoUser(conteudo: String){
+        infoUserLabel.text = conteudo
     }
     
     func settingDefaltsIconTheme(){

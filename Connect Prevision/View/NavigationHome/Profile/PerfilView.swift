@@ -39,94 +39,80 @@ class PerfilView: UIView{
         return view
     }()
     
-    var iconImage: UIImageView = {
+    
+    var fotoUsuario: UIImageView = {
         var img = UIImageView()
-        img.image = UIImage(named: .ic_logo)?.withRenderingMode(.alwaysOriginal )
-        img.layer.cornerRadius = 25
         img.translatesAutoresizingMaskIntoConstraints = false
         return img
     }()
     
-    var nameLabel: UILabel = {
+    var nomeUsuario: UILabel = {
         var lbl = UILabel()
-        lbl.text = "loading".translate
-        lbl.textColor = .black
-        lbl.font = UIFont.boldSystemFont(ofSize: 26)
-        lbl.translatesAutoresizingMaskIntoConstraints = false
-        return lbl
-    }()
-    
-    var phoneLabel: UILabel = {
-        var lbl = UILabel()
-        
-        lbl.text = "(14) 99628-2935"
-        lbl.translatesAutoresizingMaskIntoConstraints = false
-        return lbl
-    }()
-    
-    var lineView1: UIView = {
-        var view = UIView()
-        view.backgroundColor = .gray
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
-    var cidadeLabel: UILabel = {
-        var lbl = UILabel()
-        lbl.text = "Garça - São Paulo"
-        lbl.font = UIFont.boldSystemFont(ofSize: 16)
+        lbl.text = "Nome Usuário"
+        lbl.font = UIFont.boldSystemFont(ofSize: 20)
         lbl.textColor = .gray
         lbl.translatesAutoresizingMaskIntoConstraints = false
         return lbl
     }()
     
-    var cepLabel: UILabel = {
-        var lbl = UILabel()
-        lbl.text = "17400-000"
-        lbl.font = UIFont.boldSystemFont(ofSize: 16)
-        lbl.textColor = .gray
-        lbl.translatesAutoresizingMaskIntoConstraints = false
-        return lbl
+    var btn_RemoverIcone: UIButton = {
+        var btn = UIButton()
+        btn.backgroundColor = .clear
+        btn.setTitleColor(.systemBlue, for: .normal)
+        btn.setTitle("Remover Icone", for: .normal)
+        btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        return btn
     }()
     
-    var lineView2: UIView = {
-        var view = UIView()
-        view.backgroundColor = .gray
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
-    var bottomView: UIView = {
+    var middleView: UIView = {
         var view = UIView()
         view.backgroundColor = .white
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    var contaLabel: UILabel = {
+    var lbl_InformacaoConta: UILabel = {
         var lbl = UILabel()
-        lbl.text = "your_account".translate
+        lbl.text = "Informações da conta"
         lbl.textColor = .gray
         lbl.font = UIFont.boldSystemFont(ofSize: 20)
         lbl.translatesAutoresizingMaskIntoConstraints = false
         return lbl
     }()
     
-    var emailLabel: UILabel = {
-        var lbl = UILabel()
-        lbl.textColor = .gray
-        lbl.font = UIFont.boldSystemFont(ofSize: 16)
-        lbl.text = "ronaldo.samuel2021@gmail.com"
-        lbl.translatesAutoresizingMaskIntoConstraints = false
-        return lbl
+    var info_NomeUsuario: PerfilComponent = {
+        var info = PerfilComponent()
+        info.setIcon(named: .ic_person)
+        info.setupContentText(conteudo: "Nome de usuário")
+        info.setupInfoUser(conteudo: "Ronaldo Samuel")
+        info.translatesAutoresizingMaskIntoConstraints = false
+        return info
     }()
     
-    var emailIcon: UIImageView = {
-        var img = UIImageView()
-        img.image = UIImage(named: .ic_email)?.withRenderingMode(.alwaysTemplate)
-        img.tintColor = .gray
-        img.translatesAutoresizingMaskIntoConstraints = false
-        return img
+    var info_EmailUsuario: PerfilComponent = {
+        var info = PerfilComponent()
+        info.setIcon(named: .ic_email)
+        info.setupInfoUser(conteudo: "ronaldo.samuel2021@gmail.com")
+        info.setupContentText(conteudo: "E-mail")
+        info.translatesAutoresizingMaskIntoConstraints = false
+        return info
+    }()
+    
+    var info_Telefone: PerfilComponent = {
+        var info = PerfilComponent()
+        info.setIcon(named: .ic_phone)
+        info.setupContentText(conteudo: "Telefone")
+        info.translatesAutoresizingMaskIntoConstraints = false
+        return info
+    }()
+    
+    var info_MudarSenha: PerfilComponent = {
+        var info = PerfilComponent()
+        info.setIcon(named: .ic_lock)
+        info.setupContentText(conteudo: "Mudar senha")
+        info.translatesAutoresizingMaskIntoConstraints = false
+        return info
     }()
     
     var poweredLabel: UILabel = {
@@ -153,12 +139,6 @@ class PerfilView: UIView{
         btn.setBackgroundColor(.clear,for: .normal)
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
-    }()
-    
-    var imageView: UIImageView = {
-        var img = UIImageView()
-        img.translatesAutoresizingMaskIntoConstraints = false
-        return img
     }()
     
     let rainParticle1: UIImageView = {
@@ -217,7 +197,7 @@ class PerfilView: UIView{
         backgroundColor = UIColor(red: 0.23, green: 0.45, blue: 0.96, alpha: 1.00)
         setupNuvens()
         setupviewTopo()
-        setupViewBottom()
+        setupMiddleView()
         setupBotaoDeslogar()
     }
     
@@ -285,99 +265,78 @@ class PerfilView: UIView{
         addSubview(topView)
         NSLayoutConstraint.activate([
             topView.topAnchor.constraint(equalTo: topAnchor,constant: size.height*0.3),
-            topView.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 0),
-            topView.trailingAnchor.constraint(equalTo: trailingAnchor,constant: 0),
-            topView.bottomAnchor.constraint(equalTo: bottomAnchor,constant: -size.height*0.25)
+            topView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            topView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            topView.heightAnchor.constraint(equalToConstant: 138)
         ])
         
-        topView.addSubview(imageView)
+        topView.addSubview(fotoUsuario)
         NSLayoutConstraint.activate([
-            imageView.leadingAnchor.constraint(equalTo: topView.leadingAnchor,constant: 20),
-            imageView.topAnchor.constraint(equalTo: topView.topAnchor,constant: 20),
-            imageView.widthAnchor.constraint(equalToConstant: 100),
-            imageView.heightAnchor.constraint(equalToConstant: 100)
+            fotoUsuario.leadingAnchor.constraint(equalTo: topView.leadingAnchor,constant: 20),
+            fotoUsuario.topAnchor.constraint(equalTo: topView.topAnchor,constant: 20),
+            fotoUsuario.widthAnchor.constraint(equalToConstant: 100),
+            fotoUsuario.heightAnchor.constraint(equalToConstant: 100)
         ])
         
-        topView.addSubview(nameLabel)
+    }
+    
+    func setupMiddleView(){
+        
+        addSubview(middleView)
         NSLayoutConstraint.activate([
-            nameLabel.centerYAnchor.constraint(equalTo: imageView.centerYAnchor,constant: -10),
-            nameLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor,constant: 15)
+            middleView.topAnchor.constraint(equalTo: topView.bottomAnchor),
+            middleView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            middleView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            middleView.trailingAnchor.constraint(equalTo: trailingAnchor)
         ])
         
-        topView.addSubview(phoneLabel)
+        setupInformacaoConta()
+        setupInfoAccountComponents()
+    }
+    
+    func setupInformacaoConta(){
+        middleView.addSubview(lbl_InformacaoConta)
         NSLayoutConstraint.activate([
-            phoneLabel.centerYAnchor.constraint(equalTo: imageView.centerYAnchor,constant: 20),
-            phoneLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor,constant: 15)
-        ])
-        
-        topView.addSubview(lineView1)
-        NSLayoutConstraint.activate([
-            lineView1.topAnchor.constraint(equalTo: imageView.bottomAnchor,constant: 20),
-            lineView1.leadingAnchor.constraint(equalTo: topView.leadingAnchor),
-            lineView1.trailingAnchor.constraint(equalTo: topView.trailingAnchor),
-            lineView1.heightAnchor.constraint(equalToConstant: 0.04)
-        ])
-        
-        topView.addSubview(cidadeLabel)
-        NSLayoutConstraint.activate([
-            cidadeLabel.topAnchor.constraint(equalTo: lineView1.bottomAnchor,constant: size.height*0.04),
-            cidadeLabel.centerXAnchor.constraint(equalTo: topView.centerXAnchor)
-        ])
-        
-        topView.addSubview(lineView2)
-        NSLayoutConstraint.activate([
-            lineView2.bottomAnchor.constraint(equalTo: lineView1.bottomAnchor,constant: 140),
-            lineView2.leadingAnchor.constraint(equalTo: topView.leadingAnchor),
-            lineView2.trailingAnchor.constraint(equalTo: topView.trailingAnchor),
-            lineView2.heightAnchor.constraint(equalToConstant: 0.04)
-        ])
-        
-        topView.addSubview(cepLabel)
-        NSLayoutConstraint.activate([
-            cepLabel.bottomAnchor.constraint(equalTo: lineView2.topAnchor,constant: -size.height*0.04),
-            cepLabel.centerXAnchor.constraint(equalTo: topView.centerXAnchor)
+            lbl_InformacaoConta.topAnchor.constraint(equalTo: middleView.topAnchor,constant: 20),
+            lbl_InformacaoConta.leadingAnchor.constraint(equalTo: middleView.leadingAnchor,constant: 20)
         ])
     }
     
-    func setupViewBottom(){
-        addSubview(bottomView)
+    func setupInfoAccountComponents(){
+        middleView.addSubview(info_NomeUsuario)
         NSLayoutConstraint.activate([
-            bottomView.topAnchor.constraint(equalTo: topView.bottomAnchor,constant: 0),
-            bottomView.bottomAnchor.constraint(equalTo: bottomAnchor,constant: 10),
-            bottomView.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 0),
-            bottomView.trailingAnchor.constraint(equalTo: trailingAnchor,constant: 0)
+            info_NomeUsuario.topAnchor.constraint(equalTo: lbl_InformacaoConta.bottomAnchor,constant: 10),
+            info_NomeUsuario.leadingAnchor.constraint(equalTo: middleView.leadingAnchor,constant: 10),
+            info_NomeUsuario.trailingAnchor.constraint(equalTo: middleView.trailingAnchor,constant: -10),
+            info_NomeUsuario.heightAnchor.constraint(equalToConstant: 30)
         ])
         
-        bottomView.addSubview(contaLabel)
+        middleView.addSubview(info_EmailUsuario)
         NSLayoutConstraint.activate([
-            contaLabel.topAnchor.constraint(equalTo: bottomView.topAnchor,constant: 10),
-            contaLabel.leadingAnchor.constraint(equalTo: bottomView.leadingAnchor,constant: 40)
+            info_EmailUsuario.topAnchor.constraint(equalTo: info_NomeUsuario.bottomAnchor,constant: 10),
+            info_EmailUsuario.leadingAnchor.constraint(equalTo: middleView.leadingAnchor,constant: 10),
+            info_EmailUsuario.trailingAnchor.constraint(equalTo: middleView.trailingAnchor,constant: -10),
+            info_EmailUsuario.heightAnchor.constraint(equalToConstant: 30)
         ])
         
-        bottomView.addSubview(emailLabel)
+        middleView.addSubview(info_Telefone)
         NSLayoutConstraint.activate([
-            emailLabel.centerYAnchor.constraint(equalTo: bottomView.centerYAnchor,constant: -30),
-            emailLabel.leadingAnchor.constraint(equalTo: bottomView.leadingAnchor,constant: 80)
+            info_Telefone.topAnchor.constraint(equalTo: info_EmailUsuario.bottomAnchor,constant: 10),
+            info_Telefone.leadingAnchor.constraint(equalTo: middleView.leadingAnchor,constant: 10),
+            info_Telefone.trailingAnchor.constraint(equalTo: middleView.trailingAnchor,constant: -10),
+            info_Telefone.heightAnchor.constraint(equalToConstant: 30)
         ])
         
-        bottomView.addSubview(emailIcon)
+        middleView.addSubview(info_MudarSenha)
         NSLayoutConstraint.activate([
-            emailIcon.centerYAnchor.constraint(equalTo: bottomView.centerYAnchor,constant: -30),
-            emailIcon.leadingAnchor.constraint(equalTo: bottomView.leadingAnchor,constant: 50)
-        ])
-        
-        bottomView.addSubview(poweredLabel)
-        NSLayoutConstraint.activate([
-            poweredLabel.bottomAnchor.constraint(equalTo: bottomView.bottomAnchor,constant: -20),
-            poweredLabel.centerXAnchor.constraint(equalTo: bottomView.centerXAnchor,constant: -60)
-        ])
-        bottomView.addSubview(siteAPILabel)
-        NSLayoutConstraint.activate([
-            siteAPILabel.bottomAnchor.constraint(equalTo: bottomView.bottomAnchor,constant: -20),
-            siteAPILabel.leadingAnchor.constraint(equalTo: poweredLabel.trailingAnchor,constant: 4)
+            info_MudarSenha.topAnchor.constraint(equalTo: info_Telefone.bottomAnchor,constant: 10),
+            info_MudarSenha.leadingAnchor.constraint(equalTo: middleView.leadingAnchor,constant: 10),
+            info_MudarSenha.trailingAnchor.constraint(equalTo: middleView.trailingAnchor,constant: -10),
+            info_MudarSenha.heightAnchor.constraint(equalToConstant: 30)
         ])
     }
     
+  
     func setupBotaoDeslogar(){
         topView.addSubview(botaoDeslogar)
         NSLayoutConstraint.activate([

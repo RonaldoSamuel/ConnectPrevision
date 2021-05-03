@@ -59,6 +59,10 @@
 		62FAEEAF25E955470094C58A /* FireBaseLoginSignModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FAEEAE25E955470094C58A /* FireBaseLoginSignModel.swift */; };
 		62FAEEB925E958BE0094C58A /* TelaLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FAEEB825E958BE0094C58A /* TelaLoginViewModel.swift */; };
 		62FAEEBE25E95EBF0094C58A /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FAEEBD25E95EBF0094C58A /* String+Extension.swift */; };
+		62FDCD3F264030BA00D7A88C /* Simulator Screen Shot - iPhone 12 Pro Max - 2021-05-03 at 10.16.27.png in Resources */ = {isa = PBXBuildFile; fileRef = 62FDCD3B264030B900D7A88C /* Simulator Screen Shot - iPhone 12 Pro Max - 2021-05-03 at 10.16.27.png */; };
+		62FDCD40264030BA00D7A88C /* Simulator Screen Shot - iPhone 12 Pro Max - 2021-05-03 at 10.15.11.png in Resources */ = {isa = PBXBuildFile; fileRef = 62FDCD3C264030B900D7A88C /* Simulator Screen Shot - iPhone 12 Pro Max - 2021-05-03 at 10.15.11.png */; };
+		62FDCD41264030BA00D7A88C /* Simulator Screen Shot - iPhone 12 Pro Max - 2021-05-03 at 10.21.11.png in Resources */ = {isa = PBXBuildFile; fileRef = 62FDCD3D264030BA00D7A88C /* Simulator Screen Shot - iPhone 12 Pro Max - 2021-05-03 at 10.21.11.png */; };
+		62FDCD42264030BA00D7A88C /* Simulator Screen Shot - iPhone 12 Pro Max - 2021-05-03 at 10.20.48.png in Resources */ = {isa = PBXBuildFile; fileRef = 62FDCD3E264030BA00D7A88C /* Simulator Screen Shot - iPhone 12 Pro Max - 2021-05-03 at 10.20.48.png */; };
 		D87A881C52AA5D18A7A22F48 /* Pods_Connect_PrevisionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27211DE00356AD60875FB8F7 /* Pods_Connect_PrevisionTests.framework */; };
 		F6862A1B262725BD0011E454 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F6862A1A262725BD0011E454 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
@@ -144,6 +148,10 @@
 		62FAEEAE25E955470094C58A /* FireBaseLoginSignModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireBaseLoginSignModel.swift; sourceTree = "<group>"; };
 		62FAEEB825E958BE0094C58A /* TelaLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelaLoginViewModel.swift; sourceTree = "<group>"; };
 		62FAEEBD25E95EBF0094C58A /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		62FDCD3B264030B900D7A88C /* Simulator Screen Shot - iPhone 12 Pro Max - 2021-05-03 at 10.16.27.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simulator Screen Shot - iPhone 12 Pro Max - 2021-05-03 at 10.16.27.png"; sourceTree = "<group>"; };
+		62FDCD3C264030B900D7A88C /* Simulator Screen Shot - iPhone 12 Pro Max - 2021-05-03 at 10.15.11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simulator Screen Shot - iPhone 12 Pro Max - 2021-05-03 at 10.15.11.png"; sourceTree = "<group>"; };
+		62FDCD3D264030BA00D7A88C /* Simulator Screen Shot - iPhone 12 Pro Max - 2021-05-03 at 10.21.11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simulator Screen Shot - iPhone 12 Pro Max - 2021-05-03 at 10.21.11.png"; sourceTree = "<group>"; };
+		62FDCD3E264030BA00D7A88C /* Simulator Screen Shot - iPhone 12 Pro Max - 2021-05-03 at 10.20.48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simulator Screen Shot - iPhone 12 Pro Max - 2021-05-03 at 10.20.48.png"; sourceTree = "<group>"; };
 		6F7F58FA760250E178DDE74A /* Pods-Connect Prevision-Connect PrevisionUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Connect Prevision-Connect PrevisionUITests.release.xcconfig"; path = "Target Support Files/Pods-Connect Prevision-Connect PrevisionUITests/Pods-Connect Prevision-Connect PrevisionUITests.release.xcconfig"; sourceTree = "<group>"; };
 		935E6A05CF57FEA4678FD1C3 /* Pods_Connect_Prevision_Connect_PrevisionUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Connect_Prevision_Connect_PrevisionUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A85F573DAF47A5541114C6BF /* Pods-Connect PrevisionTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Connect PrevisionTests.release.xcconfig"; path = "Target Support Files/Pods-Connect PrevisionTests/Pods-Connect PrevisionTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -265,6 +273,7 @@
 		6293C1A325E7E69900718F31 = {
 			isa = PBXGroup;
 			children = (
+				62FDCD3A2640309800D7A88C /* Prints */,
 				6293C1AE25E7E69900718F31 /* Connect Prevision */,
 				6293C1C525E7E69900718F31 /* Connect PrevisionTests */,
 				6293C1D025E7E69900718F31 /* Connect PrevisionUITests */,
@@ -517,6 +526,17 @@
 			path = TelaLogin;
 			sourceTree = "<group>";
 		};
+		62FDCD3A2640309800D7A88C /* Prints */ = {
+			isa = PBXGroup;
+			children = (
+				62FDCD3C264030B900D7A88C /* Simulator Screen Shot - iPhone 12 Pro Max - 2021-05-03 at 10.15.11.png */,
+				62FDCD3B264030B900D7A88C /* Simulator Screen Shot - iPhone 12 Pro Max - 2021-05-03 at 10.16.27.png */,
+				62FDCD3E264030BA00D7A88C /* Simulator Screen Shot - iPhone 12 Pro Max - 2021-05-03 at 10.20.48.png */,
+				62FDCD3D264030BA00D7A88C /* Simulator Screen Shot - iPhone 12 Pro Max - 2021-05-03 at 10.21.11.png */,
+			);
+			path = Prints;
+			sourceTree = "<group>";
+		};
 		840F35AF77589DA244461CF8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -662,9 +682,13 @@
 				6293C1BC25E7E69900718F31 /* LaunchScreen.storyboard in Resources */,
 				622FE50F26248F02009B6740 /* Localizable.strings in Resources */,
 				6293C1B925E7E69900718F31 /* Assets.xcassets in Resources */,
+				62FDCD42264030BA00D7A88C /* Simulator Screen Shot - iPhone 12 Pro Max - 2021-05-03 at 10.20.48.png in Resources */,
+				62FDCD41264030BA00D7A88C /* Simulator Screen Shot - iPhone 12 Pro Max - 2021-05-03 at 10.21.11.png in Resources */,
 				623676D52626FEB00006FF29 /* icones.xcassets in Resources */,
 				62CB10FB2625DABA00FC4399 /* InfoPlist.strings in Resources */,
+				62FDCD3F264030BA00D7A88C /* Simulator Screen Shot - iPhone 12 Pro Max - 2021-05-03 at 10.16.27.png in Resources */,
 				F6862A1B262725BD0011E454 /* GoogleService-Info.plist in Resources */,
+				62FDCD40264030BA00D7A88C /* Simulator Screen Shot - iPhone 12 Pro Max - 2021-05-03 at 10.15.11.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1062,6 +1086,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 44V9FMY9WF;
+				"EXCLUDED_ARCHS[sdk=*]" = arm64;
 				INFOPLIST_FILE = "Connect Prevision/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
