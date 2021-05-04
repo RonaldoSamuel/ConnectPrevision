@@ -203,21 +203,24 @@ class TelaCadastroView: UIView {
         NSLayoutConstraint.activate([
             txtEmail.topAnchor.constraint(equalTo: txtNome.bottomAnchor,constant: size.height*0.03),
             txtEmail.leadingAnchor.constraint(equalTo: viewItensForm.leadingAnchor,constant: 25),
-            txtEmail.trailingAnchor.constraint(equalTo: viewItensForm.trailingAnchor,constant: -25)
+            txtEmail.trailingAnchor.constraint(equalTo: viewItensForm.trailingAnchor,constant: -25),
+            txtNome.heightAnchor.constraint(equalToConstant: 60)
         ])
         
         viewItensForm.addSubview(txtPhone)
         NSLayoutConstraint.activate([
             txtPhone.topAnchor.constraint(equalTo: txtEmail.bottomAnchor,constant: size.height*0.03),
             txtPhone.leadingAnchor.constraint(equalTo: viewItensForm.leadingAnchor,constant: 25),
-            txtPhone.trailingAnchor.constraint(equalTo: viewItensForm.trailingAnchor,constant: -25)
+            txtPhone.trailingAnchor.constraint(equalTo: viewItensForm.trailingAnchor,constant: -25),
+            txtNome.heightAnchor.constraint(equalToConstant: 60)
         ])
         
         viewItensForm.addSubview(txtSenha)
         NSLayoutConstraint.activate([
             txtSenha.topAnchor.constraint(equalTo: txtPhone.bottomAnchor,constant: size.height*0.03),
             txtSenha.leadingAnchor.constraint(equalTo: viewItensForm.leadingAnchor,constant: 25),
-            txtSenha.trailingAnchor.constraint(equalTo: viewItensForm.trailingAnchor,constant: -25)
+            txtSenha.trailingAnchor.constraint(equalTo: viewItensForm.trailingAnchor,constant: -25),
+            txtNome.heightAnchor.constraint(equalToConstant: 60)
         ])
         
         viewItensForm.addSubview(btnChange)
@@ -231,7 +234,8 @@ class TelaCadastroView: UIView {
         NSLayoutConstraint.activate([
             txtConfirmSenha.topAnchor.constraint(equalTo: txtSenha.bottomAnchor,constant: size.height*0.03),
             txtConfirmSenha.leadingAnchor.constraint(equalTo: viewItensForm.leadingAnchor,constant: 25),
-            txtConfirmSenha.trailingAnchor.constraint(equalTo: viewItensForm.trailingAnchor,constant: -25)
+            txtConfirmSenha.trailingAnchor.constraint(equalTo: viewItensForm.trailingAnchor,constant: -25),
+            txtNome.heightAnchor.constraint(equalToConstant: 60)
         ])
         
         viewItensForm.addSubview(signUpButton)
@@ -257,6 +261,30 @@ class TelaCadastroView: UIView {
             loginButton.heightAnchor.constraint(equalToConstant: 16),
             loginButton.bottomAnchor.constraint(equalTo: viewItensForm.bottomAnchor,constant: -25)
         ])
+    }
+    
+    func setupErrosForm(erros: [ErrorModel<CadastroErrorType>]){
+        for item in erros{
+            if item.typeError == .nomeVazio{
+                txtNome.setupInvalidCamp(item.message)
+            }
+            if item.typeError == .emailVazio || item.typeError == .emailInvalido{
+                txtEmail.setupInvalidCamp(item.message)
+            }
+            
+            if item.typeError == .telefoneVazio {
+                txtPhone.setupInvalidCamp(item.message)
+            }
+            
+            if item.typeError == .senhaCurta || item.typeError == .senhaVazia || item.typeError == .senhaFraca {
+                txtSenha.setupInvalidCamp(item.message)
+            }
+            
+            if item.typeError == .senhasDivergentes || item.typeError == .confirmarSenhaVazia {
+                txtConfirmSenha.setupInvalidCamp(item.message)
+            }
+            
+        }
     }
     
 }

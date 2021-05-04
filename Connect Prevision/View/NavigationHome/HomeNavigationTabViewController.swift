@@ -42,7 +42,6 @@ class HomeNavigationTabViewController: UITabBarController {
         perfilView.coordinator = coordinator
         perfilView.viewModel.isRaining = homeView.viewModel.isRaining
         perfilView.viewModel.isNight = homeView.viewModel.isNight
-        perfilView.viewModel.dataSourse = homeView.viewModel.dataSourse
         let perfilImg = UIImage(named: .ic_perfil)
         let perfilItem = UITabBarItem(title: "profile".translate, image: perfilImg, tag: 1)
         perfilView.tabBarItem = perfilItem

@@ -17,6 +17,7 @@ class TextFieldFormulario: UIView {
     var isPreenchido: BehaviorRelay<Bool> = BehaviorRelay<Bool>(value: false)
     var isSecureTextEntry: Bool = false
     var isEditando: Bool = false
+    var isValid: Bool = true
     
     var txt: MDCOutlinedTextField = {
         var txt = MDCOutlinedTextField()
@@ -47,12 +48,29 @@ class TextFieldFormulario: UIView {
         
         txt.rx.controlEvent(.editingDidBegin).bind { _ in
             self.isEditando = true
-            self.txt.leadingView?.tintColor = UIColor(red: 0.25, green: 0.57, blue: 0.87, alpha: 1.00)
+            if self.isValid {
+                self.txt.leadingView?.tintColor = UIColor(red: 0.25, green: 0.57, blue: 0.87, alpha: 1.00)
+                self.txt.setOutlineColor(UIColor(red: 0.25, green: 0.57, blue: 0.87, alpha: 1.00), for: .editing)
+            }else{
+                self.txt.setOutlineColor(.systemRed, for: .editing)
+                self.txt.leadingView?.tintColor = UIColor.systemRed
+            }
+            
         }.disposed(by: disposable)
         
         txt.rx.controlEvent(.editingDidEnd).bind { _ in
             self.isEditando = false
-            self.isPreenchido.value ? ( self.txt.leadingView?.tintColor = UIColor(red: 0.25, green: 0.57, blue: 0.87, alpha: 1.00)) : ( self.txt.leadingView?.tintColor = .gray)
+            self.isValid ?
+                self.isPreenchido.value ? ( self.txt.leadingView?.tintColor = UIColor(red: 0.25, green: 0.57, blue: 0.87, alpha: 1.00)) : ( self.txt.leadingView?.tintColor = .gray) :
+                self.isPreenchido.value ? ( self.txt.leadingView?.tintColor = UIColor(red: 0.25, green: 0.57, blue: 0.87, alpha: 1.00)) : ( self.txt.leadingView?.tintColor = .systemRed)
+        }.disposed(by: disposable)
+    
+        text.bind{ value in
+            if !value.isEmpty{
+                self.txt.setOutlineColor(.clear, for: .normal)
+                self.txt.label.text = ""
+                self.isValid = true
+            }
         }.disposed(by: disposable)
     }
     
@@ -99,6 +117,7 @@ class TextFieldFormulario: UIView {
         txt.leadingViewMode = MDCOutlinedTextField.ViewMode.always
     }
     
+    
     func setPlaceholder(_ text: String){
         txt.attributedPlaceholder = NSAttributedString(
             string: text,
@@ -107,4 +126,16 @@ class TextFieldFormulario: UIView {
             ]
         )
     }
+    
+    func setupInvalidCamp(_ text: String){
+        isValid = false
+        txt.setNormalLabelColor(.systemRed, for: .normal)
+        txt.setNormalLabelColor(.systemRed, for: .editing)
+        txt.setFloatingLabelColor(.systemRed, for: .normal)
+        txt.setFloatingLabelColor(.systemRed, for: .editing)
+        txt.label.text = text
+        txt.leadingView?.tintColor = .systemRed
+        txt.setOutlineColor(.systemRed, for: .normal)
+    }
+    
 }

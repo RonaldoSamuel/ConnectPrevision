@@ -11,30 +11,89 @@ import RxCocoa
 import RxSwift
 import MaterialComponents
 
+enum loadingStatus {
+    case refresh, sucess, error, `default`
+}
+
 class TelaPerfilViewModel{
     
     
     var firebaseHelper = LoginHelper()
     var disposable = DisposeBag()
+    private var model: TelaPerfilModel = TelaPerfilModel()
     
     var isUsuarioDeslogar: BehaviorRelay<Bool> = BehaviorRelay<Bool>(value: false)
     var isRaining: BehaviorRelay<Bool> = BehaviorRelay<Bool>(value: false)
     var isNight: BehaviorRelay<Bool> = BehaviorRelay<Bool>(value: false)
+    var status: BehaviorRelay<loadingStatus> = BehaviorRelay<loadingStatus>(value: .default)
     
-    var userName: BehaviorRelay<String> = BehaviorRelay<String>(value: "")
-    var userEmail: BehaviorRelay<String> = BehaviorRelay<String>(value: "")
-    var userLocale: BehaviorRelay<String> = BehaviorRelay<String>(value: "")
-    var userPhoto: BehaviorRelay<String> = BehaviorRelay<String>(value: "")
-    var userNumber: BehaviorRelay<String> = BehaviorRelay<String>(value: "")
     
-    var dataSourse: BehaviorRelay<ForeCastModel> = BehaviorRelay<ForeCastModel>(value: ForeCastModel())
+    var nome: String {
+        get{
+            return model.nome
+        }
+    }
+    
+    var email: String {
+        get{
+            return model.email
+        }
+    }
+    
+    var phone: String {
+        get {
+            return model.phone
+        }
+    }
+    
+    func setUsuarioLogado(){
+        setupVariaveis()
+    }
+    
+    func  setupVariaveis(){
+           
+           
+           
+           
+           
+        model.setNome(nome: Auth.auth().currentUser?.displayName ?? "Nulo")
+        model.setEmail(nome: Auth.auth().currentUser?.email ?? "Nulo")
+        model.setPhone(nome: Auth.auth().currentUser?.phoneNumber ?? "nulo")
+           
+        model.verificarCampos()
+        
+           self.status.accept(.refresh)
+       }
     
     func bindViews(){
-        userName.accept((Auth.auth().currentUser!.displayName ?? "Usuario"))
-        userEmail.accept(Auth.auth().currentUser!.email ?? "Email Do Usuario")
-        userPhoto.accept("\(String(describing: Auth.auth().currentUser!.photoURL))")
-        userNumber.accept(Auth.auth().currentUser!.phoneNumber ?? "Carregando")
+        setUsuarioLogado()
         
+     
+        
+    }
+    
+    func atualizarNome(_ nome: String){
+        let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+        changeRequest?.displayName = nome
+        changeRequest?.commitChanges { (error) in
+            self.status.accept(.error)
+        }
+        
+    }
+    
+    func atualizarEmail(_ email: String){
+        Auth.auth().currentUser?.updateEmail(
+            to: email,
+            completion: {e in
+                self.status.accept(.error)
+            })
+    }
+    
+    
+    func atualizarSenha(_ senha: String){
+        Auth.auth().currentUser?.updatePassword(to: senha) { (error) in
+            self.status.accept(.error)
+        }
     }
     
     func deslogarUsuario(){

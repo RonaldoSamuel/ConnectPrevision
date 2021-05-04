@@ -29,17 +29,18 @@ class TelaCadastroViewController: UIViewController {
     
     func bindView(){
         
-        presentationView.signUpButton.rx.tap.bind { self.viewModel.create()}.disposed(by: disposable)
+        presentationView.signUpButton.rx.tap.bind { self.viewModel.validarCampos()}.disposed(by: disposable)
         
-        presentationView.txtNome.text.bind(to: viewModel.nome).disposed(by: disposable)
+        presentationView.txtNome.text.bind(to: viewModel.txtName).disposed(by: disposable)
         
-        presentationView.txtEmail.text.bind(to: viewModel.email).disposed(by: disposable)
+        presentationView.txtEmail.text.bind(to: viewModel.txtEmail).disposed(by: disposable)
         
-        presentationView.txtPhone.text.bind(to: viewModel.phone).disposed(by: disposable)
+        presentationView.txtPhone.text.bind(to: viewModel.txtPhone).disposed(by: disposable)
         
-        presentationView.txtSenha.text.bind(to: viewModel.password).disposed(by: disposable)
+        presentationView.txtSenha.text.bind(to: viewModel.txtPassword).disposed(by: disposable)
         
-        presentationView.txtConfirmSenha.text.bind(to: viewModel.confirmPassword).disposed(by: disposable)
+        presentationView.txtConfirmSenha.text.bind(to: viewModel.txtConfirmPass
+        ).disposed(by: disposable)
         
         presentationView.btnChange.rx.tap.bind {
             let value = self.presentationView.txtSenha.isSecureTextEntry
@@ -50,8 +51,28 @@ class TelaCadastroViewController: UIViewController {
         
         presentationView.loginButton.rx.tap.bind { self.coordinator?.navigationController.popViewController(animated: true)}.disposed(by: disposable)
         
-        viewModel.isFormPreenchido.bind { value in self.presentationView.signUpButton.isEnabled = value }.disposed(by: disposable)
+        viewModel.feedbackCadastro.bind { value in
+            self.tratarStatus(status: value)
+        }.disposed(by: disposable)
         
+        
+    }
+    
+    func tratarStatus(status: CadastroStatus){
+        switch status {
+        case .cadastradoSucesso:
+            navigationController?.popViewController(animated: true)
+            break
+        case .mostrarMensagensErro:
+            presentationView.setupErrosForm(erros: viewModel.errosCadastro)
+            break
+        case .resetarErrosFormulario:
+            break
+        case .mostrarMensagensErroAPI:
+            break
+        default:
+            break
+        }
     }
     
     override func viewDidDisappear(_ animated: Bool) {

@@ -6,8 +6,13 @@ target 'Connect Prevision' do
   use_frameworks!
 
   # Pods for Connect Prevision
+  
+  # MARK: - RXSWift
   pod 'RxSwift'
-  pod 'RxCocoa'
+  pod 'RxDataSources'
+  pod 'RxSwiftExt'
+  pod 'RxGesture'
+
   pod 'MaterialComponents'
   pod 'MaterialComponents/Cards'
   pod 'Alamofire'

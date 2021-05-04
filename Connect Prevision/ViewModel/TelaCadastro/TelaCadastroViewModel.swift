@@ -10,58 +10,103 @@ import RxSwift
 import RxCocoa
 import Firebase
 
-class TelaCadastroViewModel {
+enum CadastroStatus {
+    case cadastradoSucesso, mostrarMensagensErro, mostrarMensagensErroAPI, resetarErrosFormulario,`default`
+}
+
+protocol TelaCadastroViewModelInput {
+    var txtName: BehaviorRelay<String> { get set }
+    var txtEmail: BehaviorRelay<String> { get set }
+    var txtPhone: BehaviorRelay<String> { get set}
+    var txtPassword: BehaviorRelay<String> { get set }
+    var txtConfirmPass: BehaviorRelay<String> { get set }
+}
+
+protocol TelaCadastroViewModelOutput {
+    var feedBack: [ErrorModel<CadastroErrorType>] { get }
+    var feedbackCadastro: BehaviorRelay<CadastroStatus> { get set }
+}
+
+class TelaCadastroViewModel: TelaCadastroViewModelOutput, TelaCadastroViewModelInput{
+    
+    // MARK: - Output
+    
+    var feedbackCadastro: BehaviorRelay<CadastroStatus> = BehaviorRelay<CadastroStatus>(value: .default)
+    var feedBack: [ErrorModel<CadastroErrorType>] = []
+    
+    var errosCadastro: [ErrorModel<CadastroErrorType>] {
+        get {
+            return model.errors
+        }
+    }
+    
+    // MARK: - Input
+    
+    var txtName: BehaviorRelay<String> = BehaviorRelay<String>(value: "")
+    var txtEmail: BehaviorRelay<String> = BehaviorRelay<String>(value: "")
+    var txtPhone: BehaviorRelay<String> = BehaviorRelay<String>(value: "")
+    var txtPassword: BehaviorRelay<String> = BehaviorRelay<String>(value: "")
+    var txtConfirmPass: BehaviorRelay<String> = BehaviorRelay<String>(value: "")
+    
+    //    MARK: - BaseViewModel e functions
     
     var firebaseHelper = SignHelper()
     var disposable: DisposeBag = DisposeBag()
     var model: FireBaseLoginSignModel = FireBaseLoginSignModel()
     
-    var nome: BehaviorRelay<String> = BehaviorRelay<String>(value: "")
-    var email: BehaviorRelay<String> = BehaviorRelay<String>(value: "")
-    var phone: BehaviorRelay<String> = BehaviorRelay<String>(value: "")
-    var password: BehaviorRelay<String> = BehaviorRelay<String>(value: "")
-    var confirmPassword: BehaviorRelay<String> = BehaviorRelay<String>(value: "")
-    
-    var isPasswordEqual: BehaviorRelay<Bool> = BehaviorRelay<Bool>(value: false)
-    var isFormPreenchido: BehaviorRelay<Bool> = BehaviorRelay<Bool>(value: false)
     
     func viewDidLoad(){
         
-        Observable.combineLatest(nome, email, phone, password, confirmPassword) { (value1,value2,value3,value4,value5) in
-            return (value1 != "" && value2 != "" && value3 != "" && value4 != "" && value5 != "")}.bind(to: self.isFormPreenchido).disposed(by: disposable)
-        
-        nome.asObservable()
+        txtName.asObservable()
             .subscribe(onNext: {value in
                 self.model.setNome(value)
             }).disposed(by: disposable)
         
-        email.asObservable()
+        txtEmail.asObservable()
             .subscribe(onNext: {value in
                 self.model.setEmail(value)
             }
             ).disposed(by: disposable)
         
-        phone.asObservable()
+        txtPhone.asObservable()
             .subscribe(onNext: {value in
                 self.model.setPhone(value)
             }).disposed(by: disposable)
         
-        password.asObservable()
+        txtPassword.asObservable()
             .subscribe(onNext: {value in
                 self.model.setPassword(value)
             }
             ).disposed(by: disposable)
         
-        confirmPassword.asObservable()
+        txtConfirmPass.asObservable()
             .subscribe(onNext: {value in
                 self.model.setConfirmPassword(value)
             }).disposed(by: disposable)
         
-        Observable.combineLatest(password, confirmPassword) { (value1,value2) in return value1 == value2 && value1 != "" }.bind(to: self.isPasswordEqual).disposed(by: disposable)
     }
     
-    func create(){
-        firebaseHelper.criarConta(emailModel: model)
+    func validarCampos(){
+        
+        model.checarCamposCadastro()
+        
+        if model.isDadosCadastroValidos {
+            createAccount()
+        }else {
+            feedbackCadastro.accept(.mostrarMensagensErro)
+        }
+        
+    }
+    
+    func createAccount(){
+        
+        firebaseHelper.criarConta(emailModel: model,completion: { feedbackFireBase, errorMessage in
+            if feedbackFireBase {
+                self.feedbackCadastro.accept(.cadastradoSucesso)
+            }else{
+                self.snackbar(message: errorMessage)
+            }
+        })
     }
     
 }

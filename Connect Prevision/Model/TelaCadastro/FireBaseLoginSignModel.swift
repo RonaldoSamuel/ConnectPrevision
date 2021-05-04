@@ -14,6 +14,15 @@ class FireBaseLoginSignModel {
     private (set)  var password: String
     private (set)  var confirmPassword: String
     
+    var isDadosCadastroValidos: Bool {
+        get {
+            
+            return errors.count == 0
+        }
+    }
+    
+    private (set) var errors:[ErrorModel<CadastroErrorType>] = [ErrorModel<CadastroErrorType>]()
+    
     init(nome: String,email: String,phone: String, password:String, confirmPassword:String){
         self.nome = nome
         self.email = email
@@ -48,6 +57,47 @@ class FireBaseLoginSignModel {
     
     func setConfirmPassword(_ confirmPassword: String) {
         self.confirmPassword = confirmPassword
+    }
+    
+    func checarCamposCadastro() {
+        
+        errors = [ErrorModel<CadastroErrorType>]()
+        
+        if nome.isEmpty {
+            errors.append(ErrorModel<CadastroErrorType>(typeError: .nomeVazio, message: "empty_name".translate))
+        }
+        
+        if email.isEmpty {
+            errors.append(ErrorModel<CadastroErrorType>(typeError: .emailVazio, message: "empty_email".translate))
+        }
+        
+        if !email.isValidEmail {
+            errors.append(ErrorModel<CadastroErrorType>(typeError: .emailInvalido, message: "email_invalid".translate))
+        }
+        
+        if phone.isEmpty {
+            errors.append(ErrorModel<CadastroErrorType>(typeError: .telefoneVazio, message: "empty_phone".translate))
+        }
+        
+        if password.isEmpty {
+            errors.append(ErrorModel<CadastroErrorType>(typeError: .senhaVazia, message: "empty_password".translate))
+        }
+        
+        if password.count < 8 {
+            errors.append(ErrorModel<CadastroErrorType>(typeError: .senhaCurta, message: "short_password".translate))
+        }
+        
+        if !password.isSenhaForte {
+            errors.append(ErrorModel<CadastroErrorType>(typeError: .senhaFraca, message: "password_weak".translate))
+        }
+        
+        if confirmPassword.isEmpty {
+            errors.append(ErrorModel<CadastroErrorType>(typeError: .confirmarSenhaVazia, message: "confirmpass_empty".translate))
+        }
+        
+        if confirmPassword != password {
+            errors.append(ErrorModel<CadastroErrorType>(typeError: .senhasDivergentes, message: "passwords_are_different".translate))
+        }
     }
     
 }

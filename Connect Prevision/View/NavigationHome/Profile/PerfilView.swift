@@ -42,6 +42,7 @@ class PerfilView: UIView{
     
     var fotoUsuario: UIImageView = {
         var img = UIImageView()
+        img.image = UIImage(named: .ic_logo)
         img.translatesAutoresizingMaskIntoConstraints = false
         return img
     }()
@@ -85,7 +86,7 @@ class PerfilView: UIView{
         var info = PerfilComponent()
         info.setIcon(named: .ic_person)
         info.setupContentText(conteudo: "Nome de usuário")
-        info.setupInfoUser(conteudo: "Ronaldo Samuel")
+        info.setupInfoUser(conteudo: "carregando")
         info.translatesAutoresizingMaskIntoConstraints = false
         return info
     }()
@@ -93,7 +94,7 @@ class PerfilView: UIView{
     var info_EmailUsuario: PerfilComponent = {
         var info = PerfilComponent()
         info.setIcon(named: .ic_email)
-        info.setupInfoUser(conteudo: "ronaldo.samuel2021@gmail.com")
+        info.setupInfoUser(conteudo: "carregando")
         info.setupContentText(conteudo: "E-mail")
         info.translatesAutoresizingMaskIntoConstraints = false
         return info
@@ -403,6 +404,31 @@ class PerfilView: UIView{
             ])
             sendSubviewToBack(rainParticle6)
         }
+    }
+    
+    func setupRainTheme(){
+        
+        //Nuvens Cinzas
+       imagemNuvem1.image = UIImage(named: "nuvem_chuva_1")
+        self.imagemNuvem2.image = UIImage(named: "nuvem_chuva_2")
+        self.imagemNuvem3.image = UIImage(named: "nuvem_chuva_3")
+        
+        UIView.animate(withDuration: 1.5, delay: 0.0, options:[], animations: {
+            self.backgroundColor = UIColor(red: 0.84, green: 0.84, blue: 0.84, alpha: 1.00)
+           }, completion:nil)
+        self.setupThemeRainUI(remover: false)
+    }
+    
+    func setupNightTheme(){
+        
+        //Nuvens Cinzas
+        self.imagemNuvem1.image = UIImage(named: "nuvem_chuva_1")
+        self.imagemNuvem2.image = UIImage(named: "nuvem_chuva_2")
+        self.imagemNuvem3.image = UIImage(named: "nuvem_chuva_3")
+        
+        UIView.animate(withDuration: 1.5, delay: 0.0, options:[], animations: {
+            self.backgroundColor = UIColor(red: 0.05, green: 0.03, blue: 0.30, alpha: 1.00)
+           }, completion:nil)
     }
     
 }

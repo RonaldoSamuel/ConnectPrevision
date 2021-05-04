@@ -11,42 +11,31 @@ import MaterialComponents
 
 class SignHelper {
     
-    func criarConta(emailModel: FireBaseLoginSignModel){
-        Auth.auth().createUser(withEmail: emailModel.email, password: emailModel.password, completion: {authResult, Error in if let Error = Error as NSError? {
-            switch AuthErrorCode(rawValue: Error.code){
-            case .operationNotAllowed:
-                self.snackbar(message: Error.localizedDescription)
-                break
-            case .emailAlreadyInUse:
-                self.snackbar(message: Error.localizedDescription)
-                print("Email Ja Existe")
-                break
-            case .invalidEmail:
-                self.snackbar(message: Error.localizedDescription)
-                print("Email Invalido")
-                break
-            case .weakPassword:
-                self.snackbar(message: Error.localizedDescription)
-                print("Sua Senha é fraca")
-                break
-                
-            default:
-                self.snackbar(message: Error.localizedDescription)
-                print("Error: \(Error.localizedDescription)")
-            }
+    func criarConta(emailModel: FireBaseLoginSignModel, completion: @escaping((Bool, String)->Void)){
+        Auth.auth().createUser(
+            withEmail: emailModel.email,
+            password: emailModel.password,
             
-        } else {
-            self.snackbar(message: "Usuario Cadastrado com Sucesso")
-        }
-        
-        })
+            completion: { authResult, Error in
+                if let Error = Error as NSError? {
+                    switch AuthErrorCode(rawValue: Error.code){
+                    default:
+                        completion(false, "\(Error.localizedDescription)")
+                        break
+                    }
+                    
+                } else {
+                    let changeRequest = authResult?.user.createProfileChangeRequest()
+                    changeRequest?.displayName = emailModel.nome
+                    changeRequest?.commitChanges { (error) in
+                        print(error)
+                    }
+                    completion(true, "sucesso")
+                }
+                
+            })
     }
     
-    func snackbar(message: String){
-        let action = MDCSnackbarMessage()
-        action.text = message
-        
-        MDCSnackbarManager.default.show(action)
-    }
+    
     
 }

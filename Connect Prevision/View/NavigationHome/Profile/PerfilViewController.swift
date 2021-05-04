@@ -8,6 +8,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import RxGesture
 
 class PerfilViewController: UIViewController{
     
@@ -49,6 +50,14 @@ class PerfilViewController: UIViewController{
     
     func bindView(){
         
+        presentationView.info_NomeUsuario.rx.tapGesture().when(.recognized).bind{_ in
+            self.editarNomeControle() }.disposed(by: disposable)
+        
+        presentationView.info_EmailUsuario.rx.tapGesture().when(.recognized).bind{ _ in
+            self.editarEmailControle() }.disposed(by: disposable)
+        
+        presentationView.info_MudarSenha.rx.tapGesture().when(.recognized).bind{ _ in
+            self.editarSenhaControle() }.disposed(by: disposable)
         
         presentationView.botaoDeslogar.rx
             .tap
@@ -61,18 +70,10 @@ class PerfilViewController: UIViewController{
                 self.coordinator?.navigationController.popViewController(animated: true)
             }}.disposed(by: disposable)
         
-        viewModel.userLocale.bind{ value in
-            
-            if(!value.isEmpty){
-                print(value)
-                self.presentationView.fotoUsuario.downloaded(from: value)
-            }
-            self.presentationView.fotoUsuario.image = UIImage(named: "Logo")
-        }.disposed(by: disposable)
-        
+    
         viewModel.isRaining.bind { value in
             if value {
-                self.setupRainTheme()
+                self.presentationView.setupRainTheme()
             }else{
             }
         }.disposed(by: disposable)
@@ -80,9 +81,9 @@ class PerfilViewController: UIViewController{
         viewModel.isNight.bind{ value in
             if value {
                 if self.viewModel.isRaining.value {
-                    self.setupNightTheme()
+                    self.presentationView.setupNightTheme()
                 }else{
-                    self.setupNightTheme()
+                    self.presentationView.setupNightTheme()
                     self.presentationView.setupThemeNight()
                 }
             }else{
@@ -90,31 +91,92 @@ class PerfilViewController: UIViewController{
             }
         }.disposed(by: disposable)
         
+        viewModel.status.bind{ value in
+            switch value {
+            case .refresh:
+                self.setupUpNames()
+                break
+            case .error:
+                break
+            case .sucess:
+                break
+            case .default:
+                break
+            }
+        }.disposed(by: disposable)
     }
     
-    func setupRainTheme(){
-        
-        //Nuvens Cinzas
-        self.presentationView.imagemNuvem1.image = UIImage(named: "nuvem_chuva_1")
-        self.presentationView.imagemNuvem2.image = UIImage(named: "nuvem_chuva_2")
-        self.presentationView.imagemNuvem3.image = UIImage(named: "nuvem_chuva_3")
-        
-        UIView.animate(withDuration: 1.5, delay: 0.0, options:[], animations: {
-            self.presentationView.backgroundColor = UIColor(red: 0.84, green: 0.84, blue: 0.84, alpha: 1.00)
-           }, completion:nil)
-        self.presentationView.setupThemeRainUI(remover: false)
+    func setupUpNames(){
+        presentationView.info_NomeUsuario.setupInfoUser(conteudo: viewModel.nome)
+        presentationView.info_EmailUsuario.setupInfoUser(conteudo: viewModel.email)
+        presentationView.info_Telefone.setupInfoUser(conteudo: viewModel.phone)
     }
     
-    func setupNightTheme(){
+    func editarNomeControle(){
+        let alert = UIAlertController(
+            title: "edit_nome_title",
+            message: "edit_nome_desc".translate,
+            preferredStyle: .alert
+        )
+        alert.addTextField { (textField) in
+            textField.placeholder = "new_name".translate
+        }
+        alert.addAction(UIAlertAction(title: "cancel".translate, style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
+            if let nome = alert?.textFields?[0].text {
+                if !nome.isEmpty {
+                    self.viewModel.atualizarNome(nome)
+                    
+                }
+            }
+        }))
         
-        //Nuvens Cinzas
-        self.presentationView.imagemNuvem1.image = UIImage(named: "nuvem_chuva_1")
-        self.presentationView.imagemNuvem2.image = UIImage(named: "nuvem_chuva_2")
-        self.presentationView.imagemNuvem3.image = UIImage(named: "nuvem_chuva_3")
-        
-        UIView.animate(withDuration: 1.5, delay: 0.0, options:[], animations: {
-            self.presentationView.backgroundColor = UIColor(red: 0.05, green: 0.03, blue: 0.30, alpha: 1.00)
-           }, completion:nil)
+        self.present(alert, animated: true, completion: nil)
     }
+    
+    func editarEmailControle(){
+        let alert = UIAlertController(
+            title: "edit_email_title",
+            message: "edit_email_desc".translate,
+            preferredStyle: .alert
+        )
+        alert.addTextField { (textField) in
+            textField.placeholder = "new_email".translate
+        }
+        alert.addAction(UIAlertAction(title: "cancel".translate, style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
+            if let email = alert?.textFields?[0].text {
+                if !email.isEmpty {
+                    self.viewModel.atualizarEmail(email)
+                    
+                }
+            }
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func editarSenhaControle(){
+        let alert = UIAlertController(
+            title: "edit_password_title",
+            message: "edit_password_desc".translate,
+            preferredStyle: .alert
+        )
+        alert.addTextField { (textField) in
+            textField.placeholder = "new_password".translate
+        }
+        alert.addAction(UIAlertAction(title: "cancel".translate, style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
+            if let senha = alert?.textFields?[0].text {
+                if !senha.isEmpty {
+                    self.viewModel.atualizarSenha(senha)
+                    
+                }
+            }
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+   
     
 }
